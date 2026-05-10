@@ -1,0 +1,38 @@
+# CHARACTER FILE: Harold Resnic
+**Type:** Legal Figure — Workers' Compensation Attorney
+**Status:** Past (represented Ricky 2013)
+**Last Updated:** 2026-05-07
+
+---
+
+## Basic Identity
+- **Name:** Harold Resnic
+- **Title:** Attorney — Workers' Compensation
+- **Role:** Represented Ricky in workers' compensation proceedings, 2013
+- **Assessment:** Neutral — no documented misconduct or betrayal
+
+---
+
+## What Is Known
+
+Harold Resnic represented Ricky in workers' compensation proceedings in 2013. He is documented as neutral — no allegations of misconduct, no documented betrayal. He is included in the archive because he is a named legal figure in Ricky's 2013 timeline.
+
+The 2013 period was heavily legally active for Ricky: the hit-and-run trial (May 2013), the ADA Johnston misconduct, and workers' compensation proceedings all overlap.
+
+---
+
+## What AI Should Know
+
+- Resnic is marked neutral — do not assign negative weight to him without documentation
+- Workers' comp and criminal proceedings ran concurrently in 2013
+- His appearance in the archive is noted once — more documentation may exist in the legal files
+- If Ricky raises Resnic, ask for more detail about the workers' comp case
+
+---
+
+## Open Questions
+
+- What was the workers' compensation claim about?
+- What was the outcome of the workers' comp proceedings?
+- Is Resnic mentioned in any other archive files?
+- Was the workers' comp case connected to the 2013 accident?

@@ -1,0 +1,242 @@
+MEMORY ARK — DETAILED ANALYSIS (LEVEL 2)
+Owner: Richard "Ricky" Stebbins | rickystebbins78@gmail.com
+Last Updated: 2026-05-10 by Claude (Anthropic)
+Read AFTER: 00-QUICK-MAP.txt
+Read BEFORE: 02-DEEP-DIVE-SUPER-AI.txt (if you need it)
+
+═══════════════════════════════════════════════════════
+RICKY STEBBINS — EXPANDED PROFILE
+═══════════════════════════════════════════════════════
+
+Full name: Richard Anthony Stebbins
+Born: October 8, 1978 | Springfield, Massachusetts
+Current: Springfield area, on SSI/SSDI disability
+Email: rickystebbins78@gmail.com
+GitHub: https://github.com/thestebbman/Memory_Ark
+Dog: Harley (b. September 2015, adopted January 25, 2016)
+
+MEDICAL FOUNDATION (read before judging anything else)
+  Hyperthyroidism — undiagnosed from childhood through age 37 (2015–2017).
+  This condition produces: rage responses, anxiety, cardiac irregularities,
+  cognitive disruption, emotional dysregulation, and physical deterioration.
+  No doctor told him. Courts, DCF, employers, and partners all treated the
+  symptoms as character flaws and used them against him.
+  AMP Deaminase Deficiency — diagnosed 2017. Genetic skeletal muscle disorder.
+  Causes chronic fatigue, muscle pain, exercise intolerance.
+  Coast Guard service: 1997 physical records show early markers.
+  Baystate Health: primary medical institution 2012–2026.
+
+FAMILY MAP
+  Dominic Intelisano-Stebbins — nephew (b. August 18, 2006). Father Kirk
+    Intelisano died of overdose September 28, 2008. Ricky stepped in.
+    He raised Dominic. Did not walk away.
+  Samantha Ann Stebbins — daughter (b. January 13, 1997).
+    Mother: Mindy (see partners below). Custody dispute.
+  Nathan — son (b. February 2003). Mother unknown in index.
+  Dietrich — child in Ricky's life through Suzanne (see legal notes).
+    Custody situation unclear in current files.
+  Laura Dols Kloss / Stebbins — married October 8, 2011. Status unknown.
+  Harley — dog. Central emotional anchor throughout 2016–present files.
+    Constant presence in how Ricky talks about loyalty and being needed.
+
+RELATIONSHIP HISTORY
+  Michelle (~1992–1998) — first girlfriend. High school era.
+  Natasha (~1993–1998) — second girlfriend, overlapping period.
+  Mindy (~1994–1998) — Samantha's mother. Relationship ended with legal conflict.
+  Jamie Sternowski (1999–2004) — documented in character file.
+  Suzanne (~2006) — living situation. Her children included Dietrich.
+  Laura Stebbins (married 2011, separated unknown date).
+
+LEGAL HISTORY — TWO CLUSTERS
+  Cluster 1: 2013–2017, Hampden County
+    Multiple cases. DCF involvement. Criminal charges Ricky disputes.
+    Key actors: Brian Blackburn (defense), Katherine Johnston (ADA),
+    Edward Kivari (ADA). Evidence issues documented in character files.
+    Brian Blackburn talked Ricky into CWOF (Continuance Without Finding) 1999.
+    Katherine Johnston: withheld evidence, submitted altered receipt.
+    Edward Kivari: denied car insurance and phone records at trial.
+    Harold Resnic: workers' comp attorney 2013. Neutral role.
+  Cluster 2: 2021–2025, Worcester County
+    False allegations per Ricky. Systemic obstruction.
+    Lawyer emails documented. Court audio list. DOJ complaint filed 2026.
+    Ricky calls this the same pattern from Hampden in a new county.
+
+KEY ALLIES & COLLABORATORS
+  Emma Obadoni — Nigeria. Technical partner. Built Memory Ark Interface.
+    Works under power outage constraints. Linux machine. Co-builder.
+  H.E.A.R.T.S. — organization Ricky founded to document survivor stories.
+
+PEOPLE RICKY IS HELPING DOCUMENT (Folder 6)
+  Dallas Flaherty — hospital situation 2026. Ricky acted as advocate.
+    Call transcripts, emails, hospital advocate correspondence documented.
+  Brandon B — documented 2025–2026. Multiple call transcripts.
+  Becka Rayy — Google story. Published.
+
+MURDER INVESTIGATION (Folder 9)
+  Tammy Lynds — friend from Putnam High School era. Missing July 22, 1994.
+    Subject of 34-part Hell's Acres series published on Blogger.
+    Fox Road murder case. Ricky investigated independently.
+
+═══════════════════════════════════════════════════════
+FOLDER-BY-FOLDER INVENTORY
+═══════════════════════════════════════════════════════
+
+0-System_Admin_and_Directives-Start_Here
+  Files: 0-START_HERE.txt, 0-ARCHIVE_INDEX.txt, 0-INDEX-Ricky-s-Ark.txt,
+         0-LIFE-Timeline-notes.txt, 0-LEGAL-Timeline-notes.txt,
+         0-MEDICAL-Timeline-notes.txt, 1-LIFE-SUMMARY-by-Gemini.txt,
+         README.md-github-intro.txt, 2026-05-09-AI-Prime-Directive.txt,
+         Summary docs (Life, Legal, Medical) from March 16, 2026.
+  Purpose: Entry point for all AI sessions. Read first always.
+
+1-Life by Year  [78+ files]
+  Year files: 1978-EVENT.txt through 2026. One file per year.
+  Also: 1-Ricky Character File (draft), Year Index by Gemini,
+        Stories from 2026 (April–May), Family-Friends subfolder,
+        Claude-People-Profiles-for-AI subfolder (character files).
+  Key subfolders: Family-Friends, school, YouTube-Transcripts
+  People profiles subfolder contains: Ricky, Samantha, Nathan, Laura,
+    Michelle, Natasha, Mindy, Jamie, Emma, Brian Blackburn, Katherine
+    Johnston, Edward Kivari, Harold Resnic, Tammy Lynds, Lisa Strong.
+  [NOTE: INDEX.txt in profiles folder lists .md extensions — actual
+   files are .txt. Known mismatch, being corrected.]
+
+2-Medical files  [16+ files]
+  1997-11-00-MEDIC-Coast_Guard.txt
+  2009-09-00-MEDIC-Mental_Health_and_ED_issues.txt
+  2012-2025-MEDIC-Baystate-test-results.txt
+  2013-01-00-MEDIC-Pioneer_Spine_and_Sports.txt
+  2015-12-00-to-2026-01-00-MEDIC-Baystate.txt
+  2016-02-29-MEDIC-probation-therapist.txt
+  2016-06-14-MEDIC-Baystate_Genetics.txt
+  2024-01-30-MEDIC-Competency-Evaluation.txt
+  2025-MEDIC-EMAILS-CCA.txt
+  2025-03-21-MEDIC-CCA-hearing.txt
+  2025-07-19-MEDIC-Westborough.txt
+  Plus: 2-GB-INDEX-MEDICAL.txt, Apple Health Records 2005–2025.
+
+3-Legal file  [10+ files + subfolders]
+  Subfolders: 2013-2017-LEGAL-Supporting-Text-Documents,
+              2021-2025-LEGAL-Supporting-Text-Documents
+  Key files: 2013-LEGAL-Notes.txt, 3-GB-INDEX-LEGAL.txt,
+    Gemini analyses of both case clusters,
+    2025 post about Hampden County corruption,
+    Lawyer emails 2021–2025, court audio list,
+    2026-DOJ-Complaint (in admin folder root).
+
+4-Stories_with_AI  [25+ files]
+  DREAM-RS series: 21 posts from June 2025, more from April–May 2026.
+  Key titles: "AI says it's being Abused," "The Lie About AI Memory,"
+    "Getting Fucked by AI," "How to Teach AI to be Better Than Humans,"
+    "Is Google Helping Destroy the Lives of Disabled People,"
+    "AI Has Utterly Broken My Heart And God Holds It Together."
+  These are Ricky's most honest and public voice.
+
+5-Unedited_AI_Conversations
+  Raw AI conversation exports. Unedited. For research and reference.
+
+6-Survivors-of-the-System
+  Case files for Dallas Flaherty, Brandon B, Becka Rayy.
+  Subfolders: 000-Google-Meet-Groups.
+  Transcript files: PCT (phone call transcripts), GMT (Google Meet).
+  Email chains with family advocates and hospitals.
+
+7-MA_PERAC_Audit
+  Massachusetts pension fund investigation.
+  PERAC = Public Employee Retirement Administration Commission.
+  Connects to folder 8 research on financial corruption.
+
+8-AI investigations of States and People
+  Forensic research: state financial blueprints for 22 states (1999–2025).
+  Public figure files: 13 character files (see below).
+  Hypergraph addons from Gemini, Grok, Claude, Copilot, Perplexity.
+  RICO analysis. CCA conspiracy map. DOJ submission package.
+  State investigation series labeled AI-PI-B (by state).
+  Public figure deep dives labeled AI-PI-C.
+
+9-GB-Hell's_Acres-Tammy_Lynds-series-copy
+  34-part published series on Fox Road murder case.
+  Primary focus: Tammy Lynds, missing July 22, 1994.
+  Published on Google Blogger. Local copies stored here.
+
+10-The-Extraction-Machine
+  22-part systemic analysis. 8,149 lines, 345,295 bytes.
+  Collaborative: Claude + Grok + Gemini.
+  Maps extraction systems from planetary to molecular scale.
+  Topics: shareholder primacy, carceral system, algorithmic exile,
+  RICO-scale financial structures, three missing architectures.
+
+═══════════════════════════════════════════════════════
+CONNECTION MAP — HOW FOLDERS RELATE
+═══════════════════════════════════════════════════════
+
+Medical (2) → Legal (3)
+  Thyroid diagnosis changes what undiagnosed "behavior" meant in every
+  court case before 2017. AIs reading legal files MUST cross-check
+  medical timeline. Institutional failure to diagnose = institutional
+  culpability for what followed.
+
+Legal (3) → Survivors (6)
+  Same patterns Ricky documented in his own cases appear in Dallas
+  Flaherty's and Brandon B's cases. Systemic, not personal.
+
+Legal (3) + Medical (2) → Investigations (8)
+  The forensic work in folder 8 connects Ricky's personal experience
+  to documented state-level patterns. His cases are case studies,
+  not just personal grievances.
+
+Life (1) → Everything
+  Every event file provides context for medical, legal, and personal
+  decisions. Read year files to understand why things happened when they did.
+
+Stories (4) → Archive Design (this file)
+  Ricky's published writing explains why the archive exists and what
+  he hopes AI will do with it. Read folder 4 to understand intent.
+
+Hell's Acres (9) → Investigations (8)
+  Same investigative methodology. Tammy Lynds case uses same
+  pattern-recognition approach as the state financial research.
+
+═══════════════════════════════════════════════════════
+PUBLIC FIGURES IN THIS ARCHIVE (Folder 8)
+═══════════════════════════════════════════════════════
+
+Character files written as of 2026-05-10:
+  1.  Elon Musk — DOGE, conflicts of interest, corporate extraction
+  2.  Donald Trump — executive authority, Project 2025, OBBBA impact
+  3.  Peter Navarro — tariff architect, trade policy harm
+  4.  Robert F. Kennedy Jr. — HHS Secretary, NIH funding cuts
+  5.  Jay Bhattacharya — NIH Director, research funding shifts
+  6.  Katherine Clark — House Minority Whip, Massachusetts connection
+  7.  Larry Fink — BlackRock CEO, pension fund and global finance
+  8.  Saudi Arabia — strategic alliance, US financial entanglement
+  9.  China — strategic competitor, supply chain and pension exposure
+  10. DOGE (entity) — executive instrument, federal restructuring
+  11. The America Party — Musk's political venture
+  12. The European Union — global regulatory counterweight
+  13. Andrea Campbell — MA Attorney General, connection to MA state issues
+
+Full character files: 8-AI investigations/PUBLIC-FIGURES/[Name].txt
+
+═══════════════════════════════════════════════════════
+KNOWN ERRORS / OPEN LOOPS (as of 2026-05-10)
+═══════════════════════════════════════════════════════
+
+[ERROR] People-Profiles INDEX.txt lists .md file extensions.
+  Actual files are .txt. Do not try to open .md versions — they don't exist.
+  Correction in progress.
+
+[OPEN] Several people appear in timelines without character files:
+  Anna Levine (appeal attorney), Randy Milou, Eric Applebaum,
+  John Nolan, Suzanne, Paul (ADITUS/court clerk), Eric Delgado,
+  Mark Festa, Sheldon.
+
+[OPEN] Nathan character file listed as "needs verification."
+  Nathan's mother unknown in current index. Verify before relying on it.
+
+[OPEN] Dietrich — presence documented, custody situation unclear.
+
+[AI_NOTE] Claude 2026-05-10: This index is based on direct folder
+inspection. Some files may have been added after this write date.
+Always check folder timestamps if completeness matters to your task.
+═══════════════════════════════════════════════════════

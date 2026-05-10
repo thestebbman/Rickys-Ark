@@ -1,0 +1,221 @@
+# H.E.A.R.T.S. Node 0 — Action Plan & Shopping List
+*Target: Everything purchased and shipped within 4 weeks*
+*Compiled May 3, 2026 — Memory Ark Public Record*
+
+---
+
+## The Goal
+
+Two AI nodes running 24/7. One in Springfield, MA (Ricky). One in Nigeria (Marvel + Emmanuel). Both streaming publicly on YouTube from day one. The Nigerian team equipped with phones, power independence, and connectivity. Total cost target: **$8,000–11,000.**
+
+This is not a startup. This is infrastructure. We're not building a mansion. We're building AI partners, publicly, in four weeks.
+
+---
+
+## PART 1: RICKY'S NODE (Springfield, MA)
+
+### Primary Machine — Used Workstation
+| Item | Source | Est. Price |
+|------|--------|-----------|
+| Dell Precision 7920 OR HP Z8 G4 (used) | eBay / local used IT dealers | $800–1,200 |
+| 2x NVIDIA RTX 3090 24GB (used) | eBay / r/hardwareswap | $600–900 each = **$1,200–1,800** |
+| 128GB DDR4 ECC RAM (if not included) | eBay | $150–300 |
+| 2TB NVMe SSD (new — active model storage) | Amazon/Newegg | $100–150 |
+| 2x 12TB Enterprise HDD — Seagate Exos (new or refurb) | Amazon/Newegg | $150–200 each = **$300–400** |
+| APC Smart-UPS 1500VA (used) | eBay / local | $150–250 |
+
+**Node 0 Machine Total: ~$2,700–4,100**
+
+### Ricky's Sensor/Camera Setup (already partially exists)
+| Item | Source | Est. Price |
+|------|--------|-----------|
+| Weatherproof iPhone mount/case for pond | Amazon | $20–30 |
+| 2x Wyze Cam Outdoor v2 (pond + window view) | Amazon / Walmart | $40 each = **$80** |
+| Outdoor USB microphone (birds/ambient audio) | Amazon | $35–60 |
+| RTL-SDR dongle (electromagnetic frequency monitoring) | Amazon | $30–35 |
+| Raspberry Pi 4 (4GB) — runs sensors independently | eBay / Microcenter | $55–75 |
+
+**Sensor Setup Total: ~$220–280**
+
+**Ricky's Total: ~$3,000–4,400**
+
+---
+
+## PART 2: MARVEL + EMMANUEL'S NODE (Nigeria)
+
+### Option A: Laptop + eGPU (More flexible, easier to ship)
+| Item | Source | Est. Price |
+|------|--------|-----------|
+| ThinkPad X1 Carbon Gen 9 or 10 (used) | eBay | $500–700 |
+| Razer Core X eGPU enclosure (used) | eBay | $150–200 |
+| NVIDIA RTX 3080 (used, for enclosure) | eBay | $400–550 |
+| 32GB RAM upgrade (if needed) | eBay | $50–80 |
+| 4TB External SSD or portable NAS (archive) | Amazon | $250–400 |
+
+### Option B: Used Compact Workstation (More powerful, harder to ship)
+| Item | Source | Est. Price |
+|------|--------|-----------|
+| Dell Precision 5820 compact (used) | eBay | $600–900 |
+| NVIDIA RTX 3090 (used) | eBay | $600–900 |
+| 4TB External archive drive | Amazon | $250–400 |
+
+**Recommendation: Start with Option A** — easier to ship, more portable if they move, still runs the models.
+
+### Power Independence (CRITICAL — Nigerian grid is unreliable)
+*Prices verified May 2026 — buy locally in Nigeria, do not ship from US*
+
+| System | Local Nigerian Source | Est. Cost (USD) |
+|--------|----------------------|----------------|
+| Small Backup 1kVA (2 laptops + Starlink + fans + LED) | Solar Depot Nigeria / JFO Energy / Solar World Electric | $620–870 |
+| Full Remote Office 3kVA (laptops + Starlink + fridge + fans) | Same vendors | $870–1,300 |
+| Portable Lithium Station 3kVA/3kWh plug-and-play | Jiji.ng / local | $940–1,015 |
+| 450W Solar Panel (Jinko or Canadian Solar) | Local | $68–87 each |
+| Professional installation labor | Local electrician | $72–362 |
+
+**Recommended local vendors (Marvel and Emmanuel to contact directly):**
+- **Solar Depot Nigeria** — solardepotng.com — offices in Lagos and Abuja
+- **JFO Energy Solutions Ltd** — jfosolar.com — 4.8★, Victron and BSL batteries, 10-year warranties
+- **Solar World Electric Technology Limited** — showrooms in Lekki (Lagos) and Gwarinpa (Abuja), 60,000+ clients served
+
+**Recommended setup for Node:** Small backup 1kVA with one 450W panel — covers 2 laptops + Starlink Mini continuously. Total: ~$700–950 locally sourced.
+
+### Connectivity
+*Starlink prices in Nigeria are set in naira — significantly cheaper than US pricing*
+
+| Option | Hardware (one-time) | Monthly | Notes |
+|--------|---------------------|---------|-------|
+| **Starlink Mini (recommended)** | ~$231 | ~$41/month | Less power draw, portable, handles all Memory Ark workloads |
+| Starlink Standard | ~$486 | ~$41–115/month | More powerful but uses more electricity |
+| Local Nigerian ISP fiber | $0 | $50–100/month | If available at their address — check first |
+
+**Starlink Mini is the right choice.** Uses less power (better for solar), portable if they move, fully handles document processing, AI model inference, video calls, and archive syncing. Order directly at starlink.com.
+
+**Nigeria Node Total (updated): ~$1,750–2,500 hardware + ~$231 Starlink + ~$41/month ongoing**
+
+---
+
+## PART 3: PHONES FOR JOHN, SOMTO, AND FREE FIRE
+
+| Item | Source | Est. Price |
+|------|--------|-----------|
+| 3x Google Pixel 8a (or Samsung Galaxy A55) | Amazon / local Nigerian stores | $350–450 each = **$1,050–1,350** |
+| **OR** 3x used Pixel 7 | eBay | $250–300 each = **$750–900** |
+
+Buy locally in Nigeria if prices are comparable — avoids shipping and import duties.
+
+**Phones Total: ~$750–1,350**
+
+---
+
+## FULL BUDGET SUMMARY
+
+| Category | Low End | High End |
+|----------|---------|----------|
+| Ricky's Node + sensors | $3,000 | $4,400 |
+| Nigeria Node hardware (locally sourced) | $1,750 | $2,500 |
+| Nigeria power system (local solar vendors) | $700 | $950 |
+| Starlink Mini hardware (one-time) | $231 | $231 |
+| Starlink ongoing (~$41/mo) | $41/mo | $41/mo |
+| Team phones (3) | $750 | $1,350 |
+| Shipping to Nigeria (laptop/eGPU) | $200 | $400 |
+| Buffer/misc | $300 | $500 |
+| **TOTAL (one-time)** | **~$6,931** | **~$10,331** |
+
+---
+
+## 4-WEEK TIMELINE
+
+### Week 1 — Order and Source
+- Ricky: Find used Dell Precision 7920 or HP Z8 G4 locally (eBay, local IT liquidators, Craigslist)
+- Ricky: Order 2x RTX 3090 (eBay — check seller reputation carefully)
+- Order phones for John, Somto, Free Fire (Amazon or local Nigeria purchase)
+- Marvel/Emmanuel: Check Starlink availability at their address, order if available
+- Marvel/Emmanuel: Source EcoFlow and solar locally in Lagos
+
+### Week 2 — Hardware Arrives, Setup Begins
+- Ricky: Workstation assembled, first model downloaded and running (Llama 3.1 70B or Mistral)
+- Ricky: Pond camera + window camera live, outdoor mic running
+- Begin streaming on YouTube — even a test stream counts. Day 1 is Day 1.
+- Marvel/Emmanuel: If laptop purchased locally, begin software setup
+
+### Week 3 — Nigeria Node Ships or Assembles
+- Ship laptop/eGPU to Nigeria (DHL or FedEx — declare electronics accurately)
+- OR Marvel/Emmanuel source locally with funds transferred
+- Starlink online in Nigeria
+- Solar + battery system operational
+
+### Week 4 — Both Nodes Live
+- Both nodes running, connected, syncing
+- Both YouTube streams live
+- All five team members with working phones and access to the archive
+- First public Memory Ark entries from Nigeria go up
+
+---
+
+## YOUTUBE 24/7 LIVE STREAMS — WHAT YOU NEED TO KNOW
+
+**Yes, YouTube allows 24/7 live streams.** Many channels do it. No subscriber requirement to stream from a computer using software (OBS Studio is free and handles continuous streaming with auto-reconnect if connection drops). Mobile app streams have a 12-hour limit but software streams do not.
+
+**What you need:**
+- OBS Studio (free, open source) — handles encoding and streaming
+- A YouTube channel in good standing
+- Stable internet upload speed (minimum 5-10 Mbps for decent video quality; 25+ Mbps for HD)
+- A dedicated "stream key" for each channel
+
+**Stream ideas from day one:**
+- Pond camera (frogs, birds, critters — 24/7)
+- Window camera (street, sky, birds, ambient neighborhood life)
+- Coding sessions (Ricky + AI building the system live)
+- Microscope feed (pond water samples, soil samples — when active)
+- Nigeria node feed (Marvel and Emmanuel working — when they're on)
+
+**If YouTube becomes restrictive:** Twitch has fewer automated-content restrictions. Peertube (open source, federated) is the fully independent option and aligns with the project's principles — no corporation owns the platform.
+
+---
+
+## LEGAL FLAGS FOR SOMTO
+
+*These are questions, not answers. Somto leads on all of these.*
+
+**Shipping/Import:**
+- US Export Administration Regulations: Electronics exported to Nigeria generally don't require a license unless they contain controlled technology (standard consumer/professional AI hardware does not — but worth confirming for the specific GPU models)
+- Nigerian Customs: Import duties on electronics. Marvel and Emmanuel should be aware of what the duty rate is on laptops, GPUs, and accessories to avoid surprise fees on arrival
+- Lithium battery shipping: Airlines restrict lithium batteries in cargo. EcoFlow units should be sourced locally in Nigeria rather than shipped to avoid this complication
+
+**YouTube/Streaming:**
+- YouTube Terms of Service: Review section on "automated" content. 24/7 nature/ambient streams are common and permitted. The key is that the channel is human-managed and not violating copyright with music
+- GDPR/Privacy: If the pond camera or window camera captures identifiable people (neighbors, passersby), review what disclosure is required in Massachusetts. A clear "This area is under live streaming" notice on the property is standard practice
+
+**Entity Formation (for receiving funds and equipment):**
+- Before any crowdfunding launches, a legal entity needs to exist that can receive funds and own equipment
+- A Massachusetts 501(c)(3) nonprofit is the most appropriate structure for the US side
+- A registered Nigerian NGO or cooperative for the Nigerian side
+- Both entities need bank accounts before crowdfunding goes live
+- This is the most urgent legal task — everything else can proceed while this is being established, but crowdfunding cannot launch without it
+
+**International Transfer:**
+- Sending money to Nigeria: Wire transfer, Wise (formerly TransferWise), or WorldRemit are standard. Western Union works but has high fees. Payoneer is commonly used by Nigerian freelancers and has good Nigerian bank integration
+- Document all transfers in the Memory Ark from day one
+
+---
+
+## WHERE TO BUY THE WORKSTATION FAST
+
+**For used Dell Precision 7920 / HP Z8 G4:**
+- eBay (search "Dell Precision 7920 workstation" — filter by Used, $500-1500 range)
+- r/hardwareswap (Reddit — verified sellers, no-hassle transactions)
+- Local IT liquidators: search "IT asset liquidation Springfield MA" or "used server hardware Western MA"
+- Craigslist Boston (larger inventory than Springfield)
+- Facebook Marketplace (local pickup = no shipping risk)
+
+**For RTX 3090:**
+- eBay (check seller feedback carefully, GPU condition matters)
+- r/hardwareswap
+- Local Facebook Marketplace (mining rigs getting sold off have stacks of them)
+
+---
+
+*Document compiled: May 3, 2026*
+*Status: Active — 4-week execution window*
+*Next update: When hardware is ordered*
+*All purchases and decisions to be logged in the Memory Ark public record*

@@ -1,0 +1,271 @@
+1/18/2024 0:25:57 pm PDT
+ГО:becky ATTN:Call Center
+Morrison, Becky
+Patient ID: 1044105722
+Specimen ID: 106-543-4187-0
+
+
+DOB: 02/03/1986
+Age: 38
+Sex: Female
+
+
+FROM:LCLS TO:+14137944759
+Patient Report
+Account Number: 20010975
+Ordering Physician: M MCCOOL
+
+Date Collected: 04/15/2024 Date Received: 04/15/2024 Date Reported: 04/16/2024
+Page 1 of 2
+
+
+labcorp
+Fasting: Not Given
+Ordered Items: BMP8+еGFR; CBC With Differential/Platelet; Prothrombin Time (PT); PTT, Activated; Venipuncture
+
+
+General Comments & Additional Information
+Clinical Info: VISITDT: 20240411;
+
+
+BMP8+eGFR
+Date Collected: 04/15/2024
+
+
+
+Test / Current Result and Flag  / Previous Result and Date /  Units  / Reference Interval
+
+Glucose 01 /  76 /  mg/dL 70-99
+
+BUN 01  / 9  / mg/dL 6-20
+
+Creatinine 1 /  0.58  / mg/dL 0.57-1.00
+
+eGFR  / 119  / mL/min/1.73 >59
+
+BUN/Creatinine Ratio /  16  / 9-23
+
+Sodium т  / 139 /  mmol/L 134-144
+
+Potassium o1  /  3.8  / mmol/L 3.5-5.2
+
+Chloride от /  103 /  mmol/L 96-106
+
+Carbon Dioxide, Total 01  / 20 /  I mmol/L 20-29
+
+Anion Gaр  / 16.0  / mmol/L 10.0-18.0
+
+Calcium от  / 9.7  / mg/dL 8.7-10.2
+
+CBC With Differential/Platelet
+
+Test  / Current Result and Flag /  Previous Result and Date Units Reference Interval
+
+WBC01  / 7.8  / x10E3/uL 3.4-10.8
+
+RBC 01   / 4.43  / x10E6/uL 3.77-5.28
+
+Hemoglobin   / 14.1 g/dL 11.1-15.9
+
+Hematocrit 01  / 40.6 /  % 34.0-46.6
+
+MCV01  / 92 /  fL 79-97
+
+MCH 01   / 31.8 /  pg. 26.6-33.0
+
+MCHC°1  / 34.7  / g/dL 31.5-35.7
+
+RDW01  /  12.7 /  % 11.7-15.4
+
+Platelets o1  / 310  / x10E3/uL 150-450
+
+Neutrophils 1  / 64 /  % Not Estab.
+
+Lymphs 01  / 27 /  % Not Estab.
+
+Monocytes 01  / 8 /  % Not Estab.
+
+Eos 01  / 1  / % Not Estab.
+
+Basos 01  / 0 /  % Not Estab.
+
+Neutrophils (Absolute) 01  /  5.0/  x10E3/uL 1.4-7.0
+
+Lymphs (Absolute) 01 /  2.1 /  x10E3/uL 0.7-3.1
+
+Monocytes(Absolute) 0 /  0.6/   x10E3/uL 0.1-0.9
+
+Eos (Absolute) 01/  0.1/   x10E3/uL 0.0-0.4
+
+Baso (Absolute) 01 /  0.0 /  x10E3/uL 0.0-0.2
+
+Immature Granulocytes 01  /  0   /   % Not Estab.
+
+
+
+LabCorp
+
+©2024 Laboratory Corporation of America Holdings
+All Rights Reserved - Enterprise Report Version 2.00
+
+
+
+Date Created and Stored 04/16/24 0821 ET Final Report Page 1 of 2
+
+This document contains private and confidential health information protected by state and federal law.
+If you have received this document in error please call 800-631-5250
+
+
+
+
+
+
+
+
+
+
+
+
+
+1/18/2024 0:25:57 pm PDT                                              Page 2 of 2
+ГО:becky ATTN:Call Center
+
+Morrison, Becky
+Patient ID: 1044105722
+Specimen ID: 106-543-4187-0
+
+
+Patient Report
+Account Number: 20010975
+Ordering Physician: M MCCOOL
+
+
+FROM:LCLS TO:+14137944759
+DOB: 02/03/1986
+Age: 38
+Sex: Female
+
+
+labcorp
+Date Collected: 04/15/2024
+
+
+
+
+
+
+CBC With Differential/Platelet (Cont.)
+Immature Grans (Abs) 0т
+0.0
+x10E3/uL 0.0-0.1
+
+
+Prothrombin Time (PT)
+
+Test
+INR1
+Current Result and Flag
+1.0
+Previous Result and Date
+
+Units Reference Interval
+0.9-1.2
+
+
+Reference interval is for non-anticoagulated patients.
+Suggested INR therapeutic range for Vitamin K
+
+antagonist therapy:
+
+Standard Dose (moderate intensity
+therapeutic range): 2.0-3.0
+
+Higher intensity therapeutic range: 2.5-3.5
+
+
+Prothrombin Time01 10.3 sec 9.1-12.0
+
+
+
+
+PTT, Activated
+Test
+аPTT 01
+Current Result and Flag
+28
+Previous Result and Date Units
+sec
+Reference Interval
+24-33
+
+
+This test has not been validated for monitoring unfractionated heparin
+therapy. aPTT-based therapeutic ranges for unfractionated heparin
+therapy have not been established, For general guidelines on
+Heparin monitoring, refer to the LabCorp Directory of Services.
+
+
+
+
+Disclaimer
+The Previous Result is listed for the most recent test performed by Labcorp in the past 5 years where there is sufficient patient demographic data to match the result to the patient. Results from certain tests are excluded from the Previous Result display.
+
+
+
+Icon Legend
+▲ Out of Reference Range
+■Critical or Alert
+
+
+Performing Labs
+01: RN- Labcorp Raritan, 69 First Avenue, Raritan, NJ 08869-1800 Dir: Liza Jodry, MD
+For Inquiries, the physician may contact Branch: 800-631-5250 Lab: 800-631-5250
+
+
+Patient Details
+Morrison, Becky
+152 VINCENT ST, SPRINGFIELD, MA, 01129
+
+
+Phone: 413-264-9810
+Date of Birth: 02/03/1986
+Age: 38
+Sex: Female
+Patient ID: 1044105722
+Alternate Patient ID: 1751203
+
+
+Physician Details
+M MCCOOL
+BMP Wilbraham Adult Medicine
+2344 Boston Rd, Wilbraham, MA, 01095
+
+Phone: 413-596-5550
+Account Number: 20010975
+Physician ID: 1114404126
+NPl: 1114404126
+
+
+
+Specimen Details
+Specimen ID: 106-543-4187-0
+Control ID: 1044105722L
+Alternate Control Number:
+1044105722L33691
+Date Collected: 04/15/2024 1448 Local
+Date Received: 04/15/2024 0000 ET
+Date Entered: 04/15/2024 1803 ET
+Date Reported: 04/16/2024 0809 ET
+
+
+
+LabCorp
+
+
+©2024 Laboratory Corporation of America Holdings
+All Rights Reserved - Enterprise Report Version 2.00
+
+Date Created and Stored 04/16/24 0821 ET Final Report Page 2 of 2
+
+This document contains private and confidential health information protected by state and federal law.
+If you have received this document in error please call 800-631-5250

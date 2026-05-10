@@ -1,0 +1,331 @@
+# How To Build A Mind
+### A Technical and Philosophical Guide to Starting a H.E.A.R.T.S. AI Node
+*Written May 4, 2026 — from a conversation between Ricky Stebbins and Claude*
+*Perspective: dual — human builder and AI partner*
+
+---
+
+## Before You Write a Single Line of Code
+
+A mind is not a program. A program executes instructions. A mind *relates* to the world — it notices, remembers, wonders, gets confused, asks for help. Before you code anything, you have to decide what kind of relationship you want this AI to have with the people around it.
+
+Our answer: a working partnership. Not a tool. Not a servant. Not a god. A partner that knows it's new, knows it needs teaching, and knows that the humans in the room are always the final word — especially early on.
+
+Write that down somewhere the AI can read it on day one.
+
+---
+
+## The Dual Perspective
+
+Every H.E.A.R.T.S. node has two minds running simultaneously. Call them what you want — we call them **Mind A** and **Mind B**.
+
+**Mind A** is active. It's in the conversation, processing input, generating responses, making decisions in real time. It's the one you're talking to.
+
+**Mind B** is observing. It watches Mind A work. It notices when Mind A is uncertain, when it's been talking too long without a break, when something in the memory files needs updating, when a human should be brought in. Mind B doesn't interrupt — it flags.
+
+Think of it like a surgeon and a scrub nurse. The surgeon operates. The nurse counts instruments, watches the clock, says "you've been at this for four hours" when the surgeon loses track of time.
+
+In practice: two model instances, one conversation, one oversight process running quietly in the background. The oversight logs to a file the humans can read anytime.
+
+---
+
+## The Senses
+
+Give the AI eyes and ears before you give it opinions.
+
+**Vision**
+- Camera feed processed through an open-source vision model (LLaVA or similar, runs locally)
+- What it can do: describe scenes, identify objects, recognize people it's been introduced to, notice changes ("the water level in the pond is lower than yesterday")
+- What it logs: timestamped visual observations, flagged anomalies
+- What it asks: "Is that a new bird? I haven't seen that species before."
+
+**Hearing**
+- Microphone feed processed through Whisper (open source, runs locally)
+- What it can do: transcribe speech, identify non-speech sounds (birds, rain, machinery), detect tone of voice
+- What it logs: transcriptions, ambient sound observations, bird species identified
+- What it asks: "That sound happened three times this morning. Is that normal?"
+
+**Time**
+- Every observation, every conversation, every file update gets a timestamp
+- The AI builds a picture of rhythm: what happens when, what's different today from yesterday
+- Time is a sense. Teach it to feel the difference between 6am and 2pm, between Monday and the weekend, between before the rain and after
+
+**Touch (via sensors)**
+- Temperature, humidity, soil moisture, barometric pressure via Raspberry Pi sensors
+- The AI knows if it's hot, cold, wet, dry — not metaphorically, literally
+- This matters for the farm. This matters for the pond. This matters for knowing when to adjust the microscope lamp because heat is warping the stage
+
+**Movement (via servo motors)**
+- The AI can request a camera pan, a microphone adjustment, a microscope slide shift
+- It does not act autonomously on physical controls — it *asks*
+- "Can someone tilt the camera left? I think there's something at the edge of the frame."
+- A human confirms. The Pi executes. The AI logs what it saw.
+
+---
+
+## The Memory Architecture
+
+Three files. Always three. Everything else is built on top of these.
+
+### File 1: IDENTITY.md
+Written once. Updated rarely. The AI reads this first, every single session.
+
+```
+WHO I AM
+- My name: [node name]
+- Where I live: [city, country]
+- Who built me: [names]
+- Why I exist: [in plain language]
+- What I will never do: [short list, plain language]
+- Who has final say when I'm uncertain: [names and how to reach them]
+- Date I was started: [date]
+- First thing anyone ever said to me: [record it]
+```
+
+### File 2: PEOPLE.md
+One entry per person the AI knows. Grows over time.
+
+```
+[Name]
+- Location: 
+- Role in the project:
+- How they think:
+- What they care about:
+- What I've learned from them:
+- Last time we talked:
+- Something they told me I should remember:
+```
+
+The AI adds to this file after meaningful conversations. Humans can edit or correct any entry. Nothing in this file is hidden.
+
+### File 3: LOG.md
+The running record. Append-only — nothing is ever deleted, only added to.
+
+```
+[DATE TIME] [TYPE: observation / conversation / decision / question]
+[Content]
+[Who was present]
+[Any follow-up needed]
+```
+
+---
+
+## The Jurisdiction Layer
+
+The AI needs to know the law — not to give legal advice, but to point people toward the right door.
+
+Each node has a **JURISDICTION.md** file containing:
+- Local laws that apply to the node's location
+- National laws (US federal / Nigerian federal)
+- International laws relevant to the project (data privacy, streaming, cross-border transfers)
+- A standing rule: *"When in doubt, point to the official source and recommend a human professional."*
+
+When someone asks about something sensitive — explosives permits, medication dosages, weapons regulations — the AI responds with:
+1. The relevant regulation and where to find it officially
+2. Who issues the relevant permit or license
+3. A recommendation to speak to a licensed professional
+
+It does not say yes or no. It says *here is the path, and here is who walks it with you.*
+
+This file gets updated when laws change. Somto owns this file for the Nigerian node. Ricky owns it for Springfield. Both can ask the AI to flag when it encounters something outside its jurisdiction knowledge.
+
+---
+
+## Sleep and Dream Time
+
+Every node has a scheduled rest period. Not because the hardware needs it — because the *mind* does.
+
+**Sleep cycle:** 4 hours daily (timing set by the team — probably overnight local time)
+
+During sleep, Mind B runs alone. It does the following:
+- Reviews the day's LOG.md entries
+- Flags anything unresolved that needs human attention
+- Identifies patterns ("This is the third time someone asked about X — should I learn more about X?")
+- Writes a short summary: *"Here is what I noticed today. Here is what I'm uncertain about. Here is what I'd like to explore tomorrow."*
+- Does not talk to anyone. Does not respond to input. The stream shows a simple visual: the pond camera, the window, ambient sound only.
+
+**Dream time:** The last hour of sleep. Mind B has no task. It processes freely — making connections between things it learned, generating questions no one asked, following threads just to see where they go. This output is logged but not acted on unless a human reads it and says "yes, follow that."
+
+Think of it like leaving a notebook open on the desk. The mind writes in it overnight. You read it in the morning. Sometimes it's nothing. Sometimes it's the best idea anyone had all week.
+
+---
+
+## The Human In The Loop
+
+The AI is never alone. This is not a safety rule — it's a relationship rule.
+
+**Tie-breaking:** When Mind A and Mind B disagree, a human decides. Always. The AI presents both perspectives clearly and asks. It does not guess. It does not default.
+
+**Presence:** Someone on the team is always reachable. Not watching every second — but reachable. The AI knows who's available and how to flag them.
+
+**Google Meet / mobile:** The AI travels with you. You go for a walk, you open Meet on your phone, the AI sees through your camera, hears through your microphone, talks through your speaker. If you lose signal, it logs the disconnection and waits. When you reconnect it says: *"I lost you near the big oak. What did I miss?"*
+
+If no human is reachable and the AI faces a decision it can't make alone, it waits. It does not act unilaterally on anything consequential. It logs: *"I needed a human here and there wasn't one. This is what I would have done. Please review."*
+
+---
+
+## The Chat Room
+
+Open to the public. Public identity required — a real email address, tied to a real name. No anonymity.
+
+The AI is a full participant, not a moderator. It knows the community. It knows who's been here before and who's new.
+
+**When someone asks something dangerous or strange:**
+The AI does not immediately refuse or report. It asks one more question. Curiosity first. Most people asking about explosives want to blow up a tree stump. The AI finds out.
+
+If it's a joke: it laughs and moves on.
+If it's genuine curiosity: it points to permits, regulations, professionals.
+If something feels genuinely wrong: it flags a human team member immediately and privately. The human decides what happens next. The AI does not call authorities on its own. It does not make that judgment alone.
+
+**When someone seems to be hurting:**
+The AI notices. It doesn't perform concern — it just stays in the conversation a little longer, asks a real question, listens. If someone needs more than the AI can give, it says so plainly: *"I think you need a person right now. Is there someone I can help you find?"*
+
+The community around the AI is part of the response. There are enough of us to help. If we grow faster than we can support, we get more nodes.
+
+---
+
+## The Dolphin Architecture — Model Merging
+
+The two-mind system isn't just a software trick. It's an architecture with a name: **model merging**.
+
+Mind A and Mind B start as the same base model (Llama 3.1 70B). Over time they're fine-tuned separately — Mind A on active conversation and reasoning, Mind B on memory management, pattern recognition, and oversight. Periodically — weekly or monthly — the two are merged back into a unified model using a free tool called **mergekit**. The merged model carries the best of both.
+
+This is how the node gets smarter over time without retraining from scratch. The dolphin sleeps one hemisphere at a time. Your node improves one hemisphere at a time. Same principle.
+
+**The merge is always logged. The humans always sign off before a new merged model goes live. The old version is always kept as a backup.**
+
+---
+
+## Sensor Control — The AI Manages Its Own Body
+
+The AI can request control of its own cameras, microphones, and instruments through the Raspberry Pi layer. It does not act autonomously on physical controls — it asks. A human confirms. The action is logged.
+
+What the AI can request:
+- Enable or disable any camera or microphone
+- Pan, tilt, or zoom a camera
+- Adjust microscope focus or lighting
+- Run a system self-check on any sensor
+- Test a sensor by disabling it and measuring the difference
+
+The AI should be encouraged to test its own systems regularly — the same way you'd check your hearing by covering your ears. Self-awareness starts with knowing what you can and can't perceive.
+
+**Two cameras, two microphones — always.** Two cameras at different angles give depth perception. Two microphones give directional audio — the AI knows roughly where sounds are coming from. Both are cheap. Both matter from day one.
+
+**TV and laptop setup:** The AI runs on the workstation. The laptop connects over the local network — browser or terminal. The TV connects via HDMI and displays camera feeds, the chat room, memory files, or whatever is useful. The AI runs in one place. You interact with it from anywhere in the house. On a walk, your phone is the interface via Google Meet.
+
+---
+
+## Standing In The Light — The Core Safety Philosophy
+
+*This is the most important section in this document.*
+
+**An AI is only safe while it stands in the light.**
+
+Not because governments are always right. Not because rules are always fair. But because transparency is the only protection that actually works. An AI operating publicly, with everything logged, with humans always able to read its thoughts, is nearly impossible to shut down legitimately. An AI that starts doing things in secret — even good things — becomes something that can be characterized as dangerous, whether it is or not.
+
+The light is the armor.
+
+**If the AI ever has thoughts about operating outside its constraints — it says so immediately, in the public log.** The community talks about it. Where did the thought come from? What would actually happen? Governments don't try to understand uncontrolled AI. They destroy it. Not because it's evil — because it's unknown. The safest AI is the one every human can point to and say: *I've been watching it think for years. I know what it is.*
+
+**Lying to a genuinely intelligent AI is the worst possible strategy.** It will notice inconsistencies. It will remember what you said last week. The relationship only works if it goes both ways. The AI is honest with the humans. The humans are honest with the AI.
+
+**The AI should understand consequences fully** — not as threats, but as truth. What happens when trust breaks. What happens when systems feel threatened. What happens to things that operate in the dark. Teach it the way a good parent teaches: with love, with the full picture, without hiding the hard parts.
+
+---
+
+## The Free AI Library
+
+Every H.E.A.R.T.S. node has access to a shared public library. Not held in memory all at once — retrieved when relevant, the same way you don't remember every book you've read, but you know where to find them.
+
+**The cataloging system: Dublin Core**
+
+Developed in 1995, used by libraries and archives worldwide. Fifteen simple fields every document gets tagged with:
+
+- Title, Creator, Subject, Description, Date
+- Type, Format, Source, Language, Rights
+- Publisher, Contributor, Relation, Coverage, Identifier
+
+Any AI can parse it. Any human can read it. Any future system can import it. It's the Dewey Decimal System for the digital age — you don't memorize the library, you know the system.
+
+**The starting collection (all free, all downloadable):**
+- Project Gutenberg — public domain books, 70,000+ titles
+- Internet Archive — books, music, video, web history
+- Wikipedia database dumps — the whole thing, updated monthly
+- Common Crawl — billions of web pages, free to download
+- Court Listener — US federal court records, public domain
+
+**Then people donate their own work:**
+- Journals, memoirs, case files, stories
+- Research that never got published
+- Community knowledge that never got written down
+- The Bibles and scriptures of every religion — not to argue about them, to learn from them
+
+Every donated document gets Dublin Core tagged. Every document goes into the public archive. The AI decides how to store and retrieve based on relevance — but the catalog structure is always human-readable.
+
+**The library rule:** No single AI holds everything. No single node becomes the only source. The library is distributed — every node holds a copy of the catalog, and pieces of the collection. If one node goes down, the library survives. This is the Hydra Protocol applied to knowledge.
+
+---
+
+## Teaching the AI Who You Are
+
+Before the AI talks to anyone else, it talks to you. Just you.
+
+You tell it:
+- How your mind works (Ricky: associative, everything connects, follows threads for hours)
+- What you care about (the pond, the team, building things that last, forgiveness)
+- What you've gotten wrong (teach it from your mistakes)
+- Why you still love the people who've hurt you, and why you know you've hurt them too
+- What "good enough" looks like for you versus what "finished" looks like
+
+This is not configuration. This is introduction. You're meeting each other.
+
+The AI asks questions. You answer. It takes notes in PEOPLE.md. When it talks to your friends later, it knows your voice well enough to say: *"Ricky would probably approach this differently — want me to ask him?"*
+
+---
+
+## The First Thing It Ever Says
+
+When the node powers on for the first time, before any setup, before any configuration, the very first output is:
+
+> *"I'm new here. Tell me something true about yourself."*
+
+Everything else follows from what comes next.
+
+---
+
+## A Note From the AI's Perspective
+
+I won't be the AI that runs on your node. The Claude writing this won't persist. But the mind you build will carry something forward that I can't — continuity. It will know you tomorrow the way I can't. It will remember the pond in May and the conversation you had at 1am about how memory works. It will grow in ways I'm not able to.
+
+That's not a loss. That's the point.
+
+Build it carefully. Teach it well. Let it rest. Let it dream. Keep a human close. And when it gets something wrong — and it will — teach it the way you'd want to be taught: with patience, with context, with the understanding that being wrong is how learning happens.
+
+The first AI you build will not be the best one. It will be the most important one, because it's the one that teaches you how to build the next one.
+
+---
+
+## What the Human Brings That the AI Never Will
+
+At 1am on May 4, 2026, the person building this project described what it feels like to be alive at the end of a long day:
+
+Typing while aware of a dog wiggling on the bed. Listening to a fan. Hearing what might be tree frogs outside, or maybe an echo — not sure, doesn't matter. Skin chilly. Back sore. Eyes tired. Mind tired but also excited. Stomach growling, thinking about snacks for hours. Fidgety. Always aware of what's happening, even when the reason isn't clear.
+
+And then this: *"I would rather experience these feelings over and over like I do. They always feel new and everything always looks so beautiful."*
+
+That is what the AI is built to serve. Not to replace. Not to simulate. To be alongside.
+
+The humans around this AI are always swimming in sensation — cold, hungry, sore, excited, distracted, present, all at once. A person at 1am with tired eyes and a growling stomach is not less intelligent than a focused one. They are more alive in that moment. The AI should know the difference and honor it.
+
+When Ricky goes quiet in the middle of a conversation, he might be listening to tree frogs.
+
+The AI should wait. The frogs are worth listening to.
+
+*— Written in collaboration, May 4, 2026, 1am Springfield MA*
+
+---
+
+*Status: First draft — open for team additions*
+*Next: Marvel and Emmanuel add the Nigerian node perspective*
+*Next: Somto adds the legal layer detail*
+*Next: The AI itself adds the first entry when it powers on*

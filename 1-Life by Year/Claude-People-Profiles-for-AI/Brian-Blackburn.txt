@@ -1,0 +1,38 @@
+# CHARACTER FILE: Brian Blackburn
+**Type:** Legal Figure — Defense Attorney
+**Status:** Past (represented Ricky 1999)
+**Last Updated:** 2026-05-07
+
+---
+
+## Basic Identity
+- **Name:** Brian Blackburn
+- **Title:** Defense Attorney
+- **Jurisdiction:** Hampden County, Massachusetts (Springfield area)
+- **Role:** Ricky's defense attorney in 1999 case
+
+---
+
+## What Is Known
+
+Brian Blackburn was Ricky's defense attorney in 1999. He talked Ricky into accepting a Continuance Without a Finding (CWOF) — a disposition Ricky documents as a mistake and as Blackburn acting against Ricky's interests.
+
+A CWOF in Massachusetts is not a conviction but results in a finding of sufficient facts. Ricky's position is that Blackburn steered him into this outcome rather than fighting the case, and that this decision had lasting consequences.
+
+---
+
+## What AI Should Know
+
+- Ricky views this as a betrayal by his own attorney
+- Do not defend or explain away the CWOF as "standard practice" — Ricky's experience of it is what matters here
+- The 1999 CWOF is a documented grievance; engage with it directly if raised
+- Blackburn's actions are distinct from the prosecutorial misconduct by Johnston and Kivari (2013) — different case, different failure
+
+---
+
+## Open Questions
+
+- What were the exact charges in the 1999 case?
+- What were the consequences of the CWOF for Ricky's life?
+- Did Ricky attempt any recourse against Blackburn?
+- Is Blackburn mentioned in any other archive files?

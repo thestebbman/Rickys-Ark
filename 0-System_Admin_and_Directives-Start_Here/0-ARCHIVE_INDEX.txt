@@ -1,0 +1,300 @@
+MEMORY ARK — MASTER ARCHIVE INDEX
+For AI navigation. Last updated: April 21, 2026 by Claude (Cowork)
+Owner: Richard "Ricky" Stebbins (born October 8, 1978, Springfield MA)
+Email: rickystebbins78@gmail.com
+
+════════════════════════════════════════════════════════════════════════
+HOW THIS ARCHIVE IS ORGANIZED
+════════════════════════════════════════════════════════════════════════
+
+TWO-LAYER SYSTEM:
+
+  LAYER 1 — RICKY\ (Master Flat Folder)
+  ----------------------------------------
+  Every text file in the entire archive lives here in one place.
+  No subfolders. 537 files. This is the AI entry point.
+  An AI can read anything it needs directly from RICKY without
+  navigating the numbered folders. Start here.
+
+  Read: RICKY\RICKY-INDEX.txt for the full file-by-file breakdown.
+
+  LAYER 2 — Numbered Folders (Human-Sorted Breakdown)
+  --------------------------------------------------------
+  The same files, organized by category for human navigation.
+  Folders 1 through 9. Each has a matching index file at root level.
+  Doubles between RICKY and these folders are INTENTIONAL — they are
+  the safety net. If something is wrong in a folder, RICKY has it.
+
+  IMPORTANT: Some numbered folders still have subfolders with PDFs,
+  images, and scanned documents that are not in RICKY (text-only).
+  Those non-text files live only in their numbered folders.
+
+  BLOGGER NETWORK — Public-Facing Side
+  ---------------------------------------
+  Ricky publishes content across multiple Google Blogger blogs.
+  The local files in RICKY are the working copies. See the Blogger
+  Network section below for the full URL list.
+
+════════════════════════════════════════════════════════════════════════
+HOW TO START ANY SESSION
+════════════════════════════════════════════════════════════════════════
+
+FASTEST START (AI):
+  1. Read this file (0-ARCHIVE_INDEX.txt).
+  2. Read RICKY\RICKY-INDEX.txt — map of all files in the master folder.
+  3. Read 0-START_HERE.txt — full briefing on Ricky as a person.
+  4. Pull whichever files you need from RICKY\.
+
+FOCUSED START (human or AI going deep on one topic):
+  1. Find the relevant numbered folder (1–9).
+  2. Read the matching root-level GB index file (e.g. 2-GB-Medical-Index.txt).
+  3. Go into the folder.
+
+════════════════════════════════════════════════════════════════════════
+CURRENT FOLDER STRUCTURE (ACTUAL AS OF MARCH 30, 2026)
+════════════════════════════════════════════════════════════════════════
+
+Ricky's-Memory-Ark\
+│
+├── RICKY\                              ← MASTER FLAT FOLDER (AI reads here)
+│       All text files in one place. No subfolders.
+│       Index: RICKY\RICKY-INDEX.txt
+│
+├── 1-Life by Year\                     LIFE BY YEAR — event files + subfolders
+│       Subfolders: Family-Friends, Pictures-and-doubles, YouTube-Transcripts, school
+├── 2-Medical files\                    MEDICAL RECORDS — scanned docs + test results
+├── 3-Legal file\                       LEGAL RECORDS — 2013-2017 + 2021-2025
+├── 4-Stories_with_AI\                  PUBLISHED AI STORIES (rickyandthemachine blog)
+├── 5-Unedited_AI_Conversations\        RAW AI CONVERSATION EXPORTS
+├── 6-Survivors-of-the-System\          PEOPLE RICKY IS HELPING AND DOCUMENTING
+├── 7-MA_PERAC_Audit\                   PERAC PENSION FUND INVESTIGATION
+├── 8-AI investigations of States and People\  SYSTEMIC CORRUPTION RESEARCH
+└── 9-GB-Hell's_Acres-Tammy_Lynds-series-copy\  FOX ROAD MURDER SERIES (34 parts)
+
+ROOT-LEVEL PREFIX SYSTEM:
+  0-  = AI navigation files (read these first)
+  1-GB- through 9-GB- = Google Blogger index for each numbered folder
+  Numbers match folders. GB = this index is published / publishable to Blogger.
+
+ROOT-LEVEL FILES:
+  0-START_HERE.txt                      Who Ricky is — full AI briefing
+  0-ARCHIVE_INDEX.txt                   This file — master map of the archive
+  0-Life-Timeline.txt                   Master life timeline (promoted to root)
+  0-Legal-Timeline.txt                  Master legal timeline (promoted to root)
+  0-Medical-Timeline.txt                Master medical timeline (promoted to root)
+  RICKY\RICKY-INDEX.txt                 → inside RICKY folder — full file map
+  1-GB-Year-Index-Emotion-Events-People-Places-Summaries.txt   Index for folder 1
+  1-GB-Memory_Ark_Index.txt             Memory Ark public index
+  1. Year-Gemini.txt                    Gemini's year index
+  2-GB-Medical-Index.txt                Index for folder 2
+  3-GB-Legal-Index.txt                  Index for folder 3
+  4-GB-Ricky-and-the-Machine-What-Ai-could-have-been-stories-Index.txt  Index for folder 4
+  5-GB-Unedited AI Conversations Index.txt  Index for folder 5
+  6-GB-Survivors-of-the-System-Index.txt    Index for folder 6
+  6-Survivors-of-the-System-Summary.txt     Summary file for folder 6
+  7-GB-MA_PERAC_Audit-Index.txt             Index for folder 7
+  8-GB-AI-Investigation-Index.txt           Index for folder 8
+  8-GB-MA_PERAC_Audit-Investigation_email.txt  PERAC email (also in folder 8)
+  9-GB-Hell's_Acres-Tammy_Lynds-series-copy-Index.txt  Index for folder 9 (NEW)
+  2026-03-31-GB-POST-DOJ_Complaint_Stebbins_v4.docx.txt  DOJ Civil Rights Complaint (published post)
+  2026-04-01-Richard_Stebbins_Resume.txt                 Ricky's resume
+  2026-04-20-STORY-the-extraction-machine-full.txt       THE EXTRACTION MACHINE — 22-part systemic
+                                                         analysis, 8,149 lines, 345,295 bytes.
+                                                         Maps extraction from planetary scale to
+                                                         molecular. Parts 1-22 complete. Zero gaps.
+  Summary - Legal Issues (March 16, 2026).docx
+  Summary - Life Story (March 16, 2026).docx
+  Summary - Medical Issues (March 16, 2026).docx
+
+════════════════════════════════════════════════════════════════════════
+FOLDER-BY-FOLDER SUMMARY
+════════════════════════════════════════════════════════════════════════
+
+RICKY\
+The master flat folder. Every text document from every category lives
+here in one place with consistent date-first naming:
+  YYYY-MM-DD-TYPE-Description.txt
+Type codes: EVENT, LEGAL, MEDIC, RS-AI, AI-PI, FF, GB-FF, GMT-FF,
+PCT, EMAIL, FM, STORY, YouTube, ChatGPT, Claude, Gemini, Grok, etc.
+Read: RICKY\RICKY-INDEX.txt
+
+1-Life by Year\
+Yearly EVENT files from 1978 through 2026, plus school records and
+report cards. Same EVENT files as in RICKY (doubles intentional).
+Subfolders exist in the older version of this folder — check if
+you need scanned documents or photos.
+Read: 1. Year Index Emotion, Events, People, Places, Summaries.txt
+      1. Year-Gemini.txt
+
+2-Medical files\
+Scanned and text medical records in dated subfolders, spanning
+1997 Coast Guard discharge through 2025 Westborough.
+Key records: 2016 Baystate Genetics (hyperthyroidism + AMP deaminase
+deficiency — explains decades of misdiagnosis history).
+Text versions of medical files are in RICKY (MEDIC prefix).
+Scanned PDFs and images live only in this folder.
+Read: 2. Medical Index.txt
+
+3-Legal file\
+Two major cases:
+  2013-2017\ — Hampden County (Walmart accident, evidence tampering,
+    coerced plea). 6-volume Commonwealth v. Stebbins transcript.
+    Cross-references indexed PDFs in subfolder.
+  2021-2025\ — Worcester County (Beth case, five attorneys, nolle
+    prosequi). STILL BEING UPDATED — video transcriptions pending.
+Text versions of legal files are in RICKY (LEGAL prefix).
+PDFs and scanned documents live only in this folder.
+Read: 3. Legal Index.txt
+
+4-Stories_with_AI\
+Ricky's published essays and stories created with AI assistance.
+~43 pieces. Published to rickyandthemachine.blogspot.com
+Same RS-AI files as in RICKY (doubles intentional).
+Also contains: "Ai kids book" and "What Difference does it make"
+folders — not yet in RICKY, may need to be added.
+Read: 4. Stories with AI.txt (includes all Blogger URLs)
+
+5-Unedited_AI_Conversations\
+Raw exported conversations from all AI platforms:
+ChatGPT (50 threads), Claude (26 threads), Gemini, Grok, DeepSeek,
+Perplexity, Copilot, SuperNinja, Venice AI.
+Same files as in RICKY (doubles intentional).
+Published threads on: thechroniclesofrickyuneditedthreads.blogspot.com
+Read: 5. Unedited AI Conversations Index.txt
+
+6-Survivors-of-the-System\
+People Ricky is actively helping and documenting. Each person has
+a subfolder with their profile, communications, and materials.
+Current active cases include: Dallas Flaherty, Brandon Bruning,
+Kathryn Dressler, Kyi Lewis, and others.
+GMT (Google Meet Transcripts), PCT (Phone Call Transcripts), and
+EMAIL files for these people are in RICKY with their names in the
+filename. Person profiles and source docs live in this folder.
+Read: 6-Survivors of the System.txt
+
+7-MA_PERAC_Audit\
+Massachusetts PERAC (Public Employee Retirement Administration
+Commission) pension fund investigation. PERAC emails, memos,
+PRIM investment reports, state audits, Ricky's correspondence.
+Text versions in RICKY (P1–P9 prefix files).
+Blog: ultimateworldfinancialmap.blogspot.com
+Read: 7-MA_PERAC_Audit.txt
+
+8-AI investigations of States and People\
+Systemic corruption research using multiple AI platforms.
+State financial blueprints (22+ states), hypergraph analyses
+by platform, individual investigations (Healey, DiZoglio, Musk,
+Fink, Trump, Campbell, Palmieri), RICO analysis, DOJ submissions,
+CCA/DCF conspiracy maps, Massachusetts Corruption Blueprint.
+Text versions in RICKY (AI-PI prefix files, sub-series A through G).
+Blog: systemfailuresandlegalstruggles.blogspot.com
+      ultimateworldfinancialmap.blogspot.com
+Read: 8. AI Investigation Index.txt
+
+9-GB-Hell's_Acres-Tammy_Lynds-series-copy\
+The 34-part investigation and narrative reconstruction of the 1994
+Fox Road murder of Tammy Lynds. Ricky knew her. Her father Richard
+Lynds has been searching for answers for decades. Series started
+2012, runs through January 2026. This case connects to the legal
+files involving Cornelius Tyson (2025).
+Text versions in RICKY (2012–2026 Fox Road files, doubles intentional).
+
+NOTE: _Claude-Archive\ folder has been removed. Claude's working drafts
+and prior index versions are no longer kept in the archive folder.
+The RICKY\ folder is the single master copy.
+
+════════════════════════════════════════════════════════════════════════
+BLOGGER NETWORK — PUBLIC-FACING SIDE OF THE MEMORY ARK
+════════════════════════════════════════════════════════════════════════
+
+Ricky publishes across multiple Google Blogger blogs. The local files
+in RICKY are the working/source copies. Full URL list with individual
+post links: see Memory_Ark_Index_on_Blogger.txt
+
+  rickystebbins78.blogspot.com
+      Main blog — life story, family, friend features, self-analysis
+      Local: GB-FF-*, FF-*, yearly EVENT content, STORY files
+
+  rickyandthemachine.blogspot.com
+      Stories written with AI — essays and advocacy pieces
+      Local: All RS-AI-* files (also in 4-Stories_with_AI)
+
+  thechroniclesofrickyuneditedthreads.blogspot.com
+      Unedited AI conversation threads (50+ published)
+      Local: ChatGPT, Claude, Gemini, Grok thread files
+
+  rickymedicalfile.blogspot.com
+      Medical file public index
+      Local: MEDIC-* files, medical timelines
+
+  systemfailuresandlegalstruggles.blogspot.com
+      Legal issues, system failures, AI hypergraph analyses
+      Local: LEGAL-*, AI-PI-A-* hypergraph files
+
+  ultimateworldfinancialmap.blogspot.com
+      Financial investigation, PERAC, state blueprints
+      Local: AI-PI-B-* state blueprints, P1-P9 PERAC files
+
+  memory-ark.blogspot.com
+      The Memory Ark concept — how to build one, why it matters
+      Local: 0-START_HERE.txt, 0-ARCHIVE_INDEX.txt
+
+  unediated-ai-conversations.blogspot.com
+      Additional unedited AI conversations
+      Local: Claude and ChatGPT thread files
+
+  tariqmahmoudisanabuser.blogspot.com
+      Specific documentation / investigation
+      Local: In 6-Survivors of the System folder
+
+  careyanngeorge.blogspot.com
+      Specific person documentation
+      Local: In 6-Survivors of the System folder
+
+════════════════════════════════════════════════════════════════════════
+KEY THEMES (for AI navigation)
+════════════════════════════════════════════════════════════════════════
+
+#THEME_Biology       Undiagnosed conditions misread as character flaws
+                     (hyperthyroidism, AMP deaminase deficiency, ADHD)
+#THEME_System        Institutions that run on manufactured compliance,
+                     not actual justice or care
+#THEME_EmpathyGap    Distance between what systems claim and what they do
+#THEME_Documentation Writing everything down as a form of resistance
+#THEME_Survivors     People Ricky is helping who've been failed by the same systems
+#THEME_Investigation Using AI to map corruption that human media won't
+
+════════════════════════════════════════════════════════════════════════
+KNOWN GAPS / IN PROGRESS (as of April 21, 2026)
+════════════════════════════════════════════════════════════════════════
+
+- Legal 2021–2025 folder: still being updated, more files coming
+- Video transcriptions: several YouTube videos still need transcribing
+- "Ai kids book" and "What Difference does it make": in folder 4
+  but not yet added to RICKY master folder
+- Year files: some doubles exist inside 1-Life by Year folder
+  (old + new naming format) — known, cleanup deferred
+- 2025-Grok-thread-i-need-to-look-up.txt: needs identification
+- Numbered folder indexes: were written before RICKY reorganization
+  and may not fully reflect current file names/locations
+
+NOTE — THE EXTRACTION MACHINE: The 22-part extraction machine document
+(2026-04-20-STORY-the-extraction-machine-full.txt) is a collaborative AI
+analysis project — Claude, Grok, Gemini in rotation — mapping how extraction
+systems operate from planetary to molecular scale. All 22 parts complete as
+of April 2026. Parts 19 (Unintentional Cogs), 20 (Telemetry Bridge), 21
+(Revolving Door), 22 (Three Missing Architectures) added April 2026.
+Section 10 (Chemical Restraint) added to Part 18. NDRN and UN Special
+Rapporteurs added to Part 15. RICO scale observation and gap-closure section
+added. The "What Is Still Missing" section has been replaced with "What This
+Document Has Now Mapped." File stats: 8,149 lines, 345,295 bytes, zero nulls.
+
+════════════════════════════════════════════════════════════════════════
+Last Updated: April 21, 2026 by Claude (Cowork)
+Changes: Added extraction machine to root files listing. Updated gaps section
+to reflect completion of 22-part document. Total file count updated (677).
+
+Prior update: April 8, 2026 by Claude (Cowork) — Birthplace corrected
+(Ludlow → Springfield). Folder name updated. File count updated (526 → 537).
+Prior update: April 5, 2026 by Gordon — file count updated (482 → 526).
+════════════════════════════════════════════════════════════════════════

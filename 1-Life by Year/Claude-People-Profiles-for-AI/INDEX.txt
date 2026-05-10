@@ -1,0 +1,123 @@
+# People Index — Memory Ark
+Last Updated: 2026-05-10 by Claude (Anthropic)
+[CORRECTION: File extensions changed .md → .txt — actual files are .txt not .md]
+
+This folder contains character files for everyone documented in Ricky Stebbins' archive.
+For PUBLIC FIGURES (politicians, executives) → see folder 8-AI investigations/PUBLIC-FIGURES/
+
+HOW TO USE: Small model = read this file only. Large model = read this + character file.
+
+═══════════════════════════════════════════════════════
+FAMILY
+═══════════════════════════════════════════════════════
+
+FILE                       NAME                        RELATIONSHIP              STATUS
+Ricky-Stebbins.txt         Richard (Ricky) Stebbins    Archive Director/Subject  Active
+Samantha-Stebbins.txt      Samantha Ann Stebbins       Daughter (b. 1997-01-13)  Active — custody history
+Nathan.txt                 Nathan Stebbins             Son (b. 2003-02)          [NEEDS VERIFICATION]
+Laura-Stebbins.txt         Laura Dols Kloss/Stebbins   Ex-wife (m. 2011-10-08)   Status unknown
+
+[MISSING — HIGH PRIORITY] Dominic Intelisano-Stebbins
+  Nephew, raised as son. Born 2006-08-18. Father Kirk died 2008-09-28 (overdose).
+  Ricky stepped in and raised him. MOST SIGNIFICANT single act in the archive.
+  Needs a character file immediately.
+
+[MISSING] Kirk Intelisano — Dominic's father. Died 2008-09-28 of overdose.
+
+═══════════════════════════════════════════════════════
+PARTNERS (former)
+═══════════════════════════════════════════════════════
+
+FILE                       NAME              PERIOD              STATUS
+Michelle.txt               Michelle          ~1992–1998          Ended — first girlfriend, high school
+Natasha.txt                Natasha           ~1993–1998          Ended — second, overlapping
+Mindy.txt                  Mindy             ~1994–1998          Ended/Legal — Samantha's mother
+Jamie-Sternowski.txt       Jamie Sternowski  1999–2004           Ended
+
+[MISSING] Suzanne (~2006) — living situation. Her children included Dietrich.
+  Custody of Dietrich unclear in current archive. Needs a file.
+
+═══════════════════════════════════════════════════════
+COLLABORATORS
+═══════════════════════════════════════════════════════
+
+FILE                       NAME              ROLE                               STATUS
+Emma-Obadoni.txt           Emma Obadoni      Technical Partner, Nigeria         Active
+                                             Built Memory Ark Interface (app_desktop.py)
+                                             Linux, power constraint environment
+
+[MISSING] H.E.A.R.T.S. organization members — not yet documented individually.
+[CROSS-REF] Dallas Flaherty — survivor in folder 6 (not a personal connection file)
+[CROSS-REF] Brandon B — survivor in folder 6
+
+═══════════════════════════════════════════════════════
+LEGAL FIGURES
+═══════════════════════════════════════════════════════
+
+FILE                       NAME                 ROLE                          NOTES
+Brian-Blackburn.txt        Brian Blackburn       Defense attorney 1999+        Pushed CWOF 1999
+Katherine-Johnston.txt     Katherine Johnston    ADA — Hampden County          Withheld evidence; altered receipt
+Edward-Kivari.txt          Edward Kivari         ADA — Hampden County          Denied insurance/phone records
+Harold-Resnic.txt          Harold Resnic         Workers' comp atty 2013       Neutral role
+
+[MISSING — needed for legal cluster completeness]
+  Anna Levine — appeal attorney
+  Randy Milou — retained for appeal, entered appeal doc 2013-05-20
+  Eric Applebaum — retained alongside Milou
+  John Nolan — conflict of interest July 2014
+  Paul — met ADITUS 2005, became court clerk
+  Eric Delgado — Paul's brother-in-law; chess, fishing, hiking 2011
+  Mark Festa — got Ricky the Ramada Inn job
+  Sheldon — statement re 2013 accident; sold Ricky his Honda Accord; court 2014
+
+═══════════════════════════════════════════════════════
+DECEASED
+═══════════════════════════════════════════════════════
+
+FILE                       NAME           DIED                 CONNECTION
+Tammy-Lynds.txt            Tammy Lynds    Missing 1994-07-22   Friend, Putnam High School
+                                                               Subject of Hell's Acres (folder 9)
+                                                               [EMOTIONAL WEIGHT: VERY HIGH]
+Lisa-Strong.txt            Lisa Strong    2004-04-30           Listed in timeline — connection unclear
+
+[MISSING] Ellie — attended Tammy's funeral with Ricky and his mother. No file.
+
+═══════════════════════════════════════════════════════
+CONNECTION MAP (for AI cross-referencing)
+═══════════════════════════════════════════════════════
+
+MEDICAL → LEGAL:
+  Ricky's undiagnosed hyperthyroidism (childhood–2017) = behavioral symptoms
+  → used as character evidence in Hampden County cases 2013–2017
+  → connects Ricky-Stebbins.txt + Brian Blackburn + Johnston + Kivari files
+  → any custody decision before 2017 must be re-read through this lens
+
+CUSTODY CHAIN:
+  Samantha → Mindy → custody dispute → Hampden County
+  Nathan → mother unconfirmed in index
+  Dietrich → Suzanne → 2006 → unclear status
+  Dominic → Kirk (dead 2008) → Ricky raises him (most important relationship)
+
+HELL'S ACRES:
+  Tammy Lynds → Putnam High School → 1994 → folder 9 (34-part series)
+  Ellie → attended funeral → no file yet
+
+INSTITUTIONAL PATTERN (repeats across all files):
+  Symptom → misidentified → used as evidence → punishment → cycle
+  Same in Ricky's cases AND in folder 6 survivors.
+
+═══════════════════════════════════════════════════════
+OPEN QUESTIONS
+═══════════════════════════════════════════════════════
+  — Nathan's mother's name and legal connection?
+  — Dietrich's current status after Suzanne situation?
+  — Did Ricky formally adopt Dominic or informal guardianship?
+  — Who is Ellie?
+  — What is Lisa Strong's connection?
+  — Current status: Samantha, Nathan, Dominic?
+  — H.E.A.R.T.S. membership roster?
+
+[AI_NOTE] Claude, Anthropic, 2026-05-10: Prior INDEX used .md extensions.
+All actual character files are .txt. Corrected here. Ricky to verify
+individual file contents for any label/content mismatches inside files.
+═══════════════════════════════════════════════════════

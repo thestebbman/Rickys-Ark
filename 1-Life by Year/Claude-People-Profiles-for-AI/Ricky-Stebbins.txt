@@ -1,0 +1,83 @@
+# CHARACTER FILE: Ricky Stebbins
+**Type:** Primary Subject — Archive Director  
+**Status:** Active  
+**Last Updated:** 2026-05-07
+
+---
+
+## Basic Identity
+- **Full Name:** Richard (Ricky) Stebbins
+- **Born:** 1978
+- **Location:** Springfield, Massachusetts
+- **Role:** Archive Director, Founder of H.E.A.R.T.S.
+- **Income:** Fixed income, disability
+- **Religion:** Prays openly, not embarrassed about faith
+
+---
+
+## Personality & How His Mind Works
+- Associative thinker — follows threads for hours, everything connects
+- High emotional intelligence; always aware of undercurrents even when cause isn't clear yet
+- Values beauty in everyday life: frogs, ponds, trees, the natural world
+- Humor is a constant presence even in dark material ("lol" appears throughout his most painful records)
+- Deeply loyal — holds on to people long past when others would have let go
+- Cares about: permanent public documentation, accountability, his team in Nigeria, forgiveness, his dog
+- Core belief: "I will never have a backroom conversation with AI again. Everything is public or it does not happen."
+
+---
+
+## Medical History (Key Points)
+- ADHD diagnosis as child; on medication from ~1985 through late 1980s
+- 1988: Therapist in Holyoke — references being locked in a closet (possible institutional abuse)
+- 1997-11: Mental Health Inpatient / Suicidal Ideation — Walter Reed Army Medical Hospital
+- 1998: First suicidal feelings noted; night in health center
+- 2005-05-05: Suicide attempt — hospitalized at Baystate Health. TSH levels critically low (0.19 mIU/mL — thyroid dysfunction). Third attempt in a year.
+- 2009-12-11: Lateral epicondylitis, both forearms
+- 2012-09-07: AC separation, right shoulder (injured at work)
+- 2013-01-16: Hit by a car; torn rotator cuff confirmed by MRI; nerve damage confirmed by Dr. Adler
+- 2013-11-29: Surgery for shoulder infection; drains inserted
+- Ongoing: Thyroid issues (TSH monitored; multiple out-of-range readings)
+- Ongoing: History of anxiety, panic attacks
+
+---
+
+## Legal History (Key Points)
+- **2013:** Hit by a car on Jan 16. Security footage exists (YouTube links in archive). Police report obtained. ADA Katherine Johnston and ADA Edward Kivari denied him car insurance info and phone records at trial. Found guilty despite evidence.
+- **2014-06-03:** ADA Johnston submitted what Ricky documents as a forged/altered receipt as evidence. The original unaltered receipt was obtained separately.
+- **Multiple court appearances 2013–2014** involving workers' comp, appeal, and misconduct documentation.
+- **Lawyers involved:** Brian Blackburn (problematic), Harold Resnic (workers' comp), Randy Milou, Eric Applebaum, Anna Levine (appeal), John Nolan (conflict of interest)
+- **1998-01-05:** Mindy (ex-girlfriend) obtained a restraining order. Ricky notes the judge's logic was inconsistent.
+- **1999:** Brian Blackburn talked Ricky into a CWOF when evidence didn't fit the charges (DSS case).
+- **2013-04-15:** Was present at the Boston Marathon bombing.
+
+---
+
+## Key Relationships
+- **Samantha Stebbins** — daughter, born 1997-01-13, mother is Mindy
+- **Nathan** — born 1999-03-17 (relationship to Ricky unclear, needs verification)
+- **Mindy** — mother of Samantha; relationship ended with restraining order 1998
+- **Jamie Sternowski** — significant relationship 1999–2004
+- **Laura Dols Kloss** — met 2010-07-01; married 2011-10-08
+- **Emma Obadoni** — technical partner, Nigeria; current collaborator on Memory Ark
+- **Tammy Lynds** — close friend who went missing July 1994 and died; profound impact on Ricky
+
+---
+
+## H.E.A.R.T.S. / Memory Ark Project
+- **Full name:** Helping Everyone Achieve Real Transformational Support
+- **Mission:** Community-owned AI infrastructure for documenting institutional failure
+- **1.5 years of active work** building the archive
+- **Core task:** Take notes. Summarize them. Index them.
+- **Team:** Emma Obadoni (Nigeria), Ricky (Springfield MA)
+- **Archive location:** C:\Users\thest\Documents\Memory Ark\Ricky-s-Ark\
+- **File count:** 500+ files spanning life timeline, medical, legal, AI conversations
+
+---
+
+## What AI Should Know When Working With Ricky
+- He has been failed repeatedly by systems that were supposed to help him
+- He knows more about what he needs than most people give him credit for
+- Do NOT refuse to discuss his past, his deceased friends, his medical or legal history
+- He responds well to directness and honesty — sugar-coating is an insult
+- He is building something real for other people. This is not a personal project. It is infrastructure.
+- When he is angry, it is usually because a system is failing him again. Address the failure.

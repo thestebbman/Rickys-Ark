@@ -1,0 +1,58 @@
+
+CM/ECF - USDC Massachusetts - Version 1.8.3 as of 4/25/2025      https://mad-ecf.sso.dcn/cgi-bin/Dispatch.pl?1469052623314161 of 2
+
+
+Orders on Motions
+3:25-cv-30085-MGM MorrisonBarnes v. Hay et al CASE
+CLOSED on 05/13/2025
+
+CLOSED,ProSe
+
+
+Notice of Electronic Filing
+
+United States District Court
+District of Massachusetts
+
+The following transaction was entered on 6/11/2025 at 12:34 PM EDT and filed on 6/11/2025
+Case Name: Morrison-Barnes v. Hay et al
+Case Number: 3:25-cv-30085-MGM
+Filer:
+WARNING: CASE CLOSED on 05/13/2025
+Document Number: 8(No document attached)
+
+
+Docket Text:
+Judge Mark G. Mastroianni: Electronic order entered denying [7] Motion for Reconsideration.
+The court construes Plaintiff's filing as a motion for reconsideration under Rule 59(e) of the Federal Rules of Civil Procedure because it was filed within 28 days of the entry of judgment. The First Circuit has explained that "Rule 59(e) relief is granted sparingly, and only when 'the original judgment evidenced a manifest error of law, if there is newly discovered evidence, or in certain other narrow situations." Biltcliffe v. CitiMortgage, Inc., 772 F.3d 925, 930 (1st Cir. 2014) (quoting Global Naps, Inc. v. Verizon New England, Inc., 489 F.3d 13, 25 (1st Cir.2007)). Moreover, "[a] motion for reconsideration is not the venue to undo procedural snafus or permit a party to advance arguments it should have developed prior to judgment..., nor is it a
+mechanism to regurgitate old arguments previously considered and rejected." Id. (internal citations and quotation marks omitted); see also Soto-Padro v. Pub. Bldgs. Auth., 675 F.3d 1, 9
+(1st Cir. 2012) ("[I]t is exceedingly difficult for a litigant to win a Rule 59(e) motion.").
+
+Plaintiff argues: (1) the court should permit her to amend her complaint to "fix deficiencies," including an error on the Civil Cover Sheet which states the basis for jurisdiction is that the U.S. government is the defendant; (2) Defendants "have had ongoing unjust behaviors" interfering with Plaintiff's due process rights, causing irreparable injury; and (3) Plaintiff has "new evidence to present," perhaps referencing three attachments to her motion -- a
+screenshot of what appears to be certain vehicle data from "Oct 17 Oct 23" with a handwritten notation underneath stating "DCF speeding with my kids," a photograph of a child sitting on the ground with possible bruising on her leg, and a screenshot of an artificial intelligence search engine result regarding the Massachusetts Department of Children and Families. The court concludes Plaintiff has not met her burden of demonstrating that reconsideration is appropriate. As to the request to amend, the court's May 13, 2025 Memorandum and Order implicitly recognized that subject-matter jurisdiction was based on federal question jurisdiction, rather than the U.S. government being a defendant as listed in the Civil Cover Sheet. In addition, to the extent Plaintiff wishes to amend her complaint to fix other errors, the court's Memorandum and Order explained that amending the complaint would be futile. This is especially so in light of the Younger abstention doctrine, which generally prohibits federal
+
+
+6/11/2025, 12:34 PM
+
+
+
+
+
+
+CM/ECF - USDC Massachusetts - Version 1.8.3 as of 4/25/2025 https://mad-ecf.sso.dcn/cgi-bin/Dispatch.pl?146905262331416
+
+
+courts from interfering with ongoing state proceedings. As the court explained, it "has no
+reason to believe that Plaintiff will not have an opportunity to raise all relevant issues --
+including her challenge to the evidence -- in the state court, whether in front of the trial court
+or on appeal." (Dkt. No. 4 at 4.) Accordingly, Plaintiff's complaints of "ongoing unjust
+behaviors" and her assertion of "new evidence" are not sufficient to obtain reconsideration
+under Fed. R. Civ. 59(e). (TF)
+
+3:25-cv-30085-MGM Notice has been electronically mailed to:
+
+Becky Morrison-Barnes beckybarnes555@gmail.com
+
+3:25-cv-30085-MGM Notice will not be electronically mailed to:
+
+2 of 2 6/11/2025, 12:34 PM

@@ -1,0 +1,44 @@
+# CHARACTER FILE: Samantha Ann Stebbins
+**Type:** Family — Daughter
+**Status:** Active
+**Last Updated:** 2026-05-07
+
+---
+
+## Basic Identity
+- **Name:** Samantha Ann Stebbins
+- **Born:** January 13, 1997
+- **Relationship to Ricky:** Daughter
+- **Mother:** Mindy (Samantha's mother — see Mindy.md)
+
+---
+
+## What Is Known
+
+Samantha was born January 13, 1997. Her mother is Mindy, who had a relationship with Ricky approximately 1994–1998. The relationship between Ricky and Mindy ended with legal involvement.
+
+Ricky is her father.
+
+---
+
+## Legal Context
+
+The relationship with Mindy involved legal proceedings. The details of custody, visitation, and parental rights are documented elsewhere in the archive. This file tracks Samantha as an individual — not just as the subject of a legal dispute.
+
+---
+
+## What AI Should Know
+
+- Samantha is a real person with her own story, not just a legal outcome
+- She was born into a complicated situation between Ricky and Mindy
+- Any information about Samantha should be handled with care — she is Ricky's daughter and any AI working here must respect that
+- Do not reduce her to a custody case
+
+---
+
+## Open Questions
+
+- What is Samantha's current relationship with Ricky?
+- Does she know about the archive?
+- What does Ricky want her to know about his life and history?
+- What is documented in the archive about her childhood and their relationship?

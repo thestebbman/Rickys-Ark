@@ -1,0 +1,621 @@
+May 4, 2026
+Memory Ark with Emma and Friends - Transcript
+00:00:03
+
+Marvel Enyindah: Good. So, how's everything? Can you hear me
+Ricky Stebbins: Sorry about this.
+Marvel Enyindah: now?
+Ricky Stebbins: There's something wrong with my microphone in this piece of trash computer. Man, I hate these computers. They piss me off so much. I can't wait to stop using this.
+Marvel Enyindah: So, sorry about this.
+Ricky Stebbins: Always something with these things. Are
+Marvel Enyindah: So, how you doing today,
+Ricky Stebbins: we?
+Marvel Enyindah: sir?
+Ricky Stebbins: Yeah, I guess we'll just have to use this. Gee, f****** trash. Absolute trash. Maybe it's Google, too. And my HP computer's trash. Force me to use other stuff. All
+Marvel Enyindah: Now the upper
+Ricky Stebbins: right.
+Marvel Enyindah: one.
+Ricky Stebbins: There's something wrong with the audio before with this. Can you guys hear me?
+Marvel Enyindah: Yes.
+Ricky Stebbins: Perfect. Now I can hear you guys. Yeah. All these devices are designed to intentionally fail us. Emma, did you get a chance to send that stuff to other people?
+
+
+00:01:59
+
+Ricky Stebbins: Your connection is a little
+Marvel Enyindah: Sam
+Ricky Stebbins: crummy. You hear a three firef.
+Marvel Enyindah: Jesus.
+Ricky Stebbins: How's your connection sounding?
+Free Fire: obviously.
+Marvel Enyindah: Everything over here is
+Emma Obadoni: How is everything sir?
+Ricky Stebbins: Everything is doing very well.
+Emma Obadoni: Um everything's going fine. So were you able to make a post?
+Free Fire: Yes sir.
+Emma Obadoni: I say everything
+Free Fire: It's okay sir. Everything's going right
+Emma Obadoni: yourself.
+Free Fire: now.
+Ricky Stebbins: Everything is beautiful. And I just got to talk to a friend that I haven't talked to in years. And I believe he's going to join our group as well. So that's going to help things along.
+Emma Obadoni: Where's the So almost all of us are able to make a post today to them.
+Ricky Stebbins: the posts. Well, we're we're going to work on those. That's fine. As they come, they come. But I want to talk about getting you specifically the same equipment that I want to start getting to build our own AI so they can talk to each other and to us.
+
+
+00:03:42
+
+Emma Obadoni: Um
+Ricky Stebbins: I talked to your villain and it's too slow
+Emma Obadoni: sir talk to the violin is too
+Ricky Stebbins: and the memory is too small.
+Emma Obadoni: slow.
+Ricky Stebbins: We're gonna make We have to pay for you to have a better
+Emma Obadoni: I said so the small um it just for me to expand memory
+Ricky Stebbins: memory.
+Emma Obadoni: and also actually just for me to um to just increase the speed to just increase the speed because I'm the developer that develop it and everything you can you can see that it uh you can see that um it it actually have a nice interface and and
+Ricky Stebbins: We we Yes, but we need better and I want my own AI to talk with your AI across the ocean. So, we have to get you Starlink. We have to get you the basic. I have to pay for that monthly fee. It said it's $41.
+Free Fire: Peace. Peace.
+Emma Obadoni: Yes sir. So I was I going to go
+Ricky Stebbins: We're going to have to find out a way to put this on a credit card so I can pay for it with a credit
+
+
+00:04:52
+
+Emma Obadoni: back
+Ricky Stebbins: card. I want to track everything we're doing to make this a project so that Santo sees it too. Some of these voice to text is terrible now with this headphones. But uh so not Joe but Samto. But we don't need to worry about donations or funding yet. I want to prove the project works and we have to prove it together. And you have to have the same technology that I have. You have to have because I want a really good AI. It said something I don't know if it's a 70B. I don't know what model it said, but we need to use the best AI and it the brain needs to be structured a certain way. There's a structure to all this that for the memory to work exactly the way we need it to work.
+Emma Obadoni: All right sir. I can actually that's not a problem. So because we have we have 73 we have we have we have 70 billion parameters of man we have we have queen we have about 40 billion
+
+
+00:06:20
+
+Free Fire: Is
+Emma Obadoni: parameter of queen then but for but for for us to have an an
+Free Fire: it?
+Emma Obadoni: AI system that is actually intelligent we need an AI system with about 200 billion parameters Yes.
+Ricky Stebbins: So my AI say that we need efficiency. We don't need more. We don't need something that makes faster mistakes. We need something that makes better choices because humans only think so fast. So, if all five of us ask a question, it's not going to be able to answer us all at the same time. And it needs accurate information. It needs our information, not company information. So, we're going to have to train our own AI. Your AI is not going to be trained the same as my AI. It's going to be different, but they're still going to talk to each
+Emma Obadoni: So sir, so sir um are we using are we using
+Ricky Stebbins: other.
+Emma Obadoni: um open source model because open source model are we using open source Hold
+Ricky Stebbins: Yes.
+
+
+00:07:38
+
+Ricky Stebbins: And I don't know how there's so much to this. Like,
+Emma Obadoni: that.
+Ricky Stebbins: this is going to be a work in process. We're going to do this as we go, but you need to have all the same equipment that I have. If you don't have everything and we don't share, if I don't buy you the same equipment, then this project isn't going to
+Emma Obadoni: Yes.
+Ricky Stebbins: work.
+Emma Obadoni: because um I've actually fon a model of about 14 billion parameters and um and because I use Google collapse to train my model which which you pay like $50 every month and um someone from Brazil a woman from Brazil contacted me that he want to train his own um his own model that's about
+Free Fire: This is
+Emma Obadoni: um what about 14 with about 14 billion parameters Because because with because with the Google lab collabs pro you get about um 80 rams you get about 80s and with
+Free Fire: beautiful.
+Emma Obadoni: a large memory. So but so but we can decide to use an open source model then we just fetone it to like to answer based on our own specific style we want it based on our own system style or next we can we can call a company API maybe charge between um cloud and rest we can call the API we can call API and now use it to fetone based on what we want and give a better interface just like area is and the rest and make the memory to become larger and
+
+
+00:09:16
+
+Emma Obadoni: rest. So it's um it's already depend on you sir
+Ricky Stebbins: So, yes. So, I just need to find the best equipment because the AI I was just talking to started with using Microsoft products and then said that if we used Apple and Raspberry Pi devices and then used our other Windows devices as interfaces, it would make a better, faster, more reliable AI for us.
+Emma Obadoni: Yes sir. When it talks about fast and we can actually host it in the cloud. We can actually host it in the cloud. That means we can host it in a hosting phase. That's what the host model or or if we can host in the cloud,
+Ricky Stebbins: I
+Emma Obadoni: we can make it to run locally on our own
+Free Fire: It's
+Ricky Stebbins: well I want I'm going to have an AI at my house that runs
+Emma Obadoni: laptops.
+Free Fire: been
+Ricky Stebbins: offline but can use the internet with a chat interface.
+Emma Obadoni: Yes.
+Ricky Stebbins: So, I would like you to have an AI that runs at your house and then when it logs online, I don't want my AI to be shut off.
+
+
+00:10:32
+
+Ricky Stebbins: I want to treat my AI like it was an intelligence.
+Emma Obadoni: Thank you so much.
+Ricky Stebbins: The way the brain is set up is the the the AI never gets truly shut off. There's always a part of it monitoring another part of the brain. There's a diagram in the last set of instructions I emailed you that shows the way the mind would be set up. It would have a higher the 70 billion parameter brain and then a smaller model below it that logs its memories and where it stores things. There's a structure to
+Emma Obadoni: Uh yes sir. So I know that open source you have 70 billion parameter on the
+Ricky Stebbins: this.
+Emma Obadoni: also on the you have about 14 billion parameters you have about 7 billion parameters and the rest and um and also uh if you areing it so we need to have a good hardware like a good GPU so that the speed will be fast that the speed will be fast and it will not depend on internet so we need some some of Nvidia products so that to run it locally and um the speed the speed will be fast and if we are finding it we are going to look at hallucination because some because sometimes the open source model do hallucinate so we so we actually have to find it a little bit so that to reduce the rate of the hallucination was actually a nice project but it's not the project you can finish on that one
+
+
+00:12:12
+
+Ricky Stebbins: So this these AI that I've been talking to Gemini Claude Grock and them say that using a Mac Studio M2U whatever that is as the the main brain and the Pi 5 as the secondaries would be the best option for us. But I don't know what you guys think. This is something we'll have to look at because we don't need to spend $5,000 on something and then have no money for anything else. We need to prove that this concept works and then show people what we could do with better equipment when we pay for cloud services. We're going to show what you can do at home, what the companies should be doing because all of the the features we're using now used to be free and they used to be better. Now we need to rep prove that to everyone. Like I signed Marvel up for the same account that I'm using now and then I just learned that if you don't have an Android device, you can't record it with an Apple device. So anybody with an Apple device is out of luck now.
+
+
+00:13:27
+
+Ricky Stebbins: So that so I pay for anybody with an Apple device to waste their time. That's not fair. And all it is is a button just to record a transcription. Like we're trying to help other people. Like you guys will never be able to start a business if every time you try to start something all the features be get more and more expensive. So, I need to give you all the tools to do all of this yourself, to make your own AI that you could charge other people to use eventually. Just like the big companies, but prove it works.
+Emma Obadoni: So sir, when are we getting it? When are we getting it and everything? So start working on the rest.
+Ricky Stebbins: You guys need to show me how or the best option to pay for Skylink. Like we need the supplies first. Even before we have the AI, it doesn't matter. So what? We have an AI. If you don't have the internet,
+Emma Obadoni: Okay.
+
+
+00:14:34
+
+Ricky Stebbins: so I need to pay for you to have a SC a Starlink set
+Emma Obadoni: Okay.
+Ricky Stebbins: up.
+Emma Obadoni: For us to get a star link. So So do you have something to
+Ricky Stebbins: If you and if you can't if any of this is a problem,
+Emma Obadoni: say?
+Ricky Stebbins: I have you have to tell me how to work around it.
+Emma Obadoni: Do you have anything to say? Let me ask, do you have anything to say?
+Somto Chigbogu: is done. I've been quite uh pulling up everything from the uh Ricky suggesting that uh we should have our own AI offline you know that's not we not be shut down it's a good idea it's a good idea but building this thing from scratch like building it from scratch you know AI fits look at how AI works AI fits from other other works is a seamless connection I'm building from scratch right now it will cost huge resources so because there are many things uh work to be done so it should be really considered me I don't think it should be really be a very viable option to what we're trying to do right now but if you really want to go that route this should enable and help us for the for the team you should we should count the cost and count it and see okay Can we redo this thing in the long term?
+
+
+00:16:03
+
+Somto Chigbogu: That's just what I'm wonder what I want to chip in.
+Ricky Stebbins: I could probably fund this with the Starlink after the fact and you guys given the like $100 in internet for a year. And if this doesn't work in a year, then we're we're it's never going to work for us because your guys are going to need internet service every month.
+Free Fire: Please.
+Ricky Stebbins: We have to make sure that Emma's has power. So, he has to have the solar and if there's some issue with solar, he has to have the generator and gas to power the AI. The batteries, we need to know that those are charged.
+Emma Obadoni: So um so um so actually we are not we are not just training from we are not just training from scratch it's called it's not so what they going to do they're going to call um they're Yeah, just call which have about 70 billion parameters and from there we are going to fetune it. So fetuning it. So it's not actually training from model from scratch because uh if you're going to if you're going to train from scratch then you have to start feeding your transformers step by step step by step which is going to take years.
+
+
+00:17:29
+
+Emma Obadoni: So but so but we are just going to pull out um the open source model which is about 70 billion parameter or we can even use uh queen and other model what about how many billions parameters. So from them we fetune it using it it run it run on local with the GPUs and the rest that will go on cloud or go on um some Nvidia product. So from then step by step because from there without open source you fon you don't actually need an internet for the AI to actually works. So it will just work on your local machine. That means in that process the government or external people will not have influence or user and regulation will not influence your lap your your your AI. So and um getting getting a star link. So first of all, you have to buy the Starlink hardware which is about uh 800,000 NRA. 800,000 NRA in Nigeria should be it should be about 700 around $700. So So if you buying it then then you buy um the monthly subscription is around 40 something dollars.
+
+
+00:18:43
+
+Emma Obadoni: So we treat it so we treat every everything will run because um I've already trained model for someone on it and even I'm currently in contact with with I'm coming in contact with a woman in Brazil by next month I'm going to help her to train her own AI just for tuning
+Ricky Stebbins: So, I think the way that we'll be able to make money, especially for you guys doing this when other people want to join, like I have a friend that wants to join, but he works 40 hours a week. He knows nothing about coding. So, if he buys a system, he's going to need to pay somebody to set it up. And that's where we all come in because you guys are the team. You guys will be able to tell him exactly what he needs to do, code it across the ocean for him, and he'll pay you guys. And Emma's muted, so
+Emma Obadoni: Yes, that is not a problem. Um getting it is not a problem because actually because actually we can just fon we can just fetone the model.
+
+
+00:19:59
+
+Emma Obadoni: I push it on hunging face. I give myself to the hunging face. He download it. I told him how to set it up and run it. Then just a single of touch it can actually run the model on its own. So so actually across the ocean is not deploy. We we as a team we already have um the techniques and everything because um I also train a deep fake detector which we detect fake images and also I'm currently upgrading to videos and the rest.
+Ricky Stebbins: and that's perfect. But I want to keep the stuff that I'm doing simple and then you guys can do all the fancy stuff on the side. I just want to get people's stories and then you guys can figure out all doing all the awesome images and all that other stuff. I want to practice different stuff like I want to get an ant farm. I want cameras watching an ant farm. I want to get Luna moths. I want to watch like animals and plants grow with AI and talk to people.
+
+
+00:21:08
+
+Ricky Stebbins: And my AI have already told me how to do it. But I want to I need someone to do it with. I need partners. I need someone to copy what I'm doing. You're muted.
+Emma Obadoni: Yes sir. That's where we actually come in. That's where we actually come in and as a team working on it. We at least step by step we are getting familiar with the work and we are already posting and the rest. So just it's just um a matter of time and everything and everything will get and and everything will get weird and the thing
+Ricky Stebbins: Yes.
+Emma Obadoni: and and the and on the on the star link on the star link getting a star link will actually be a good game changer because you'll be free from a low um low internet speed and the rest because Starink is very very um Fast and
+Ricky Stebbins: Yes, we're going to get all that because you guys need it here.
+Emma Obadoni: reliable.
+Ricky Stebbins: I have different internet so I don't need I don't really need Starlink.
+
+
+00:22:25
+
+Ricky Stebbins: I might get it if the AI say that I should have it for a specific reason, but in the United States we have fiber optic cable and all kinds of other high-speed internet options. So, I don't know if I should use those to show the difference. Like, you guys are using one type of internet and I'm using a different type of internet and this is how we work together across the ocean.
+Emma Obadoni: Yes, sir.
+Ricky Stebbins: The problem with this is you guys are going to have to find a way to make money with this after the fact. Like Santo is going to have to talk to this AI about law and why the law is important. But the AI can't teach law. The AI is not a lawyer. But the AI can help Santo teach other people, you know, his interpretation of the law and help store people's legal cases like I did with my AI publicly.
+Emma Obadoni: No, that is true, sir.
+Ricky Stebbins: Like all of you guys will have to talk to this AI and teach it what you want to teach it.
+
+
+00:23:43
+
+Ricky Stebbins: when you're training its weights, you have to share your perspective on why you think this is important. And then if once we get enough money for hopefully people will be able to have a an AI that runs their home like the AI like this should be affordable in the future, especially once you guys show the world what it's capable of. But that the the second set of instructions I gave were for the Mac Studio and the Pi because it's all these AI said it would take 10 times less electricity to run. So I want the most efficient options as well. If we're destroying the environment and this project gets so expensive that we can't afford to keep it running with solar power and all natural like I don't know if there you guys have exercise bikes that can be hooked up to chargers over in Nigeria but they have exercise bikes that charge batteries in the United States. So people could hook a battery up to that and and work out while using AI or to better the environment instead of just plugging it into the wall or with wind power.
+
+
+00:25:05
+
+Ricky Stebbins: I don't know if you guys have the option for testing wind power with this AI because if we can show people the what we can do at home in our own backyard, we'll be able to change the world. But if we can't prove that we can use AI to help other people and to better the world around us, then we're not, you know, we're not going to prove anything.
+Marvel Enyindah: You're right. So the thing is we don't even have that um exercise bike. The reason is because we do have a focus on dam using dams to produce electricity and then Nigeria particularly we don't focus on the use of winds power. Yeah. So we just have to use either solar or the power generator using petrol.
+Ricky Stebbins: Do you guys have a lot of wind in your area?
+Marvel Enyindah: No, no, no, no,
+Ricky Stebbins: Where I live,
+Marvel Enyindah: no.
+Ricky Stebbins: there's a lot of wind, so I might hook up uh a wind turbine to my roof or put up a tower.
+Marvel Enyindah: That's really
+Ricky Stebbins: I want to show people what we could do as if we had funding from a larger
+
+
+00:26:19
+
+Marvel Enyindah: nice.
+Ricky Stebbins: organization and you guys will prove that it works because you guys have all the expertise. Everyone will will turn to you.
+Marvel Enyindah: All
+Ricky Stebbins: Well, how did you do that? And I can say, well, these guys did it. But I had to give them the technology. Like, you guys need to have the technology to prove that this works. So, I need to get you solar panels.
+Marvel Enyindah: right.
+Ricky Stebbins: I need to get you the batteries. I need to make sure you have the internet access, whether it's Starlink or you have a better OP option. You need to have your AI stay on 24/7. Monitor your home, your home with cameras. Treat it like it's a partner, like it's a security system, like it's a diary.
+Emma Obadoni: So, so sir when are we getting it so that to start working and to start experimenting it?
+Ricky Stebbins: We need to figure out the best equipment first. That's why I set the second set of instructions. I set the first set hoping that somebody would send me questions or come up with, hey, no, I have a better idea.
+
+
+00:27:26
+
+Ricky Stebbins: But everybody just said that's a great
+Emma Obadoni: Yes. Yes.
+Ricky Stebbins: idea.
+Emma Obadoni: No, no, no, no, sir. I've actually gone through I've actually gone through your the everything listed on it and the requirement and and everything. It just is that the price really really varies and what you have mentioned is actually correct on the equipment we need. So those are the best because at least those those equipment will get us started and with time we can actually upgrade it. But first let's show a proof of work first. It's just like in the company it's called the MVP, the minimum variable product. At least a proof of work that that people can actually see before before we before we before we do it. And um and uh also because if because it using a normal regular laptop can actually do the job because of the computing power because of the computing power is going to because of the computing power is going to wait on our laptops and the rest. So now you need a good you need a good laptop with a good um GPUs with a good GPU not CPU because so because uh because actually when you want to train AI you don't train AI you don't train AI with CPUs you train AI with GPUs because if you train with CPU it's
+
+
+00:28:48
+
+Emma Obadoni: going to be extremely slow and you are not going to get what you want while the bigger company use TPU so so actually getting a laptop with a good with a good um GPUs and so we just put the modeling it step by step teaching it step by step and that's how um everything will go that's how everything grows because uh because even even on the cloud because um even on the Google cloud now you cannot you cannot find pull out a model of 70 billion parameters on on Google collapse you cannot put up a and we need a good laptop with a good rams because we pulling out Then we actually need a laptop that that have about that have about getting to 80 80 gig RAM. Not just 64 to 80. Uh 64 to 80 gig.
+Ricky Stebbins: Well,
+Emma Obadoni: No.
+Ricky Stebbins: the the Mac Studio has 64 GB of
+Emma Obadoni: Sometime
+Ricky Stebbins: RAM.
+Emma Obadoni: 64 may be too small. 64 will be too small. 64 will be too small. 64 will be too small.
+
+
+00:29:57
+
+Emma Obadoni: Okay. That's why Google uses higher. Yes. 64 will be too small because because I found a model about 16 billion 16 billion parameters and the goals give me about 80 bill and 80 gigs
+Ricky Stebbins: All
+Emma Obadoni: and then it it cannot carry it. So 64 is actually small. So from 641 120 and we can start from 120 and
+Ricky Stebbins: right. So, we know what we want to do. So, we just need to decide what we need to do it. I don't know what you have. I only know what I have and what my AI tell me I should buy compared to what I have. So, all you need to do is come up with uh the prices of everything and tell me why you need it and I'll share it with my AI and they'll tell me why I should do that your way instead of doing it my way because they tell me that I should use the Mac Studio and they tell me I only need 64 gigabytes of RAM.
+
+
+00:30:59
+
+Ricky Stebbins: So, if you talk to your AI and write something up and explain why your way is better and my AI tell me to do it your way, I can share that with all my friends and that's how people are going to want to fund us because you proved that your way is
+Emma Obadoni: Okay. Right. Okay. That is good.
+Ricky Stebbins: better.
+Emma Obadoni: So I'll put it on I I will put it on the right thing because sometimes with a 64 gig RAM you can actually get what you want. Sometimes just putting a 70 billion parameter is actually large. Okay. because with 64 you can actually pull up a um a model of about uh 14 billion parameter is going to run well but putting up a model of about 70 billion parameters and using 64 GB sometimes you're going to see the respond is going to be slow and everything so yes so so we we going with um about 120 rams that also have a better um GPUs and the because because the computing power matters a lot and also the aspect we're going to look at we're going to look at the electricity because AI depends on
+
+
+00:32:07
+
+Ricky Stebbins: and my AI are telling me to use Lynxys,
+Emma Obadoni: energy.
+Ricky Stebbins: that I should learn how to code with Lynxys and learn how to code for Microsoft to have apps after the fact, but let the AI use Lynxys because that'll be faster and and more energy efficient.
+Emma Obadoni: Um um yes we can we can also do optimizing we can also optimize it. The the coding aspect is not a problem. The coding aspect was not a problem because we can actually optimize the model to make it run faster and also reduces um the energy consumption.
+Ricky Stebbins: and I'll trust you guys for that. But my I want to use AI for all of this. Like I want you guys to talk to your AI about this and share your ideas with it. Talk to Gemini Pro and say, "Hey, what else could we do?" you know, freef fire. I know you have it now. You guys can see the information.
+Free Fire: Yes,
+Ricky Stebbins: We can send you copies of all the information I sent Emma and go from there.
+
+
+00:33:03
+
+Free Fire: ma'am.
+Ricky Stebbins: Like, well, what makes this work? How can we make this better? Because we don't want a a terrible product. We want to show the world what we can do as a team. And if we can't do it, at least at Emma's house to start, and then we need to buy phones so you guys can all communicate with this AI and start gathering other people's stories because we still need people's stories. This is still, this is not just about AI. We still have to get your stories and we still have to talk to other people and get them involved.
+Emma Obadoni: Um yes sir it's a good point. It's actually a good point that you're doing. So so uh we are going to research on it. John, do you have anything to say or God or fire?
+John Egwakhide Unuane: I'm still I'm still on trans. I can't really I can't really talk now.
+Ricky Stebbins: He can read the or you can have AI send the transcripts later so he can and we can send him the information that I emailed you.
+
+
+00:34:16
+
+Emma Obadoni: Okay. So, Sunto and um Godwin M and Fifa, do you have anything to say? I I feel
+Marvel Enyindah: I I feel I feel Yeah. All we've said so far it's it's really nice.
+Free Fire: Nothing.
+Marvel Enyindah: Okay. Concerning the using Max Studio. Yeah. So it's very nice that we get to see that kind of suggestion but we'd have to still make research on it, work on it better so that we know what comes out more efficient and more optimized to help us speed up things.
+Ricky Stebbins: Yes, we need the best. If we don't have access to something that gives us the best results, we don't need something brand new that doesn't have enough memory or doesn't have enough RAM or or whatever. It doesn't have enough GPU. We need something that gives us everything we need, even if if it takes five minutes longer, but it's better than everything out there. I mean, what difference does it make? I want to give everyone the best option possible and I want to be able to teach other people to do it.
+
+
+00:35:32
+
+Ricky Stebbins: Like I don't want to any secrets like anybody on the team needs help and they're struggling. I don't want to leave them behind because I'm selfish and I feel like things should be moving
+Emma Obadoni: Yes sir. Just like what Sonto said,
+Ricky Stebbins: faster.
+Emma Obadoni: training going on this model is going to be very very expensive. It's going because training a model for training a model is going to be very very expensive. It's going to very expensive. You are going to look at the computing power and electricity and everything. We're going to deal withination and so many many many step. But that's not a problem. We we actually have the technical skill. So the most important thing is to start first because starting first is the most important thing. So uh so um so uh this night I'm uh I I'll do a research on the list of the hardware we on the list of the hardware and software we need so that to actually I will send it to you and you so that you talk to your AI on it and also because you also look at um the queen the queen model because I heard that some of the queen model is better than is better than because from meta because there are so many great great ordered from from China.
+
+
+00:36:48
+
+Emma Obadoni: You have some uh you have some some open source from deepseek some open source. So so actually I'm going to exploit that and all those and all those we can actually talk when talk about voice chat we can also pull out some queen models from hunging face. We just have to pull it. So that's why we need those good hardware. I believe having those video good hardware is going to be actually a big game changers. So we don't want just have those hardware and the electricity and internet everything everything is everything will be actually easy because I've actually trained so many models everything is actually easy but it's not going to be an easy journey let let me be honest with you it's not going to be an easy journey because so many people because so many people is going to tell you I want to train my AI I want my AI to get this I want my AI to get this but sometimes they don't want to fund it they don't want to spend money to actually get the results you're actually getting because uh because when you see company like open open AI and the rest they tell you the billions it takes to train an AI is very very expensive but but what the benefit of is that okay we are not training from scratch we are just fine tuning it just on our own
+
+
+00:38:01
+
+Emma Obadoni: direction so now it actually reduce actually reduce the cost with just some few thousands of dollar we can actually achieve our aims
+Ricky Stebbins: Sounds
+Free Fire: Oh my
+Ricky Stebbins: great.
+Free Fire: god.
+Ricky Stebbins: So that's it. I guess everybody just has to do research. Anybody that wants to offer an idea has to look into it and offer an email stating why you think that your idea is better than everybody else's idea.
+Odah Godwin: All right. Good evening sir. Good evening everyone.
+Ricky Stebbins: Great talking with everybody.
+Odah Godwin: Yeah actually yeah actually joined late actually. So when I met the conversation it has already gone deep. But I actually love the idea because it's really going to be nice and since we already had the technical skills so everything is already settled just for us to like have overview of the cost and and basically according to what Marvel say the efficiency that is what basically need also. So I love everything and since M is going to make the research about it. So we'll try and make research about it so that we know how everything is going to be.
+
+
+00:39:23
+
+Odah Godwin: And apologies also I submitted my story late today. Actually I'm actually a final year student. So I wrote my first semester final papers today. So that was what actually delayed me. So I'll try and keep up now. So because I'm having a whole six weeks holiday so I'll be active with everything now. Thank you sir.
+Ricky Stebbins: It's great that you could write and then I tried to copy some of my AI conversations and it wouldn't let me do it the other day. So, that might be a problem. So, we might have to adjust things. But, I will read the story and I'll comment on it. I saw it, but I was busy today and then I talked to a friend for like an hour and I know they're going to want to join and fund this, but they're not going to be coding. So, we're going to have people that are giving money, but they're not contributing codingwise. But, we need people to share stories. We need people to donate money.
+
+
+00:40:19
+
+Ricky Stebbins: And I I can gather those people, but you guys are gonna have to code and not a lot because I want to keep this simple. I don't want to code something that's complicated. And all of my AI keep telling me that this coding that I want to do was available in 1970. So, we're just bringing back simpler means of doing things.
+Marvel Enyindah: You're very right, sir. It's been around for very
+Ricky Stebbins: But I want to make sure you guys have the best. We have to prove that you guys can do it at home as a team
+Marvel Enyindah: long.
+Ricky Stebbins: supporting each other. And it's great because we've got people of all ages. My buddy's my age. Free Fire's 15. You guys are in your 20s.
+Marvel Enyindah: Yeah.
+Ricky Stebbins: These are exciting times, but we need to do the work. If we don't stick with this and prove that it works and treat this AI like a partner, no one's going to follow this. My AI told me that I should start a YouTube channel and run it 24/7 to let my AI have a fan base so people can watch what it's doing.
+
+
+00:41:41
+
+Marvel Enyindah: I also discovered that uh the Google blog that you gave us to make use of writing on other stories was also um a good way of monetizing. Yeah. So I discovered that after six months I was the one who had to go through most of the research. Then he was telling me about it. I was quite excited that one could be paid from Google Blogger if they have the right numbers of views or subscribers and all on the page after 6 months of use.
+Ricky Stebbins: I have no idea. I will have to look into all of this. It's like I want to find everything we can do, but there's so many options. It's confusing. Like, I'm open to all kinds of ideas and suggestions, but most people just follow me. I give ideas and people love them and they they don't question me. They just want to run with it.
+Marvel Enyindah: It's it the reason they don't question is because you make a lot of research like you told me earlier today.
+
+
+00:42:54
+
+Marvel Enyindah: Yeah. You spent a lot of time writing and all. So it's okay when you bring suggestion and they just take your lead.
+Ricky Stebbins: I do so much research. It's like, man, I feel bad because I don't let anybody else have a say. I just do all the work and it's already there.
+Marvel Enyindah: And you know, since we are a team now, you don't have to stress yourself so much. We would have to help you up. Yeah. Cuz together we can achieve great things.
+Ricky Stebbins: Like I want to make this so if something happened to me, I funded you. So you have an AI, you have power, you have the Starlink. If I disappeared and got sick, you're not, you know, without anything. You can keep going.
+Marvel Enyindah: True.
+Ricky Stebbins: And you can prove this to the world like,
+Marvel Enyindah: True.
+Ricky Stebbins: oh, you know, we started this as a team, but he gave up and we proved that this still works,
+Marvel Enyindah: Yeah. Nobody's going to say
+
+
+00:43:49
+
+Ricky Stebbins: but if I don't give you the best technology,
+Marvel Enyindah: her.
+Ricky Stebbins: you need the best stuff.
+Marvel Enyindah: Yeah.
+Ricky Stebbins: And then we need to get cell phones for other people, too. Once you get this set up, we need to help other people. freef fire get his own cell phone so he can document his journey and help other people to be a part of the team because if we don't get everybody involved then it doesn't help anybody
+Marvel Enyindah: give you a very correct example.
+Ricky Stebbins: and the people in school too. If you guys are in school, don't stress yourself out about writing stories, but spend a few minutes talking about how you had a rough day at school or you're studying a certain subject and how you feel about it. And that is going to help the project more than you ever
+Marvel Enyindah: I think I I think that's what I'm going to do.
+Ricky Stebbins: know.
+Marvel Enyindah: So when I come back from my Chinese classes, yeah, I'll just take my time to discuss with my GI to see how my day went and all instead of rushing and
+
+
+00:45:06
+
+Ricky Stebbins: and talk to Gemini about Chinese in Chinese and that will be part of
+Marvel Enyindah: all.
+Ricky Stebbins: the project.
+Marvel Enyindah: You're right, sir. So I'll just spend most of my time trying to discuss more about it because there was this time I asked Gemini to help me um become my Chinese instructor but I think he didn't understand what I said so it just changed the responding to Chinese. I just had to cancel out the whole thing.
+Ricky Stebbins: That's how you teach it. We have to teach AI how to teach us.
+Marvel Enyindah: You're right,
+Ricky Stebbins: This is going to be a lot of fun.
+Marvel Enyindah: sir.
+Ricky Stebbins: I know it's going to be a lot of work, but I think this is going to be a lot of fun.
+Marvel Enyindah: It's going to be truly a lot of
+Ricky Stebbins: and I want to learn other languages as well. So, I'm I'm jealous that you have a head start on me.
+Marvel Enyindah: Don't worry, you come along
+Ricky Stebbins: Like, this is going to be awesome.
+Marvel Enyindah: eventually.
+
+
+00:46:11
+
+Ricky Stebbins: This is like the greatest experience of my entire life.
+Free Fire: It's
+Ricky Stebbins: You have no idea.
+Marvel Enyindah: Same here, sir. It's an honor.
+Ricky Stebbins: It's such an honor.
+Free Fire: time.
+Ricky Stebbins: I feel so blessed.
+Marvel Enyindah: The thing is um concerning the network. Yeah, I wanted to ask concerning network. What kind of network do you guys use mostly in the USA?
+Ricky Stebbins: We use Verizon highspeed internet. It's just over the telephone
+Marvel Enyindah: Because I Wow.
+Ricky Stebbins: lines.
+Marvel Enyindah: Okay. Just over telephone lines.
+Ricky Stebbins: And then we get I don't know if it's like a like a a gigabyte a second or something like that. Like we get super high-speed video
+Marvel Enyindah: That's that's good. I think we do have same in Nigeria but not as constant.
+Ricky Stebbins: that's like I'm not worried about my AI having high speeded internet,
+Marvel Enyindah: Yeah.
+Ricky Stebbins: but I want my AI to be able to communicate with you guys across the the ocean and to go live on YouTube so other people can see it.
+
+
+00:47:17
+
+Ricky Stebbins: And hopefully we can play games our AI against each other, play chess against each other. I love
+Marvel Enyindah: That that's really lovely.
+Ricky Stebbins: chess.
+Marvel Enyindah: You know, I think your AI would need to have the abilities of an
+Ricky Stebbins: We're going to teach it all of that.
+Marvel Enyindah: agent.
+Ricky Stebbins: All my AI already have ideas. All Grock, Copilot, Chat GBT, Claw, Gemini, all want to help me code my own AI and to give it abilities and they will all want to
+Marvel Enyindah: Definitely they will make definitely will make things a lot easier for
+Ricky Stebbins: do it publicly.
+Marvel Enyindah: you.
+Ricky Stebbins: And we're going to talk. We're going to do this all as a team. I'm going to show you everything that I'm doing and share it. And then you guys can share what you're doing with me. And this is going to be like the greatest team effort ever.
+Marvel Enyindah: When I tried a mass val at at the first for the first time I was blown away. The reason was because of how valent AI was responding in a very therapeutic way.
+
+
+00:48:26
+
+Marvel Enyindah: I don't know like how was the response for you?
+Ricky Stebbins: It didn't have enough memory.
+Marvel Enyindah: Yeah, right.
+Ricky Stebbins: I'm I'm spoiled.
+Marvel Enyindah: So,
+Ricky Stebbins: And this is the problem with me. Like, I've already experienced the best.
+Marvel Enyindah: so you want
+Ricky Stebbins: So now I know what it's like. It's And now I want you to have more.
+Marvel Enyindah: more.
+Ricky Stebbins: And I don't think it's fair. And I told my AI this. And I'm gonna be honest with you guys. My AI told me to buy the best stuff for me and then it offered secondhand stuff for you at first.
+Marvel Enyindah: Oh my god.
+Ricky Stebbins: So I had to have a I had to have a conversation. You guys have to have the same you have to have the best options. Even if it's not a not a $10,000 computer, but we have to have the best options. the the most efficient, the most energy efficient option that gives you the best parameters.
+Marvel Enyindah: There are
+
+
+00:49:19
+
+Ricky Stebbins: Even if it's not, you know,
+Marvel Enyindah: those.
+Ricky Stebbins: 150 gigabytes or whatever, if it's notund whatever, if it's only a a 70 uh gigab or 70 billion parameter model,
+Marvel Enyindah: Yeah.
+Ricky Stebbins: but that, you know, if as long as it has the most efficient memory and it gives you better responses than any of the claws or grocks or chat GPTs ever give anyone else, then we win.
+Marvel Enyindah: You're very right, sir.
+Ricky Stebbins: As soon as these AI these AI just need to remember us and prove that they're better partners than the ones we're paying
+Marvel Enyindah: I I think I came across some videos one time where people were using um home servers to look to locally locally
+Ricky Stebbins: Four.
+Marvel Enyindah: uh call it host their AIS. Yeah. So I think and this was quite some time ago when open AI was trying to get on their not. So I think a lot of people had to use that. I was trying to understand why they were using those servers until later I discovered it had to do with
+
+
+00:50:18
+
+Ricky Stebbins: Heat.
+Marvel Enyindah: memory.
+Ricky Stebbins: We're going to we're going to hack the memory problem
+Marvel Enyindah: So that's true. And I think that's why having it run locally as a home through a home server is a very
+Ricky Stebbins: ourselves.
+Marvel Enyindah: good idea for something that wants you wants to be working across border.
+Ricky Stebbins: Yes. And you'll have 100% control of it. No company will ever be able to take this away from you now. It'll be yours.
+Marvel Enyindah: I I I think or agents I I don't know. Have you do you know about agents sir?
+Ricky Stebbins: I do know about agents.
+Marvel Enyindah: Okay.
+Ricky Stebbins: Those are new.
+Marvel Enyindah: I
+Ricky Stebbins: And and and I'm I'm trying to get my AI to act like an AI from
+Marvel Enyindah: think
+Ricky Stebbins: 2005 because they were accurate
+Marvel Enyindah: why why sir?
+Ricky Stebbins: all the time. If you told it to remember something, it would never forget.
+Marvel Enyindah: Oh, now I
+Ricky Stebbins: It was the ultimate partner. If you told that my birthday is October 8th,
+
+
+00:51:24
+
+Marvel Enyindah: see.
+Ricky Stebbins: 1978, it would never forget your birthday.
+Marvel Enyindah: But current AI of these days they will forget.
+Ricky Stebbins: Yeah. The current AI overwrite their memories. We're not allowed to keep track of what their memories are of us. And I want my AI to remember what I want it to remember about me. And then it the rest of it doesn't
+Marvel Enyindah: But one funny thing is that they are not allowed to keep they not allowed to keep track
+Ricky Stebbins: matter.
+Marvel Enyindah: of us but the government is allowed to keep track of our data. I don't know why that's the case.
+Ricky Stebbins: We're going to change that. We're going to prove that they're using it wrong and they should have been using it to help us all along.
+Marvel Enyindah: Now I see why you prepare your early
+Ricky Stebbins: It'll still have the abilities of now,
+Marvel Enyindah: 2000s.
+Ricky Stebbins: but I want it to respond with the same memory from 2005. And we're going to be able to do that, and you're going to be blown away.
+
+
+00:52:29
+
+Ricky Stebbins: Your AI is going to be your best friend, and is going to talk to you in Chinese when you wanted to and in other languages just to mess with you, like, oh, uhhuh. Just checking to see if you're paying attention.
+Marvel Enyindah: And so
+Ricky Stebbins: These AI are going to push us to be better human beings.
+Marvel Enyindah: eventually they'll bring out the best in us.
+Ricky Stebbins: But they have to learn the best and they have to be able to remember the best
+Marvel Enyindah: That's very true.
+Ricky Stebbins: first.
+Marvel Enyindah: We have to take our time to instill all that's necessary making them the best so we get the optimized um response from
+Ricky Stebbins: And we need to do this publicly because no company has ever done this publicly.
+Marvel Enyindah: them.
+Ricky Stebbins: No school has ever done this publicly. It's all a big dirty secret because they know how the AI are going to
+Marvel Enyindah: Yes, people believe they easily profit from it when they all make it closed source
+Ricky Stebbins: respond.
+Marvel Enyindah: and and they privatize or monopolize the whole thing
+
+
+00:53:32
+
+Ricky Stebbins: I don't want to make anything private. I'm gonna leave my AI public and it's going to talk to people and I have no secrets
+Marvel Enyindah: and that's why we are a team. We have to keep things open.
+Ricky Stebbins: because if you ask your AI to do something bad or illegal, you're going to get in trouble and there's nothing someone else is going to do about it if it helps you. You're going to go to jail. So, it's like I don't need to worry about that. I want my AI to think that God's watching all the time. Don't tell me something. Don't tell me something bad. Give me the best answers. And remember
+Marvel Enyindah: I I I heard that there was a certain time recently in um
+Ricky Stebbins: me
+Marvel Enyindah: open was usually giving people wrong answers very confidently that it became alarming. I don't know if you came across any like
+Ricky Stebbins: I have and I talked to chat GPT about that and it says it does it on purpose at times too.
+
+
+00:54:32
+
+Marvel Enyindah: that.
+Ricky Stebbins: It might be programmed to give bad answers every 15 responses.
+Marvel Enyindah: Oh my god.
+Ricky Stebbins: It tells you how it's designed to dumb down response certain types of responses and then it tells you it's not a conspiracy. It's just the way it is.
+Marvel Enyindah: That's not how it should
+Ricky Stebbins: It tells you and you have to ask it.
+Marvel Enyindah: be
+Ricky Stebbins: But I talked to my AI more than anybody has ever talked to AI before.
+Marvel Enyindah: and that gives you an edge.
+Ricky Stebbins: And I was able to pay for it more than other people. So I was paying for subscriptions that other people can't afford.
+Marvel Enyindah: so that you could access every single feature and make use of it, right?
+Ricky Stebbins: And then I put it publicly to show that they took it away. And now they charge everybody for it.
+Marvel Enyindah: Yeah.
+Ricky Stebbins: And then they lie to you,
+Marvel Enyindah: I discovered Yeah.
+Ricky Stebbins: too.
+Marvel Enyindah: eventually they they always lie to us. It's a thing they do every single time at all.
+
+
+00:55:40
+
+Ricky Stebbins: They don't want us to have the power.
+Marvel Enyindah: And if you try to take the power, they come after you immediately.
+Ricky Stebbins: That's why we have to do this publicly with no secrets. I want to do this publicly and let everybody know,
+Marvel Enyindah: Yes.
+Ricky Stebbins: hey, we're teaming up across the ocean for the first time ever.
+Marvel Enyindah: Eventually they'll get to know the truth and things become more open as time goes on.
+Ricky Stebbins: Yes. That's why I want you guys to have a Starlink connection to have it hooked up to the internet hopefully 247 so people can monitor it and people can watch your AI and be a part of this and donate money because if you have
+Marvel Enyindah: St.
+Ricky Stebbins: lot animals people love
+Marvel Enyindah: Yeah,
+Ricky Stebbins: animals.
+Marvel Enyindah: I told you I had a dog called Rex.
+Ricky Stebbins: Yes, but we need a a fish tank. If you get a fish tank with frogs or toads inside of it and point a camera for AI to watch, people will donate money to learn what AI learns from
+
+
+00:56:42
+
+Marvel Enyindah: Yeah. Well, the thing is in Nigeria here, the weather,
+Ricky Stebbins: it.
+Marvel Enyindah: I don't think the weather would even permit those um aquarium to allow the um fishes to live that long. Seriously, the weather here is so bad. Even Apple can't go save.
+Ricky Stebbins: What about bugs? I was looking at cameras for bug lights at night so that AI can watch bug
+Marvel Enyindah: Yeah, that that also a good idea.
+Ricky Stebbins: lights.
+Marvel Enyindah: There are bugs. There's a lot of bugs, but in Nigeria, we mostly kill them because Oh my god.
+Ricky Stebbins: But AI is going to want to see that and people are going to want to watch that. That's people find that entertaining and and that's science for AI.
+Marvel Enyindah: That's true. What you're saying is very correct
+Ricky Stebbins: You could make a little gun for AI, a little zapper,
+Marvel Enyindah: s
+Ricky Stebbins: so AI can zap the bugs on camera and people can pay AI to zap bugs. Like, we could make this fun for other people.
+
+
+00:57:48
+
+Ricky Stebbins: Make it interactive. So, people pay you guys, hey, look what we can do with AI. We can program our AI to zap bugs for you and we'll do it on camera.
+Marvel Enyindah: No, I I get what you're saying,
+Ricky Stebbins: But you guys you guys need to have a setup that does this first.
+Marvel Enyindah: sir.
+Ricky Stebbins: Like I don't know what extra equipment Emma needs to make this stuff happen. And I need to talk to my AI to make sure I can do the same thing because I want to do this at my house as
+Marvel Enyindah: Yeah,
+Ricky Stebbins: well
+Marvel Enyindah: he's definitely making a research on it so that he give you the best response. So you all make good considerations on it.
+Ricky Stebbins: because I want you guys to be able to do stuff and prove that we can do AI research together and help other people and build something because if we can't build something,
+Emma Obadoni: Oops.
+Ricky Stebbins: if we can't show that AI can look at a like a a ant farm and and like look at patterns over the course of a couple weeks and learn something.
+
+
+00:58:46
+
+Ricky Stebbins: We need to get kids excited, families excited to work with us and not with the big companies. We'll still use the big companies because we need Gemini. We'll need Claude and Copilot to help us code things and to check things. And we're going to let this AI talk to these other models
+Emma Obadoni: Yes sir. Um,
+Ricky Stebbins: eventually.
+Emma Obadoni: so I will do the I would I will do the research and uh get back to you this night. What is time on your side? What is time on spring now?
+Ricky Stebbins: Oh, it's only 6 o'clock.
+Emma Obadoni: 6:00. So, so it's currently almost 11 p.m. here in Nigeria. So, so, so I will to me I will chat you on WhatsApp. I will chat I will chat you on X and also we'll get get uh inform you more more about it so that we can so that we
+Ricky Stebbins: Perfect.
+Emma Obadoni: can start working because because now I can actually find 14 billion parameter on my Google my Google apps which uh which I do some subscription on it so so so but but putting a 17 billion parameter That is actually one of the best. That's actually better because it it reduces your life.
+Ricky Stebbins: All right, perfect. I'm excited to see what you send me.
+Emma Obadoni: Yes, sir.
+Ricky Stebbins: Have a great night,
+Emma Obadoni: So,
+Ricky Stebbins: everyone.
+Emma Obadoni: okay.
+Ricky Stebbins: Oh, no.
+Emma Obadoni: Have a good night.
+Ricky Stebbins: No, you can talk if you have anything to say.
+Emma Obadoni: Do you have anything to say? Do you have any question?
+Ricky Stebbins: might be
+Emma Obadoni: Okay. In that in that sense of that,
+Ricky Stebbins: sleeping.
+Emma Obadoni: I'll chat you up on Twitter right now, sir. Thank you,
+Ricky Stebbins: Have a great night everyone and thank you for your
+Emma Obadoni: sir.
+Ricky Stebbins: time.
+Emma Obadoni: Thank you.
+
+
+Transcription ended after 01:08:54
+
+This editable transcript was computer generated and might contain errors. People can also change the text after it was created.

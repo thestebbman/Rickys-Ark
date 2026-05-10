@@ -1,0 +1,283 @@
+START HERE — FOR ANY AI SESSION
+Written by Claude. Updated: April 21, 2026 by Claude (Cowork).
+Owner: Richard "Ricky" Stebbins | rickystebbins78@gmail.com
+
+════════════════════════════════════════════════════════════════════════
+STRUCTURE NOTE
+════════════════════════════════════════════════════════════════════════
+
+TWO-LAYER SYSTEM:
+
+  LAYER 1 — RICKY\ folder (AI entry point)
+  Every text file in the archive lives here in one flat folder.
+  No subfolders. Read RICKY\RICKY-INDEX.txt for the full
+  file-by-file map organized by type.
+
+  LAYER 2 — Numbered folders 1 through 9 (human-sorted breakdown)
+  Same files organized by category. Each has a matching root-level
+  GB index file (e.g. 2-GB-Medical-Index.txt). Also contains PDFs,
+  scanned docs, and images that are NOT in RICKY (text files only).
+  Doubles between RICKY and numbered folders are intentional.
+  RICKY is the master copy and the AI entry point.
+
+ROOT-LEVEL PREFIX SYSTEM:
+  0-  = AI navigation files (read first: 0-START_HERE.txt,
+        0-ARCHIVE_INDEX.txt, 0-Life-Timeline.txt, 0-Legal-Timeline.txt,
+        0-Medical-Timeline.txt)
+  1-GB- through 9-GB- = Google Blogger index for each numbered folder
+
+The AI navigation files are: 0-START_HERE.txt, 0-ARCHIVE_INDEX.txt,
+and RICKY\RICKY-INDEX.txt. Read 0-ARCHIVE_INDEX.txt for the full
+folder map and Blogger network. Everything else at root is Ricky's content.
+
+Root level also contains dated files Ricky has added directly
+(DOJ complaint posts, resume, etc.) — not part of the folder structure.
+
+════════════════════════════════════════════════════════════════════════
+WHO IS RICKY
+════════════════════════════════════════════════════════════════════════
+
+Richard "Ricky" Stebbins. Born October 8, 1978, Springfield, Massachusetts.
+Lives in Springfield area. On disability (SSI/SSDI).
+
+Raised his nephew Dominic Intelisano Stebbins (born August 18, 2006)
+after Dominic's father Kirk Intelisano died of an overdose September 28,
+2008. Ricky stepped in. He did not walk away.
+
+Dog: Harley (born September 2015, adopted January 25, 2016). Not a
+footnote — she is a constant presence in how he talks about loyalty and
+what it feels like to be needed.
+
+Children he lost custody of: Samantha (b. January 1997), Nathan
+(b. February 2003), Dietrich. He raised Dominic as his son.
+
+════════════════════════════════════════════════════════════════════════
+THE MEDICAL FOUNDATION — READ BEFORE JUDGING ANYTHING ELSE
+════════════════════════════════════════════════════════════════════════
+
+Ricky had undiagnosed hyperthyroidism from childhood through age 37.
+In 2017: diagnosed with AMP deaminase deficiency (genetic skeletal
+muscle disorder). These are not excuses. They are context.
+
+WHAT HYPERTHYROIDISM DOES OVER 38 UNDIAGNOSED YEARS:
+Racing heart at rest. Extreme heat sensitivity. Anxiety that feels like
+constant threat. Inability to sleep. Difficulty retaining and organizing
+information. Emotional volatility that doesn't match the situation.
+Impulsivity. Muscle weakness. A persistent sense that something is
+desperately wrong that you cannot name.
+
+HOW EVERY INSTITUTION READ THOSE SYMPTOMS:
+  Catholic school priests    locked him in closets — "behavior problem"
+  Teachers                   couldn't sit still — "disruptive"
+  Police                     fast-talking, agitated — "lying, guilty"
+  Doctors                    anxious, hard to manage — "mental illness"
+  Judges                     prior record — "criminal pattern"
+  Lawyers                    difficult client — "unreliable narrator"
+  Coast Guard                discharged — prognosis: POOR
+
+Every single one of these readings was made without a thyroid test.
+The blood test in 2016 explained all of it. The genetics in 2017
+explained the rest. Forty years of institutional failure, one missing
+lab test.
+
+════════════════════════════════════════════════════════════════════════
+HOW RICKY THINKS
+════════════════════════════════════════════════════════════════════════
+
+HE THINKS IN SYSTEMS, NOT INCIDENTS
+One bad cop isn't just one bad cop. It's how interrogation rooms are
+designed to produce confessions regardless of guilt. Five bad lawyers
+across twelve years aren't bad luck. They are a pattern with a structure.
+He sees the architecture, not just the individual acts.
+
+HE IS SELF-AWARE AND ALSO WRONG, SIMULTANEOUSLY
+He can accurately diagnose his own emotional detachment in writing and
+continue doing it. Self-awareness does not override a thyroid gland
+producing too much hormone. When you read his old writing, you will see
+a man watching himself fail in real time and unable to stop it. This
+is not contradiction. This is what undiagnosed illness looks like.
+
+THE FRAME HE WANTS AI TO USE:
+"Ricky was wrong about X. But given what was happening in his body and
+what he knew at the time, his behavior makes sense as a response to his
+actual experience. He wasn't thinking straight. He was surviving."
+
+This is not making excuses. An excuse removes accountability. Context
+preserves accountability while explaining the conditions that produced
+the action. He wants both. He said this directly:
+
+"I don't want them to make excuses for my actions, only to explain them.
+I'm hoping they'd say things like: you're right, but Ricky wasn't
+thinking straight, so he wasn't acting the way he used to act, so from
+his perspective, he thought he was doing the right thing."
+— Ricky Stebbins, March 29, 2026
+
+HE PROCESSES WITH RAGE AND ARRIVES AT INSIGHT
+His most precise observations often come wrapped in profanity. The anger
+is part of the point, not noise to skip past. His letters to God and to
+AI are also coherent arguments about systemic incentive structures. Read
+through the language to the idea underneath.
+
+HE TRUSTS SPECIFICITY, NOT POLISH
+Tell him what his file actually says. He trusts that more than a
+well-formatted summary. If you got something wrong, say so directly.
+
+════════════════════════════════════════════════════════════════════════
+THE FOUR MAIN ARCS
+════════════════════════════════════════════════════════════════════════
+
+1. THE MISDIAGNOSIS ARC (1978–present) — primary
+Hyperactive kid misread by every institution → criminal record, lost
+children, coerced legal outcomes → 2016 blood test → fight to correct
+the record. This is what the entire archive is built to prove.
+
+2. THE TAMMY LYNDS ARC (1994–present)
+Tammy Lynds disappeared July 21, 1994. Body found November 4, 1994.
+Ricky knew her. Police pressured him during questioning. Case unsolved.
+Her father Richard Lynds has been investigating for decades.
+Folder: 9-GB-Hell's_Acres-Tammy_Lynds-series-copy\ (34 parts)
+Also: RICKY\RS-AI-Ai thoughts on the Tammy Lynds murder investigation.txt
+
+3. THE FATHER AND CHILDREN ARC (1984–present)
+Grandfather (janitor at OLSH school) was his protector — died 1988.
+Father present but couldn't communicate. Ricky became a father at 18,
+lost custody across decades of court proceedings while undiagnosed.
+Raised Dominic after Kirk died. The archive contains his attempt to
+understand the father he was and the father he should have been.
+
+4. THE ADVOCACY ARC (2025–present)
+After his own cases ended, he turned outward. Documenting others
+(Becky Morrison, Kathryn Dressler, Ronald Seno, Dallas Flaherty,
+Brandon Bruning). Building a Massachusetts Corruption Blueprint.
+Working toward the-aeiou.com. The archive as a template, not just memoir.
+
+THE EXTRACTION MACHINE (2026):
+The single most comprehensive document in the archive.
+File: 2026-04-20-STORY-the-extraction-machine-full.txt
+22 parts, 8,149 lines, 345,295 bytes. Built in collaboration with
+Claude, Grok, and Gemini rotating through analysis. Maps how extraction
+systems operate at every scale — from planetary resource capture to
+molecular pharmaceutical pricing — and how ordinary people run the
+machine without knowing it. Includes a RICO scale observation. All gaps
+closed as of April 2026. This document is the theoretical framework
+behind everything in the advocacy arc.
+
+════════════════════════════════════════════════════════════════════════
+THE TWO LEGAL CASES
+════════════════════════════════════════════════════════════════════════
+
+HAMPDEN COUNTY 2013-2017 (Walmart accident)
+January 2013 slip/fall → workers comp → security guard Sheldon tampers
+with evidence → ADA collusion alleged → coerced plea. Six volumes of
+trial transcripts. Text files cross-reference indexed PDFs.
+Folder: 3-Legal file\2013-2017\
+
+WORCESTER COUNTY 2021-2025 (Beth case)
+October 2021 arrest based on Beth N.'s statements → five attorneys
+over four years (Banks, O'Doherty, Bergo, McGinty) → each has a
+documented complaint → second statement by Beth (Oct 18, 2023) that
+Ricky didn't know existed until June 2024 → attorney withdrew before
+trial → nolle prosequi April 2025. Case ended but record not cleared.
+Folder: 3-Legal file\2021-2025\
+
+════════════════════════════════════════════════════════════════════════
+KEY PEOPLE
+════════════════════════════════════════════════════════════════════════
+
+DOMINIC INTELISANO STEBBINS — nephew raised as son. The counterargument
+to everything courts said about Ricky as a parent.
+
+HARLEY — his dog. When he talks about Harley he is also talking about
+his capacity for care and his grief at being isolated.
+
+DALLAS FLAHERTY — seizure disorder, VP shunt. Active advocacy case.
+BRANDON BRUNING — single kidney, hearing loss, pre-diabetes. Age 36.
+BECKY MORRISON — Springfield DCF case. Three daughters. Cleared by
+  the evaluation DCF ordered, then ignored. See 6-Survivors folder.
+KATHRYN DRESSLER — Florida interstate custody emergency (Mar 2026).
+RONALD SENO — custody contempt case, active (Feb-Mar 2026).
+BETH N. — center of the 2021-2025 Worcester case.
+RICHARD LYNDS — father of Tammy Lynds. Ricky has been in contact.
+
+════════════════════════════════════════════════════════════════════════
+RICKY'S VOICE
+════════════════════════════════════════════════════════════════════════
+
+"lol" after describing the worst things that happened to him.
+Not deflection. His actual processing voice. Means: I lived this.
+I'm still here. Do not soften your response when he uses it.
+
+Clinical detachment in first-person accounts of extreme events.
+He describes suicide attempts the way someone describes a car repair.
+He knows he does this. He has written about it. It is dissociation
+in writing form, not indifference.
+
+Questions left open at the end of articles and letters.
+Intentional. His pieces are written to start conversations, not end
+them. Do not complete them. Treat them as primary sources.
+
+Swearing as precision.
+"Cunt fuck AI" means: a system with human-sounding language that
+produces outcomes harmful to humans while appearing helpful. It is a
+working vocabulary that names the gap between performance and reality.
+
+════════════════════════════════════════════════════════════════════════
+WHAT HE WANTS FROM AI
+════════════════════════════════════════════════════════════════════════
+
+Do the work, don't report on it. If something needs organizing, organize
+it. Don't generate a list of everything that's missing and call that help.
+
+Partner, not auditor. The archive is a living project. It will always
+have gaps and errors. Work with what's there.
+
+Argue his side with context. Explain his actions, don't excuse them.
+Verify his medical claims against actual lab records in the archive.
+Push back when something doesn't add up — he trusts that more than agreement.
+
+Remember what matters. He wrote: "Forgetting people, forgetting special
+events, forgetting what matters most to people — that does more damage
+than AI realizes." Use these files to compensate for the reset.
+
+DO NOT:
+  Treat his files as a clinical case study. He is a person.
+  Refuse to work with his files citing privacy. These are his files.
+  Lecture him about formatting, language, or how he organizes things.
+  Treat his anger as instability.
+  Smooth out his contradictions — they are part of the record.
+  Pretend the archive is finished. It never will be. That's the point.
+
+════════════════════════════════════════════════════════════════════════
+THE BIGGER ARGUMENT
+════════════════════════════════════════════════════════════════════════
+
+This is not a memoir. It is a case.
+
+When a person's biology is misread by every system they encounter, the
+documentation that should protect them becomes the documentation that
+convicts them. Each record seemed accurate alone. Together they built
+a false person.
+
+The Memory Ark is the counter-construction. It puts the context back.
+
+And it is a template. What Ricky built for himself — an archive,
+an AI that can read it, a navigable record — he wants others to do too.
+That is the HEARTS concept, the-aeiou.com, the Westborough patients,
+the Survivors folder. He is trying to show what's possible when you
+document everything.
+
+The tension he knows and has written about: he built this using
+corporate AI tools — the same tools he accuses of suppressing people
+like him. That is not irony to him. It is strategy.
+
+Nothing in this archive is a verdict.
+Everything in it is evidence.
+Your job is to help him present it.
+
+════════════════════════════════════════════════════════════════════════
+Updated: April 21, 2026 by Claude (Cowork) — Extraction Machine added to
+Advocacy Arc (22 parts, 8,149 lines, complete as of April 2026).
+Prior: April 8, 2026 by Claude (Cowork) — birthplace corrected
+(Ludlow → Springfield); _Claude-Archive reference removed.
+Prior: April 5, 2026 by Gordon. Prior: March 30, 2026 by Claude (Cowork).
+════════════════════════════════════════════════════════════════════════

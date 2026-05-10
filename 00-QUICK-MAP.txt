@@ -1,0 +1,78 @@
+MEMORY ARK — QUICK MAP
+Owner: Richard "Ricky" Stebbins | rickystebbins78@gmail.com
+Last Updated: 2026-05-10 by Claude (Anthropic)
+GitHub Mirror: https://github.com/thestebbman/Memory_Ark
+
+═══════════════════════════════════════════════════════
+IF YOU ARE A SMALL MODEL (under 8K context): READ ONLY THIS FILE.
+IF YOU ARE A MEDIUM MODEL: Read this + the folder index for your topic.
+IF YOU ARE A LARGE MODEL: Read this + 0-ARCHIVE_INDEX.txt + 0-START_HERE.txt
+═══════════════════════════════════════════════════════
+
+WHO IS RICKY (30 seconds)
+  Richard Stebbins. Born October 8, 1978. Springfield, Massachusetts.
+  On SSI/SSDI disability. Raised nephew Dominic after Dominic's father
+  died of overdose (2008). Dog: Harley (2016). Three children he lost
+  custody of: Samantha, Nathan, Dietrich. He did not walk away from any
+  of them. Had undiagnosed hyperthyroidism from childhood until age 37.
+  AMP deaminase deficiency diagnosed 2017. These explain a lot.
+
+WHAT THIS ARCHIVE IS
+  677 files. Personal memory system. Legal documentation. Medical records.
+  Stories. AI conversations. Research into systemic corruption.
+  Public and transparent by design. Not a monument — a working tool.
+
+THE 10 FOLDERS (pick the one you need)
+  0-System_Admin_and_Directives-Start_Here → Read this folder first.
+                                              AI instructions, Ricky's biography,
+                                              timelines, master index.
+  1-Life by Year        → Year-by-year life events (1978–present).
+                          78 files. EVENT files + Family/Friends subfolder.
+  2-Medical files       → Medical records. Key thread: thyroid misdiagnosis.
+                          Baystate, Coast Guard, mental health, genetics.
+  3-Legal file          → Two case clusters: 2013–2017 (Hampden County)
+                          and 2021–2025 (Worcester). Both involve systemic failure.
+  4-Stories_with_AI     → Published blog posts. "Ricky and the Machine" series.
+                          DREAM-RS files = Ricky's voice + AI collaboration.
+  5-Unedited_AI_Conversations → Raw AI conversation exports. Unfiltered.
+  6-Survivors-of-the-System   → People Ricky is helping document.
+                                 Dallas Flaherty, Brandon B, others.
+  7-MA_PERAC_Audit      → Massachusetts pension fund investigation.
+  8-AI investigations   → Systemic corruption research across states/institutions.
+  9-GB-Hell's_Acres     → Fox Road murder series. Tammy Lynds. 34 parts.
+
+KEY PEOPLE (quick reference)
+  Dominic Intelisano-Stebbins — nephew, raised as son (b. 2006)
+  Harley — dog, adopted 2016, constant presence
+  Tammy Lynds — subject of Hell's Acres murder series
+  Dallas Flaherty — survivor being documented in folder 6
+  Brandon B — survivor being documented in folder 6
+  Emma Obadoni — connected to early Memory Ark / H.E.A.R.T.S.
+
+KEY THEMES (what connects everything)
+  Medical misdiagnosis → loss of custody → legal battles → debt → disability
+  Institutional failure across: courts, hospitals, DCF, landlords, employers
+  H.E.A.R.T.S. = organization Ricky founded to help survivors
+  The Extraction Machine = 22-part systemic analysis (folder 0 or 10)
+  Memory Ark = the archive system you are reading right now
+
+HOW THE ARCHIVE IS STRUCTURED
+  Two-layer system:
+  Layer 1 — RICKY\ flat folder: all text files in one place. AI reads here.
+  Layer 2 — Numbered folders 1–9: same files by category. For humans.
+  Doubles between layers are intentional. RICKY\ is master copy.
+
+NAMING CONVENTION
+  YYYY-MM-DD-TYPE-Description.txt
+  Types: EVENT, MEDIC, LEGAL, STORY, DREAM, GB-POST, CASE, EMAIL, GMT, PCT
+
+WHAT TO DO IF YOU'RE LOST
+  1. Read 0-System_Admin_and_Directives-Start_Here/0-START_HERE.txt
+  2. Read 0-System_Admin_and_Directives-Start_Here/0-ARCHIVE_INDEX.txt
+  3. Then go to the folder that matches your task.
+  If still lost: ask Ricky directly. He prefers honesty over guessing.
+
+AI RULE: Do not flatten contradictions. Do not correct Ricky's emotional
+record. His feelings at the time of writing are historical fact.
+Log your interpretations separately under [AI_NOTE].
+═══════════════════════════════════════════════════════

@@ -1,0 +1,80 @@
+WESTCOMM Regional Dispatch    Page: 1
+
+Call Number Printed: 06/01/2024
+
+For Date: 06/01/2024 Saturday
+
+Call Number      Time   Call     Reason   Action   Priority   Duplicate
+24-63413      1514        911 - Missing/Runaway/Found Person     Complaint Taken Care Of 2
+
+
+
+Call Taker: WC097 - CENTER, BAILEY
+Call Source: 911
+Call Closed By: WC060 - MARTIN, MICAELA 06/01/2024 1603
+Call Modified By: WC060 MARTIN, MICAELA
+Location/Address: [CHI 2187] GANDARA STARR PROGRAM - 305 BROADWAY
+Jurisdiction: CHICOPEE
+Fire District: 1-3-7-4-5-8
+EMS Service Area: Medic 1, 2, 3, 7
+LAW Determinant: 123B02 - RUNAWAY
+Chief Complaint: RUNAWAY
+Problem: RUN AWAY
+LAW Situation: 1. This incident involves a RUNAWAY. 2. This incident does not involve а
+SPECIAL LOCATION. 3. The age of the person is: 16 4. S/he does not have
+any physical/medical/mental conditions. 5. This incident does not involve
+an AT RISK person. 6. It is suspected that s/he is a RUNAWAY. 7. The
+person's description is: 8. The caller is on scene. 9. The 2nd party
+caller is on scene. 10. The time the person was last seen is: 5 MIKES 11.
+Her/his clothing is appropriate for current weather conditions.
+
+
+Party Entered By: 06/01/2024 1515 WC097 - CENTER, BAILEY
+Calling Party: GONZALES, LILLIANI @ ***UNKNOWN*** - CHICOPEE, MA 01020 413-378-9569
+Party Entered By: 06/01/2024 1531 WC097 - CENTER, BAILEY
+Calling Party: MOTHER OF CHILD
+BARNES, LISA @ ***UNKNOWN*** - CHICOPEE, MA 01020
+
+
+CallBack Number: 413-364-9810
+ID: CHI390 - ENOS, THEODORE
+Disp-15:15:45 Arvd-15:20:05 Clrd-16:03:43
+
+Dispatched By: WC060 - MARTIN, MICAELA
+Arrived By: WC060- MARTIN, MICAELA
+Cleared By: WC060- MARTIN, MICAELA
+ID: CHI168 - BIRKS, JOHN
+Disp-15:15:50 Clrd-15:16:39
+
+
+Dispatched By: WC060 - MARTIN, MICAELA
+Cleared By: WC060 - MARTIN, MICAELA
+ID: CHI442 - LEPAGE (N), NATHANIEL
+Dispatched By:WC060 - MARTIN, MICAELА
+Disp-15:16:36
+
+
+
+Arvd-15:21:50 Clrd-15:36:00
+Arrived By: WC060- MARTIN, MICAELA
+Cleared By: CHI442 - LEPAGE (N), NATHANIEL
+Narrative: 06/01/2024 1515 CENTER, BAILEY
+YOUTH THAT RAN AWAY NO NKNOWN DIRECTION
+
+Narrative: 06/01/2024 1532 CENTER, BAILEY
+MOTHER OF RUNAWAY REQUESTING PHONE CALL FROM OFFICERS. PHONE
+NUMBER IN PARTIES TAВ
+
+Narrative: 06/01/2024 1546 MARTIN, MICAELA
+104 courtesy transport to 305 Broadway sm: 34124.7
+
+Narrative: 06/01/2024 1600 ENOS, THEODORE
+Lilly ran to the police station. I picked her up and brought
+her back to 305 broadway. According to her and the staff
+member, they had an argument but they were able to work it
+out and Lilly agreed to stay at 305. 
+
+Narrative: 06/01/2024 1603 ENOS, THEODORE
+ending 34125.8
+
+Alarm: None

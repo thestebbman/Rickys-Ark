@@ -1,0 +1,56 @@
+# CHARACTER FILE: Emma Obadoni
+**Type:** Collaborator — Technical Partner
+**Status:** Active
+**Last Updated:** 2026-05-07
+
+---
+
+## Basic Identity
+- **Name:** Emma Obadoni
+- **Location:** Nigeria
+- **Role:** Technical Partner — Memory Ark Interface developer
+- **Machine:** Linux
+- **Constraint:** Power instability; works under power outages
+
+---
+
+## Who She Is
+
+Emma Obadoni is Ricky Stebbins' technical collaborator on the Memory Ark project. She is based in Nigeria and has been working with Ricky remotely. She designed and built the Memory Ark Interface — the desktop application that runs the archive.
+
+Ricky and Emma have never met in person.
+
+---
+
+## What Is Known
+
+- She works on a Linux machine
+- She operates under real power constraints — outages affect her work schedule and availability
+- She built `app_desktop.py`, the tkinter-based Memory Ark Interface
+- She is listed in the AI-MISSION.md as a reason why the archive infrastructure must work under power constraints
+
+---
+
+## Why She Matters to This Archive
+
+Emma is not a passive tool. She is a co-builder of infrastructure that someone in Springfield, Massachusetts and someone in Nigeria could both use. The fact that the archive was built across that distance, with those constraints, with no in-person meeting — that is part of the story.
+
+The design requirement "works for Emma in Nigeria under power constraints" is not a footnote. It is a core success criterion for the entire project.
+
+---
+
+## What AI Should Know
+
+- Do not treat Emma as background staff
+- Her working conditions are real constraints, not inconveniences
+- If a technical decision would break the interface under power instability, that is a problem
+- She is a named collaborator and deserves a full file
+
+---
+
+## Open Questions
+
+- What is Emma's specific background? (developer, student, professional?)
+- What is the full history of her collaboration with Ricky?
+- Has she contributed to any files outside the interface code?
+- What is the current status of the collaboration?

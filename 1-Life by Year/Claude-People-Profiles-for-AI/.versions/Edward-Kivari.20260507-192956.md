@@ -1,0 +1,36 @@
+# CHARACTER FILE: Edward Kivari (ADA)
+**Type:** Legal Figure — Co-Prosecuting ADA  
+**Status:** Active (as of 2013 prosecution)  
+**Last Updated:** 2026-05-07
+
+---
+
+## Basic Identity
+- **Name:** Edward Kivari
+- **Title:** Assistant District Attorney (ADA)
+- **Jurisdiction:** Hampden County, Massachusetts (Springfield area)
+- **Role:** Co-prosecutor with ADA Katherine Johnston in Ricky's 2013 hit-and-run case
+
+---
+
+## What Is Documented
+
+On the trial date, May 1, 2013 (courtroom 1, 10:14am, Judge Hadley), both ADA Katherine Johnston and ADA Edward Kivari denied Ricky access to car insurance information and phone records that were relevant to his defense.
+
+This is the only documented appearance of ADA Kivari in the archive. He appears as part of the pair that withheld evidence. The primary documented pattern of misconduct (forged receipt, altered documents) falls on ADA Johnston's actions specifically in May and June 2013–2014.
+
+---
+
+## What AI Should Know
+
+- Kivari's role is documented once — as part of the evidence denial at trial
+- Do not overstate his role beyond what is documented
+- He and Johnston acted together in denying the car insurance and phone records
+- If more documentation exists in other archive files, it should be cross-referenced here
+
+---
+
+## Open Questions
+- Is ADA Kivari mentioned in any other archive files?
+- Was he involved in the post-trial proceedings (forged receipt, 2014)?
+- Were there any formal complaints filed against Kivari as well as Johnston?
