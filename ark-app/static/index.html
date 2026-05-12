@@ -565,6 +565,73 @@
     .search-result:hover { border-color: var(--human); }
     .search-snippet { font-size: 10px; color: var(--muted); margin-top: 3px; }
 
+    /* ── scratchpad / thoughts panel ── */
+    .thought-feed { display: flex; flex-direction: column; gap: 8px; }
+    .thought-entry {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 12px;
+      line-height: 1.55;
+      animation: fadeSlide .3s ease;
+    }
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(-6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .thought-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+    .thought-type {
+      padding: 2px 7px;
+      border-radius: 99px;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    .thought-type-reasoning  { background: rgba(167,139,250,.18); color: var(--ai); }
+    .thought-type-plan       { background: rgba(52,211,153,.18);  color: var(--shared); }
+    .thought-type-concern    { background: rgba(245,158,11,.22);  color: var(--warning); }
+    .thought-type-question   { background: rgba(74,158,255,.18);  color: var(--human); }
+    .thought-type-flag       { background: rgba(239,68,68,.18);   color: var(--danger); }
+    .thought-type-decision   { background: rgba(16,185,129,.18);  color: var(--success); }
+    .thought-time { font-size: 10px; color: var(--muted); margin-left: auto; }
+    .thought-text { color: #d0d8f0; white-space: pre-wrap; word-break: break-word; }
+    .thought-session { font-size: 9px; color: var(--muted); margin-top: 4px; font-style: italic; }
+    .thoughts-empty {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 40px 0;
+    }
+    .thoughts-empty .thoughts-empty-icon { font-size: 32px; margin-bottom: 8px; opacity: .3; }
+    .thoughts-live-dot {
+      display: inline-block;
+      width: 6px; height: 6px;
+      background: var(--ai);
+      border-radius: 50%;
+      animation: pulse 1.5s ease-in-out infinite;
+      margin-right: 4px;
+    }
+    .thoughts-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .thoughts-toolbar .label {
+      font-size: 11px;
+      color: var(--muted);
+      margin-right: auto;
+    }
+
     /* read indicator */
     .ai-reading-dot {
       display: inline-block;
@@ -637,7 +704,8 @@
 <div class="right-panel">
   <div class="panel-tabs">
     <div class="panel-tab active" data-tab="viewer" onclick="switchTab('viewer', this)">📄 File</div>
-    <div class="panel-tab" data-tab="perms" onclick="switchTab('perms', this)">🔐 Permissions</div>
+    <div class="panel-tab" data-tab="thoughts" onclick="switchTab('thoughts', this)">🧠 Thoughts</div>
+    <div class="panel-tab" data-tab="perms" onclick="switchTab('perms', this)">🔐 Perms</div>
     <div class="panel-tab" data-tab="mode" onclick="switchTab('mode', this)">⚙️ Mode</div>
   </div>
 
@@ -668,6 +736,19 @@
           <button class="btn" onclick="cancelEdit()">Cancel</button>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- THOUGHTS / SCRATCHPAD -->
+  <div id="tab-thoughts" style="display:none;flex-direction:column;overflow:hidden;flex:1">
+    <div class="thoughts-toolbar">
+      <span class="label"><span class="thoughts-live-dot"></span>Live · auto-refreshes</span>
+      <span id="thoughts-count" style="font-size:10px;color:var(--muted)"></span>
+      <button class="btn" style="font-size:10px;padding:2px 8px" onclick="loadScratchpad()">⟳</button>
+      <button class="btn" style="font-size:10px;padding:2px 8px;color:var(--danger)" onclick="clearScratchpad()">🗑 Clear</button>
+    </div>
+    <div class="panel-body" id="thought-feed-wrap" style="padding:10px">
+      <div class="thought-feed" id="thought-feed"></div>
     </div>
   </div>
 
@@ -830,7 +911,7 @@ window.onload = () => {
 };
 
 async function refreshAll() {
-  await Promise.all([loadFiles(), loadPermissions(), loadMode(), loadAudit()]);
+  await Promise.all([loadFiles(), loadPermissions(), loadMode(), loadAudit(), loadScratchpad()]);
 }
 
 /* ── files ───────────────────────────────────────────────────── */
@@ -1275,16 +1356,77 @@ async function submitAnnotation() {
   }
 }
 
+/* ── scratchpad / thoughts ───────────────────────────────────── */
+const THOUGHT_REFRESH_MS = 3000;
+let scratchpadEntries = [];
+let thoughtTimer = null;
+
+async function loadScratchpad() {
+  try {
+    const res = await fetch('/api/scratchpad?limit=100');
+    scratchpadEntries = await res.json();
+    renderScratchpad();
+  } catch (_) {}
+}
+
+function renderScratchpad() {
+  const feed = document.getElementById('thought-feed');
+  const count = document.getElementById('thoughts-count');
+  if (!scratchpadEntries.length) {
+    feed.innerHTML = `<div class="thoughts-empty">
+      <div class="thoughts-empty-icon">🧠</div>
+      <div>No thoughts yet</div>
+      <div style="margin-top:6px;font-size:10px">AI writes here via POST /api/scratchpad</div>
+    </div>`;
+    count.textContent = '';
+    return;
+  }
+  count.textContent = `${scratchpadEntries.length} entries`;
+  feed.innerHTML = scratchpadEntries.map(e => {
+    const time = e.timestamp ? e.timestamp.slice(11, 19) : '';
+    const typeClass = 'thought-type-' + escHtml(e.type || 'reasoning');
+    const session = e.session_id
+      ? `<div class="thought-session">session: ${escHtml(e.session_id)}</div>` : '';
+    return `<div class="thought-entry">
+      <div class="thought-meta">
+        <span class="thought-type ${typeClass}">${escHtml(e.type || 'reasoning')}</span>
+        <span class="thought-time">${escHtml(time)}</span>
+      </div>
+      <div class="thought-text">${escHtml(e.thought)}</div>
+      ${session}
+    </div>`;
+  }).join('');
+}
+
+async function clearScratchpad() {
+  if (!confirm('Clear all AI thoughts? This cannot be undone.')) return;
+  const res = await fetch('/api/scratchpad', { method: 'DELETE',
+    headers: {'Content-Type': 'application/json'}, body: JSON.stringify({}) });
+  if (res.ok) { toast('Thoughts cleared ✓', 'success'); loadScratchpad(); loadAudit(); }
+  else toast('Clear failed', 'error');
+}
+
+function startThoughtPolling() {
+  if (thoughtTimer) return;
+  thoughtTimer = setInterval(loadScratchpad, THOUGHT_REFRESH_MS);
+}
+function stopThoughtPolling() {
+  if (thoughtTimer) { clearInterval(thoughtTimer); thoughtTimer = null; }
+}
+
 /* ── tab switching ───────────────────────────────────────────── */
 function switchTab(tab, btn) {
-  ['viewer','perms','mode'].forEach(t => {
-    document.getElementById('tab-' + t).style.display = t === tab ? 'block' : 'none';
+  ['viewer','thoughts','perms','mode'].forEach(t => {
+    const el = document.getElementById('tab-' + t);
+    if (el) el.style.display = t === tab ? (t === 'thoughts' ? 'flex' : 'block') : 'none';
   });
   document.querySelectorAll('.panel-tab').forEach(b => b.classList.remove('active'));
   // find the right tab button using data-tab attribute
   document.querySelectorAll('.panel-tab').forEach(b => {
     if (b.dataset.tab === tab) b.classList.add('active');
   });
+  if (tab === 'thoughts') { loadScratchpad(); startThoughtPolling(); }
+  else stopThoughtPolling();
 }
 
 /* ── modals ──────────────────────────────────────────────────── */

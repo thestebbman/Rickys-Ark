@@ -21,6 +21,7 @@ BASE_DIR = Path(__file__).parent
 WORKSPACE = BASE_DIR / "workspace"
 SYSTEM_DIR = BASE_DIR / "system"
 AUDIT_LOG = SYSTEM_DIR / "logs" / "audit.jsonl"
+SCRATCHPAD_LOG = SYSTEM_DIR / "logs" / "scratchpad.jsonl"
 PERMISSIONS_FILE = SYSTEM_DIR / "permissions.json"
 MODE_FILE = SYSTEM_DIR / "mode.json"
 STATIC_DIR = BASE_DIR / "static"
@@ -490,6 +491,84 @@ def api_search():
             except (UnicodeDecodeError, PermissionError):
                 pass
     return jsonify(results[:MAX_SEARCH_RESULTS])
+
+
+# ── routes — scratchpad ─────────────────────────────────────────────────────
+
+SCRATCHPAD_TYPES = {"reasoning", "plan", "concern", "question", "flag", "decision"}
+
+
+def write_scratchpad(thought: str, type_: str = "reasoning",
+                     session_id: str = "") -> dict:
+    """Append one thought entry to the scratchpad log and return it."""
+    entry = {
+        "id": str(uuid.uuid4()),
+        "timestamp": now_iso(),
+        "type": type_ if type_ in SCRATCHPAD_TYPES else "reasoning",
+        "thought": thought,
+        "session_id": session_id,
+    }
+    SCRATCHPAD_LOG.parent.mkdir(parents=True, exist_ok=True)
+    with open(SCRATCHPAD_LOG, "a", encoding="utf-8") as f:
+        f.write(json.dumps(entry) + "\n")
+    return entry
+
+
+def read_scratchpad(limit: int = 200, session_id: str = "") -> list:
+    if not SCRATCHPAD_LOG.exists():
+        return []
+    entries = []
+    with open(SCRATCHPAD_LOG, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line:
+                try:
+                    entries.append(json.loads(line))
+                except json.JSONDecodeError:
+                    pass
+    if session_id:
+        entries = [e for e in entries if e.get("session_id") == session_id]
+    return list(reversed(entries))[:limit]  # newest first
+
+
+@app.route("/api/scratchpad", methods=["GET"])
+def api_get_scratchpad():
+    limit = int(request.args.get("limit", 200))
+    session_id = request.args.get("session_id", "")
+    return jsonify(read_scratchpad(limit=limit, session_id=session_id))
+
+
+@app.route("/api/scratchpad", methods=["POST"])
+def api_post_scratchpad():
+    data = request.json or {}
+    thought = data.get("thought", "").strip()
+    if not thought:
+        return jsonify({"error": "thought is required"}), 400
+    type_ = data.get("type", "reasoning")
+    session_id = data.get("session_id", "")
+    entry = write_scratchpad(thought, type_=type_, session_id=session_id)
+    write_audit("ai", "scratchpad_write", "system", "", "allowed",
+                f"[{type_}] {thought[:80]}")
+    return jsonify(entry), 201
+
+
+@app.route("/api/scratchpad", methods=["DELETE"])
+def api_clear_scratchpad():
+    session_id = (request.json or {}).get("session_id", "")
+    if session_id:
+        # remove only entries matching session_id
+        entries = read_scratchpad(limit=10000)
+        kept = [e for e in reversed(entries) if e.get("session_id") != session_id]
+        SCRATCHPAD_LOG.parent.mkdir(parents=True, exist_ok=True)
+        with open(SCRATCHPAD_LOG, "w", encoding="utf-8") as f:
+            for e in kept:
+                f.write(json.dumps(e) + "\n")
+    else:
+        if SCRATCHPAD_LOG.exists():
+            SCRATCHPAD_LOG.unlink()
+    write_audit("human", "scratchpad_clear", "system", "", "allowed",
+                f"session_id={session_id or 'all'}")
+    return jsonify({"ok": True})
 
 
 # ── bootstrap ────────────────────────────────────────────────────────────────
