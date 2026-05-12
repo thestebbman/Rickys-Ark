@@ -1400,8 +1400,11 @@ function renderScratchpad() {
 
 async function clearScratchpad() {
   if (!confirm('Clear all AI thoughts? This cannot be undone.')) return;
-  const res = await fetch('/api/scratchpad', { method: 'DELETE',
-    headers: {'Content-Type': 'application/json'}, body: JSON.stringify({}) });
+  const res = await fetch('/api/scratchpad', {
+    method: 'DELETE',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({}),
+  });
   if (res.ok) { toast('Thoughts cleared ✓', 'success'); loadScratchpad(); loadAudit(); }
   else toast('Clear failed', 'error');
 }

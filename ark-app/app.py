@@ -151,7 +151,6 @@ def safe_resolve(zone: str, rel: str) -> Path:
     except ValueError:
         raise ValueError(f"Path '{rel}' escapes zone '{zone}'")
     return result
-    return resolved
 
 
 def check_permission(actor: str, action: str, zone: str) -> bool:
