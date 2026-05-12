@@ -28,6 +28,9 @@ MODE_FILE = SYSTEM_DIR / "mode.json"
 
 ZONES = ["human", "ai", "shared", "debate"]
 
+MAX_SEARCH_RESULTS = 50
+SNIPPET_CONTEXT_CHARS = 40
+
 ZONE_LABELS = {
     "human":  "🔵 Human",
     "ai":     "🟣 AI",
@@ -758,11 +761,11 @@ class ArkDesktop:
                     content = fpath.read_text(encoding="utf-8")
                     if query in content.lower():
                         idx = content.lower().find(query)
-                        snippet = content[max(0, idx - 40):idx + 40].replace("\n", " ")
+                        snippet = content[max(0, idx - SNIPPET_CONTEXT_CHARS):idx + SNIPPET_CONTEXT_CHARS].replace("\n", " ")
                         results.append((zone, rel, f"…{snippet}…"))
                 except (UnicodeDecodeError, OSError):
                     pass
-                if len(results) >= 50:
+                if len(results) >= MAX_SEARCH_RESULTS:
                     break
 
         if not results:
