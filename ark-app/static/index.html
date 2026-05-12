@@ -636,9 +636,9 @@
 <!-- ── RIGHT PANEL ── -->
 <div class="right-panel">
   <div class="panel-tabs">
-    <div class="panel-tab active" onclick="switchTab('viewer', this)">📄 File</div>
-    <div class="panel-tab" onclick="switchTab('perms', this)">🔐 Permissions</div>
-    <div class="panel-tab" onclick="switchTab('mode', this)">⚙️ Mode</div>
+    <div class="panel-tab active" data-tab="viewer" onclick="switchTab('viewer', this)">📄 File</div>
+    <div class="panel-tab" data-tab="perms" onclick="switchTab('perms', this)">🔐 Permissions</div>
+    <div class="panel-tab" data-tab="mode" onclick="switchTab('mode', this)">⚙️ Mode</div>
   </div>
 
   <!-- FILE VIEWER -->
@@ -1281,11 +1281,9 @@ function switchTab(tab, btn) {
     document.getElementById('tab-' + t).style.display = t === tab ? 'block' : 'none';
   });
   document.querySelectorAll('.panel-tab').forEach(b => b.classList.remove('active'));
-  // find the right tab button
+  // find the right tab button using data-tab attribute
   document.querySelectorAll('.panel-tab').forEach(b => {
-    if (b.getAttribute('onclick') && b.getAttribute('onclick').includes("'" + tab + "'")) {
-      b.classList.add('active');
-    }
+    if (b.dataset.tab === tab) b.classList.add('active');
   });
 }
 

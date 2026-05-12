@@ -128,18 +128,28 @@ def zone_path(zone: str) -> Path:
 def safe_resolve(zone: str, rel: str) -> Path:
     """Resolve a user-supplied relative path inside a zone, preventing traversal.
 
-    Raises ValueError if the resolved path escapes the zone directory.
+    Builds the path component by component, explicitly rejecting '..' and
+    absolute path separators, then does a final resolved-path check.
+    Raises ValueError if the resulting path escapes the zone directory.
     """
     base = zone_path(zone).resolve()
-    # Normalise: strip leading slashes / dots that could escape the base
-    # Use os.path.normpath then re-join to resolve any '..' components.
-    clean = Path(os.path.normpath(rel))
-    resolved = (base / clean).resolve()
-    # Ensure the resolved path starts with the zone base
+    # Decompose into individual components and filter dangerous ones
+    raw_parts = Path(rel).parts
+    clean_parts: list = []
+    for part in raw_parts:
+        # Reject any component that would escape the base
+        if part in ("..", ".", "") or part.startswith("/") or part.startswith("\\"):
+            raise ValueError(f"Unsafe path component '{part}' in '{rel}'")
+        clean_parts.append(part)
+    if not clean_parts:
+        raise ValueError(f"Empty or invalid path '{rel}'")
+    result = base.joinpath(*clean_parts)
+    # Final defence: confirm the resolved canonical path is still inside base
     try:
-        resolved.relative_to(base)
+        result.resolve().relative_to(base)
     except ValueError:
         raise ValueError(f"Path '{rel}' escapes zone '{zone}'")
+    return result
     return resolved
 
 
