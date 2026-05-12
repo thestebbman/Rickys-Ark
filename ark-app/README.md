@@ -30,17 +30,43 @@ The Memory Ark Interface gives you and an AI partner a shared workspace where:
 
 ## Quick Start
 
-### 1. Install Python (3.8 or newer)
+### Option A — Desktop App (no browser needed)
+
+Uses Python's built-in `tkinter` library — **no extra installs required**.
+
+#### 1. Install Python (3.8 or newer)
 
 Download from https://python.org if you don't have it.
 
-### 2. Open a terminal and go to the `ark-app` folder
+#### 2. Open a terminal and go to the `ark-app` folder
 
 ```bash
 cd path/to/Rickys-Ark/ark-app
 ```
 
-### 3. Install dependencies
+#### 3. Run the desktop app
+
+```bash
+python desktop_app.py
+```
+
+A native desktop window opens immediately — no browser required.
+
+---
+
+### Option B — Web Interface (browser-based)
+
+#### 1. Install Python (3.8 or newer)
+
+Download from https://python.org if you don't have it.
+
+#### 2. Open a terminal and go to the `ark-app` folder
+
+```bash
+cd path/to/Rickys-Ark/ark-app
+```
+
+#### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -58,7 +84,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Run the app
+#### 4. Run the app
 
 ```bash
 python app.py
@@ -70,9 +96,13 @@ You'll see:
 🌊 Memory Ark Interface — running at http://127.0.0.1:5000
 ```
 
-### 5. Open your browser
+#### 5. Open your browser
 
 Go to: **http://127.0.0.1:5000**
+
+---
+
+Both interfaces share the same workspace files, audit log, permissions, and mode settings — you can use either one or switch between them.
 
 ---
 
