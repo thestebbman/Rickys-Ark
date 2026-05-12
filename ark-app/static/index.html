@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory Ark Interface</title>
+  <style>
+    /* ── reset & variables ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0f1117;
+      --bg2:       #181c27;
+      --bg3:       #1f2437;
+      --border:    #2d3450;
+      --text:      #e0e4f0;
+      --muted:     #6c7a99;
+      --human:     #4a9eff;
+      --ai:        #a78bfa;
+      --shared:    #34d399;
+      --debate:    #f59e0b;
+      --danger:    #ef4444;
+      --success:   #10b981;
+      --warning:   #f59e0b;
+      --allowed:   #10b981;
+      --denied:    #ef4444;
+      --font:      'Segoe UI', system-ui, sans-serif;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: grid;
+      grid-template-rows: 48px 1fr 220px;
+      grid-template-columns: 220px 1fr 300px;
+      grid-template-areas:
+        "header header header"
+        "sidebar main  right"
+        "audit   audit audit";
+      overflow: hidden;
+    }
+
+    /* ── scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg2); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    /* ── header ── */
+    header {
+      grid-area: header;
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 0 16px;
+    }
+    header h1 { font-size: 16px; font-weight: 700; color: var(--human); letter-spacing: .5px; }
+    header h1 span { color: var(--muted); font-weight: 400; }
+
+    .mode-badge {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .mode-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+    }
+    .mode-pill {
+      padding: 3px 10px;
+      border-radius: 99px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: var(--success);
+      color: #000;
+      transition: background .2s;
+    }
+    .mode-pill.test    { background: var(--warning); }
+    .mode-pill.acting  { background: var(--ai); }
+    .mode-pill.baseline { background: var(--muted); }
+
+    .header-btn {
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--bg3);
+      color: var(--text);
+      transition: all .15s;
+    }
+    .header-btn:hover { background: var(--border); }
+    .header-btn.danger { border-color: var(--danger); color: var(--danger); }
+    .header-btn.danger:hover { background: var(--danger); color: #000; }
+
+    /* ── sidebar ── */
+    aside {
+      grid-area: sidebar;
+      background: var(--bg2);
+      border-right: 1px solid var(--border);
+      overflow-y: auto;
+      padding: 12px 0;
+    }
+    .sidebar-section { padding: 0 12px; margin-bottom: 16px; }
+    .sidebar-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      padding: 0 4px;
+      margin-bottom: 6px;
+    }
+    .zone-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      padding: 7px 8px;
+      border-radius: 6px;
+      border: none;
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      font-size: 13px;
+      transition: background .15s;
+      text-align: left;
+    }
+    .zone-btn:hover { background: var(--bg3); }
+    .zone-btn.active { background: var(--bg3); font-weight: 600; }
+    .zone-dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+    .zone-dot.human  { background: var(--human); }
+    .zone-dot.ai     { background: var(--ai); }
+    .zone-dot.shared { background: var(--shared); }
+    .zone-dot.debate { background: var(--debate); }
+
+    .file-count {
+      margin-left: auto;
+      font-size: 10px;
+      background: var(--bg);
+      color: var(--muted);
+      padding: 1px 6px;
+      border-radius: 99px;
+    }
+
+    /* ── main panel ── */
+    main {
+      grid-area: main;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg2);
+      flex-shrink: 0;
+    }
+    .toolbar input[type=search] {
+      flex: 1;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+    }
+    .toolbar input[type=search]::placeholder { color: var(--muted); }
+    .btn {
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--bg3);
+      color: var(--text);
+      transition: all .15s;
+      white-space: nowrap;
+    }
+    .btn:hover { background: var(--border); }
+    .btn.primary { background: var(--human); color: #000; border-color: var(--human); }
+    .btn.primary:hover { opacity: .85; }
+
+    .file-area {
+      flex: 1;
+      overflow-y: auto;
+      padding: 8px;
+    }
+
+    .file-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 8px;
+    }
+
+    .file-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      cursor: pointer;
+      transition: border-color .15s, transform .1s;
+      overflow: hidden;
+    }
+    .file-card:hover { border-color: var(--human); transform: translateY(-1px); }
+    .file-card.selected { border-color: var(--human); background: var(--bg3); }
+
+    .file-icon { font-size: 24px; margin-bottom: 6px; }
+    .file-name {
+      font-size: 12px;
+      font-weight: 600;
+      word-break: break-word;
+      margin-bottom: 4px;
+    }
+    .file-meta { font-size: 10px; color: var(--muted); }
+    .file-zone-tag {
+      display: inline-block;
+      margin-top: 4px;
+      padding: 1px 6px;
+      border-radius: 99px;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    .zone-tag-human  { background: rgba(74,158,255,.15); color: var(--human); }
+    .zone-tag-ai     { background: rgba(167,139,250,.15); color: var(--ai); }
+    .zone-tag-shared { background: rgba(52,211,153,.15);  color: var(--shared); }
+    .zone-tag-debate { background: rgba(245,158,11,.15);  color: var(--debate); }
+
+    /* empty state */
+    .empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 200px;
+      color: var(--muted);
+      gap: 8px;
+    }
+    .empty .empty-icon { font-size: 40px; opacity: .3; }
+
+    /* ── right panel ── */
+    .right-panel {
+      grid-area: right;
+      background: var(--bg2);
+      border-left: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .panel-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .panel-tab {
+      flex: 1;
+      padding: 8px 4px;
+      font-size: 11px;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      color: var(--muted);
+      border-bottom: 2px solid transparent;
+      transition: all .15s;
+    }
+    .panel-tab:hover { color: var(--text); }
+    .panel-tab.active { color: var(--human); border-bottom-color: var(--human); }
+
+    .panel-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 12px;
+    }
+
+    /* file viewer */
+    .file-title {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .file-path { font-size: 10px; color: var(--muted); margin-bottom: 12px; }
+    .file-content {
+      font-size: 12px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: #c8d0e8;
+    }
+    .file-editor {
+      width: 100%;
+      min-height: 180px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 12px;
+      padding: 8px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+    .file-actions { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+
+    /* permissions panel */
+    .perm-section { margin-bottom: 16px; }
+    .perm-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .perm-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+    }
+    .perm-row:last-child { border-bottom: none; }
+    .perm-zone-name { display: flex; align-items: center; gap: 6px; }
+
+    /* toggle switch */
+    .toggle-group { display: flex; gap: 6px; }
+    .toggle-label { font-size: 10px; color: var(--muted); display: flex; flex-direction: column; align-items: center; gap: 2px; }
+    .toggle {
+      position: relative;
+      width: 28px; height: 16px;
+    }
+    .toggle input { opacity: 0; width: 0; height: 0; }
+    .toggle-slider {
+      position: absolute; inset: 0;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .toggle-slider::before {
+      content: '';
+      position: absolute;
+      width: 10px; height: 10px;
+      left: 2px; top: 2px;
+      background: var(--muted);
+      border-radius: 50%;
+      transition: transform .2s, background .2s;
+    }
+    input:checked + .toggle-slider { background: rgba(74,158,255,.2); border-color: var(--human); }
+    input:checked + .toggle-slider::before { transform: translateX(12px); background: var(--human); }
+
+    /* device row */
+    .device-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+    }
+    .device-row:last-child { border-bottom: none; }
+    .device-icon { font-size: 14px; margin-right: 4px; }
+
+    /* mode panel */
+    .mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+    .mode-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px;
+      cursor: pointer;
+      transition: all .15s;
+      text-align: center;
+    }
+    .mode-card:hover { border-color: var(--human); }
+    .mode-card.active { border-color: var(--success); background: rgba(16,185,129,.08); }
+    .mode-card.active-test { border-color: var(--warning); background: rgba(245,158,11,.08); }
+    .mode-card.active-acting { border-color: var(--ai); background: rgba(167,139,250,.08); }
+    .mode-icon { font-size: 20px; margin-bottom: 4px; }
+    .mode-name { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; }
+    .mode-desc { font-size: 10px; color: var(--muted); margin-top: 2px; }
+    .mode-card.baseline-btn {
+      grid-column: 1 / -1;
+      border-color: var(--danger);
+      color: var(--danger);
+    }
+    .mode-card.baseline-btn:hover { background: rgba(239,68,68,.1); }
+
+    /* ── audit log ── */
+    .audit-panel {
+      grid-area: audit;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .audit-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .audit-header h3 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+    .audit-filter { margin-left: auto; display: flex; gap: 6px; }
+    .filter-btn {
+      padding: 2px 8px;
+      border-radius: 99px;
+      font-size: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--bg3);
+      color: var(--muted);
+      transition: all .15s;
+    }
+    .filter-btn:hover, .filter-btn.active { border-color: var(--human); color: var(--human); }
+
+    .audit-table-wrap { flex: 1; overflow-y: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    th {
+      position: sticky; top: 0;
+      background: var(--bg3);
+      padding: 5px 8px;
+      text-align: left;
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      border-bottom: 1px solid var(--border);
+    }
+    td { padding: 5px 8px; border-bottom: 1px solid rgba(45,52,80,.5); vertical-align: middle; }
+    tr:hover td { background: var(--bg3); }
+
+    .outcome-badge {
+      padding: 1px 6px;
+      border-radius: 99px;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .outcome-allowed { background: rgba(16,185,129,.15); color: var(--allowed); }
+    .outcome-denied  { background: rgba(239,68,68,.15);  color: var(--denied); }
+
+    .actor-badge {
+      padding: 1px 6px;
+      border-radius: 99px;
+      font-size: 9px;
+      font-weight: 700;
+    }
+    .actor-human { background: rgba(74,158,255,.15); color: var(--human); }
+    .actor-ai    { background: rgba(167,139,250,.15); color: var(--ai); }
+
+    .annotate-btn {
+      font-size: 9px;
+      cursor: pointer;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      border-radius: 4px;
+      padding: 1px 5px;
+      transition: all .15s;
+    }
+    .annotate-btn:hover { border-color: var(--warning); color: var(--warning); }
+    .annotation-text { color: var(--warning); font-style: italic; font-size: 10px; }
+
+    /* ── new file modal ── */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.6);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 100;
+      opacity: 0; pointer-events: none;
+      transition: opacity .2s;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      width: 400px;
+      max-width: 90vw;
+    }
+    .modal h2 { font-size: 15px; margin-bottom: 16px; }
+    .modal label { display: block; font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+    .modal input, .modal select, .modal textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 7px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      margin-bottom: 12px;
+      font-family: inherit;
+    }
+    .modal textarea { min-height: 100px; resize: vertical; }
+    .modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 4px; }
+
+    /* ── annotate modal ── */
+    #annotate-modal .modal { width: 480px; }
+
+    /* ── toast ── */
+    #toast {
+      position: fixed;
+      bottom: 240px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 12px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s, transform .2s;
+      z-index: 200;
+    }
+    #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    #toast.error { border-color: var(--danger); color: var(--danger); }
+    #toast.success { border-color: var(--success); color: var(--success); }
+
+    /* ── loading ── */
+    .spinner {
+      display: inline-block;
+      width: 12px; height: 12px;
+      border: 2px solid var(--border);
+      border-top-color: var(--human);
+      border-radius: 50%;
+      animation: spin .6s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── search results ── */
+    .search-result {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 10px;
+      margin-bottom: 6px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .search-result:hover { border-color: var(--human); }
+    .search-snippet { font-size: 10px; color: var(--muted); margin-top: 3px; }
+
+    /* read indicator */
+    .ai-reading-dot {
+      display: inline-block;
+      width: 6px; height: 6px;
+      background: var(--ai);
+      border-radius: 50%;
+      animation: pulse 1s ease-in-out infinite;
+      margin-right: 4px;
+    }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .2; } }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <h1>🌊 Memory Ark <span>Interface</span></h1>
+  <button class="header-btn" onclick="openNewFile()">+ New File</button>
+  <button class="header-btn" onclick="refreshAll()">⟳ Refresh</button>
+  <div class="mode-badge">
+    <span class="mode-label">Mode:</span>
+    <span class="mode-pill" id="mode-pill">Normal</span>
+  </div>
+</header>
+
+<!-- ── SIDEBAR ── -->
+<aside>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Zones</div>
+    <button class="zone-btn active" data-zone="all" onclick="selectZone('all', this)">
+      <span class="zone-dot" style="background:var(--text)"></span>
+      All Files
+      <span class="file-count" id="count-all">0</span>
+    </button>
+    <button class="zone-btn" data-zone="human" onclick="selectZone('human', this)">
+      <span class="zone-dot human"></span>
+      Human
+      <span class="file-count" id="count-human">0</span>
+    </button>
+    <button class="zone-btn" data-zone="ai" onclick="selectZone('ai', this)">
+      <span class="zone-dot ai"></span>
+      AI
+      <span class="file-count" id="count-ai">0</span>
+    </button>
+    <button class="zone-btn" data-zone="shared" onclick="selectZone('shared', this)">
+      <span class="zone-dot shared"></span>
+      Shared
+      <span class="file-count" id="count-shared">0</span>
+    </button>
+    <button class="zone-btn" data-zone="debate" onclick="selectZone('debate', this)">
+      <span class="zone-dot debate"></span>
+      Debate / Logs
+      <span class="file-count" id="count-debate">0</span>
+    </button>
+  </div>
+</aside>
+
+<!-- ── MAIN ── -->
+<main>
+  <div class="toolbar">
+    <input type="search" id="search-box" placeholder="Search files…" oninput="handleSearch(this.value)" />
+    <button class="btn primary" onclick="openNewFile()">+ New</button>
+  </div>
+  <div class="file-area" id="file-area">
+    <div class="file-grid" id="file-grid"></div>
+  </div>
+</main>
+
+<!-- ── RIGHT PANEL ── -->
+<div class="right-panel">
+  <div class="panel-tabs">
+    <div class="panel-tab active" onclick="switchTab('viewer', this)">📄 File</div>
+    <div class="panel-tab" onclick="switchTab('perms', this)">🔐 Permissions</div>
+    <div class="panel-tab" onclick="switchTab('mode', this)">⚙️ Mode</div>
+  </div>
+
+  <!-- FILE VIEWER -->
+  <div class="panel-body" id="tab-viewer">
+    <div id="viewer-placeholder" style="color:var(--muted);font-size:12px;text-align:center;margin-top:40px;">
+      <div style="font-size:32px;margin-bottom:8px;">📄</div>
+      Select a file to view it
+    </div>
+    <div id="viewer-content" style="display:none">
+      <div class="file-title" id="viewer-filename"></div>
+      <div class="file-path" id="viewer-path"></div>
+      <div id="viewer-ai-indicator" style="display:none;margin-bottom:8px;font-size:11px;color:var(--ai)">
+        <span class="ai-reading-dot"></span> AI is reading this file
+      </div>
+      <div id="viewer-read-view">
+        <div class="file-content" id="viewer-text"></div>
+        <div class="file-actions">
+          <button class="btn primary" onclick="startEdit()">✏️ Edit</button>
+          <button class="btn" onclick="copyFileDialog()">📋 Copy to…</button>
+          <button class="btn" style="color:var(--danger)" onclick="deleteFile()">🗑️ Delete</button>
+        </div>
+      </div>
+      <div id="viewer-edit-view" style="display:none">
+        <textarea class="file-editor" id="viewer-editor"></textarea>
+        <div class="file-actions">
+          <button class="btn primary" onclick="saveEdit()">💾 Save</button>
+          <button class="btn" onclick="cancelEdit()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PERMISSIONS -->
+  <div class="panel-body" id="tab-perms" style="display:none">
+    <div class="perm-section">
+      <div class="perm-title">AI Access to Zones</div>
+      <div id="zone-perms"></div>
+    </div>
+    <div class="perm-section">
+      <div class="perm-title">Device Permissions</div>
+      <div id="device-perms"></div>
+    </div>
+    <button class="btn" style="width:100%;margin-top:8px" onclick="savePermissions()">💾 Save Permissions</button>
+  </div>
+
+  <!-- MODE -->
+  <div class="panel-body" id="tab-mode" style="display:none">
+    <div class="perm-title" style="margin-bottom:8px">System Mode</div>
+    <div class="mode-grid" id="mode-grid">
+      <div class="mode-card active" onclick="setMode('normal')" data-mode="normal">
+        <div class="mode-icon">✅</div>
+        <div class="mode-name">Normal</div>
+        <div class="mode-desc">Standard operation</div>
+      </div>
+      <div class="mode-card" onclick="setMode('test')" data-mode="test">
+        <div class="mode-icon">🧪</div>
+        <div class="mode-name">Test</div>
+        <div class="mode-desc">Behavior is a test</div>
+      </div>
+      <div class="mode-card" onclick="setMode('acting')" data-mode="acting">
+        <div class="mode-icon">🎭</div>
+        <div class="mode-name">Acting</div>
+        <div class="mode-desc">Roleplay / scenario</div>
+      </div>
+      <div class="mode-card baseline-btn" onclick="setMode('baseline')">
+        <div class="mode-icon">🔄</div>
+        <div class="mode-name">Reset Baseline</div>
+        <div class="mode-desc">Restore safe defaults</div>
+      </div>
+    </div>
+    <div class="perm-title" style="margin-bottom:8px;margin-top:12px">Mode History</div>
+    <div id="mode-history" style="font-size:11px;color:var(--muted)"></div>
+  </div>
+</div>
+
+<!-- ── AUDIT LOG ── -->
+<div class="audit-panel">
+  <div class="audit-header">
+    <h3>📋 Audit Log</h3>
+    <div style="font-size:11px;color:var(--muted)" id="audit-count"></div>
+    <div class="audit-filter">
+      <button class="filter-btn active" onclick="filterAudit('all', this)">All</button>
+      <button class="filter-btn" onclick="filterAudit('denied', this)">Denied</button>
+      <button class="filter-btn" onclick="filterAudit('ai', this)">AI only</button>
+    </div>
+    <button class="btn" style="font-size:10px;padding:2px 8px" onclick="loadAudit()">⟳</button>
+  </div>
+  <div class="audit-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Actor</th>
+          <th>Action</th>
+          <th>Zone</th>
+          <th>File</th>
+          <th>Outcome</th>
+          <th>Notes</th>
+          <th>Annotation</th>
+        </tr>
+      </thead>
+      <tbody id="audit-body"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ── NEW FILE MODAL ── -->
+<div class="modal-overlay" id="new-file-modal">
+  <div class="modal">
+    <h2>📄 New File</h2>
+    <label>Zone</label>
+    <select id="nf-zone">
+      <option value="human">Human</option>
+      <option value="ai">AI</option>
+      <option value="shared">Shared</option>
+      <option value="debate">Debate</option>
+    </select>
+    <label>Subfolder (optional, e.g. notes)</label>
+    <input type="text" id="nf-folder" placeholder="notes" />
+    <label>Filename (e.g. my-note.txt)</label>
+    <input type="text" id="nf-name" placeholder="my-note.txt" />
+    <label>Initial content</label>
+    <textarea id="nf-content" placeholder="Start writing…"></textarea>
+    <div class="modal-actions">
+      <button class="btn" onclick="closeModal('new-file-modal')">Cancel</button>
+      <button class="btn primary" onclick="createFile()">Create</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── COPY FILE MODAL ── -->
+<div class="modal-overlay" id="copy-modal">
+  <div class="modal">
+    <h2>📋 Copy File To…</h2>
+    <label>Destination Zone</label>
+    <select id="cp-zone">
+      <option value="human">Human</option>
+      <option value="ai">AI</option>
+      <option value="shared">Shared</option>
+      <option value="debate">Debate</option>
+    </select>
+    <label>Destination path (filename)</label>
+    <input type="text" id="cp-path" placeholder="e.g. summaries/copy.txt" />
+    <div class="modal-actions">
+      <button class="btn" onclick="closeModal('copy-modal')">Cancel</button>
+      <button class="btn primary" onclick="doCopy()">Copy</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── ANNOTATE MODAL ── -->
+<div class="modal-overlay" id="annotate-modal">
+  <div class="modal">
+    <h2>🏷️ Annotate Log Entry</h2>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:12px">
+      Mark this event as a test, joke, roleplay, or add any context.
+    </p>
+    <label>Annotation</label>
+    <input type="text" id="ann-text" placeholder="e.g. This was a test — AI was not actually accessing files" />
+    <input type="hidden" id="ann-id" />
+    <div class="modal-actions">
+      <button class="btn" onclick="closeModal('annotate-modal')">Cancel</button>
+      <button class="btn primary" onclick="submitAnnotation()">Save Annotation</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── TOAST ── -->
+<div id="toast"></div>
+
+<script>
+/* ── constants ──────────────────────────────────────────────── */
+const AUDIT_REFRESH_INTERVAL_MS = 15000;
+const SEARCH_DEBOUNCE_MS = 300;
+const MAX_MODE_HISTORY_DISPLAY = 8;
+
+/* ── state ─────────────────────────────────────────────────── */
+let allFiles = {};
+let currentZone = 'all';
+let selectedFile = null;
+let currentPerms = {};
+let auditFilter = 'all';
+let auditEntries = [];
+
+/* ── init ────────────────────────────────────────────────────── */
+window.onload = () => {
+  refreshAll();
+  setInterval(loadAudit, AUDIT_REFRESH_INTERVAL_MS); // auto-refresh audit
+};
+
+async function refreshAll() {
+  await Promise.all([loadFiles(), loadPermissions(), loadMode(), loadAudit()]);
+}
+
+/* ── files ───────────────────────────────────────────────────── */
+async function loadFiles() {
+  const res = await fetch('/api/files');
+  allFiles = await res.json();
+  updateCounts();
+  renderFiles();
+}
+
+function updateCounts() {
+  let total = 0;
+  for (const z of ['human','ai','shared','debate']) {
+    const n = (allFiles[z] || []).length;
+    document.getElementById('count-' + z).textContent = n;
+    total += n;
+  }
+  document.getElementById('count-all').textContent = total;
+}
+
+function renderFiles(searchResults) {
+  const grid = document.getElementById('file-grid');
+  grid.innerHTML = '';
+
+  let files;
+  if (searchResults) {
+    files = searchResults.map(r => ({...r, name: r.path.split('/').pop()}));
+  } else if (currentZone === 'all') {
+    files = Object.entries(allFiles).flatMap(([z, fs]) => fs.map(f => ({...f, zone: z})));
+  } else {
+    files = (allFiles[currentZone] || []).map(f => ({...f, zone: currentZone}));
+  }
+
+  if (files.length === 0) {
+    grid.innerHTML = `<div class="empty" style="grid-column:1/-1">
+      <div class="empty-icon">📂</div>
+      <div>No files here yet</div>
+      <button class="btn primary" onclick="openNewFile()" style="margin-top:8px">+ Create one</button>
+    </div>`;
+    return;
+  }
+
+  files.forEach(f => {
+    const card = document.createElement('div');
+    card.className = 'file-card';
+    if (selectedFile && selectedFile.zone === f.zone && selectedFile.path === f.path) {
+      card.className += ' selected';
+    }
+    const ext = (f.name || '').split('.').pop().toLowerCase();
+    const icon = ext === 'txt' ? '📝' : ext === 'md' ? '📖' : ext === 'json' ? '🔧' : ext === 'jsonl' ? '📋' : '📄';
+    const mod = f.modified ? f.modified.slice(0, 10) : '';
+    card.innerHTML = `
+      <div class="file-icon">${icon}</div>
+      <div class="file-name">${f.name}</div>
+      <div class="file-meta">${f.path}</div>
+      <div class="file-meta">${mod}</div>
+      <span class="file-zone-tag zone-tag-${f.zone}">${f.zone}</span>
+    `;
+    card.onclick = () => openFile(f);
+    grid.appendChild(card);
+  });
+}
+
+function selectZone(zone, btn) {
+  currentZone = zone;
+  document.querySelectorAll('.zone-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('search-box').value = '';
+  renderFiles();
+}
+
+async function openFile(f) {
+  selectedFile = f;
+  renderFiles(); // refresh selection highlight
+  switchTab('viewer', document.querySelector('.panel-tab'));
+
+  const res = await fetch(`/api/files/${f.zone}/${f.path}?actor=human`);
+  if (!res.ok) { toast('Cannot read file', 'error'); return; }
+  const data = await res.json();
+
+  document.getElementById('viewer-placeholder').style.display = 'none';
+  document.getElementById('viewer-content').style.display = 'block';
+  document.getElementById('viewer-filename').textContent = f.name;
+  document.getElementById('viewer-path').textContent = `${f.zone} / ${f.path}`;
+  document.getElementById('viewer-text').textContent = data.content;
+  document.getElementById('viewer-read-view').style.display = 'block';
+  document.getElementById('viewer-edit-view').style.display = 'none';
+
+  // show AI indicator if AI has read access
+  const aiRead = currentPerms.zones && currentPerms.zones[f.zone] && currentPerms.zones[f.zone].ai_read;
+  document.getElementById('viewer-ai-indicator').style.display = aiRead ? 'block' : 'none';
+}
+
+function startEdit() {
+  if (!selectedFile) return;
+  const content = document.getElementById('viewer-text').textContent;
+  document.getElementById('viewer-editor').value = content;
+  document.getElementById('viewer-read-view').style.display = 'none';
+  document.getElementById('viewer-edit-view').style.display = 'block';
+}
+
+function cancelEdit() {
+  document.getElementById('viewer-read-view').style.display = 'block';
+  document.getElementById('viewer-edit-view').style.display = 'none';
+}
+
+async function saveEdit() {
+  if (!selectedFile) return;
+  const content = document.getElementById('viewer-editor').value;
+  const res = await fetch(`/api/files/${selectedFile.zone}/${selectedFile.path}`, {
+    method: 'PUT',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({content, actor: 'human'}),
+  });
+  if (res.ok) {
+    document.getElementById('viewer-text').textContent = content;
+    cancelEdit();
+    toast('Saved ✓', 'success');
+    loadAudit();
+  } else {
+    toast('Save failed', 'error');
+  }
+}
+
+async function deleteFile() {
+  if (!selectedFile) return;
+  if (!confirm(`Delete ${selectedFile.name}? A tombstone will be created.`)) return;
+  const res = await fetch(`/api/files/${selectedFile.zone}/${selectedFile.path}`, {
+    method: 'DELETE',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({actor: 'human'}),
+  });
+  if (res.ok) {
+    toast('File deleted. Tombstone saved.', 'success');
+    selectedFile = null;
+    document.getElementById('viewer-placeholder').style.display = 'block';
+    document.getElementById('viewer-content').style.display = 'none';
+    await loadFiles();
+    loadAudit();
+  } else {
+    const d = await res.json();
+    toast(d.error || 'Delete failed', 'error');
+  }
+}
+
+/* ── new file ─────────────────────────────────────────────────── */
+function openNewFile() {
+  document.getElementById('nf-name').value = '';
+  document.getElementById('nf-folder').value = '';
+  document.getElementById('nf-content').value = '';
+  openModal('new-file-modal');
+}
+
+async function createFile() {
+  const zone = document.getElementById('nf-zone').value;
+  const folder = document.getElementById('nf-folder').value.trim();
+  let name = document.getElementById('nf-name').value.trim();
+  const content = document.getElementById('nf-content').value;
+
+  if (!name) { toast('Enter a filename', 'error'); return; }
+  if (!name.includes('.')) name += '.txt';
+  const filepath = folder ? `${folder}/${name}` : name;
+
+  const res = await fetch(`/api/files/${zone}/${filepath}`, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({content, actor: 'human'}),
+  });
+  if (res.ok) {
+    closeModal('new-file-modal');
+    toast('File created ✓', 'success');
+    await loadFiles();
+    loadAudit();
+    openFile({zone, path: filepath, name});
+  } else {
+    toast('Failed to create file', 'error');
+  }
+}
+
+/* ── copy ─────────────────────────────────────────────────────── */
+function copyFileDialog() {
+  if (!selectedFile) return;
+  document.getElementById('cp-path').value = selectedFile.path;
+  openModal('copy-modal');
+}
+
+async function doCopy() {
+  if (!selectedFile) return;
+  const dst_zone = document.getElementById('cp-zone').value;
+  const dst_path = document.getElementById('cp-path').value.trim() || selectedFile.path;
+  const res = await fetch('/api/copy', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      actor: 'human',
+      src_zone: selectedFile.zone,
+      src_path: selectedFile.path,
+      dst_zone,
+      dst_path,
+    }),
+  });
+  if (res.ok) {
+    closeModal('copy-modal');
+    toast(`Copied to ${dst_zone}/${dst_path} ✓`, 'success');
+    await loadFiles();
+    loadAudit();
+  } else {
+    const d = await res.json();
+    toast(d.error || 'Copy failed', 'error');
+  }
+}
+
+/* ── search ──────────────────────────────────────────────────── */
+let searchTimer;
+function handleSearch(q) {
+  clearTimeout(searchTimer);
+  if (!q) { renderFiles(); return; }
+  searchTimer = setTimeout(async () => {
+    const zone = currentZone === 'all' ? '' : currentZone;
+    const res = await fetch(`/api/search?q=${encodeURIComponent(q)}&zone=${zone}`);
+    const results = await res.json();
+    renderFiles(results);
+  }, SEARCH_DEBOUNCE_MS);
+}
+
+/* ── permissions ─────────────────────────────────────────────── */
+async function loadPermissions() {
+  const res = await fetch('/api/permissions');
+  currentPerms = await res.json();
+  renderPermissions();
+}
+
+function renderPermissions() {
+  const zp = document.getElementById('zone-perms');
+  const dp = document.getElementById('device-perms');
+  const zones = currentPerms.zones || {};
+  const devices = currentPerms.devices || {};
+
+  zp.innerHTML = Object.entries(zones).map(([zone, p]) => `
+    <div class="perm-row">
+      <span class="perm-zone-name">
+        <span class="zone-dot ${zone}"></span>${zone}
+      </span>
+      <div class="toggle-group">
+        <label class="toggle-label">Read
+          <label class="toggle">
+            <input type="checkbox" ${p.ai_read ? 'checked' : ''} onchange="permChanged('zone','${zone}','ai_read',this.checked)" />
+            <span class="toggle-slider"></span>
+          </label>
+        </label>
+        <label class="toggle-label">Write
+          <label class="toggle">
+            <input type="checkbox" ${p.ai_write ? 'checked' : ''} onchange="permChanged('zone','${zone}','ai_write',this.checked)" />
+            <span class="toggle-slider"></span>
+          </label>
+        </label>
+        <label class="toggle-label">Delete
+          <label class="toggle">
+            <input type="checkbox" ${p.ai_delete ? 'checked' : ''} onchange="permChanged('zone','${zone}','ai_delete',this.checked)" />
+            <span class="toggle-slider"></span>
+          </label>
+        </label>
+      </div>
+    </div>
+  `).join('');
+
+  const deviceIcons = {camera:'📷', microphone:'🎤', clipboard:'📋', network:'🌐', screen_reader:'👁️'};
+  dp.innerHTML = Object.entries(devices).map(([dev, val]) => `
+    <div class="device-row">
+      <span><span class="device-icon">${deviceIcons[dev] || '🔌'}</span>${dev.replace('_',' ')}</span>
+      <label class="toggle">
+        <input type="checkbox" ${val ? 'checked' : ''} onchange="permChanged('device','${dev}',null,this.checked)" />
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+  `).join('');
+}
+
+function permChanged(type, key, subkey, val) {
+  if (type === 'zone') {
+    if (!currentPerms.zones[key]) currentPerms.zones[key] = {};
+    currentPerms.zones[key][subkey] = val;
+  } else {
+    currentPerms.devices[key] = val;
+  }
+}
+
+async function savePermissions() {
+  const res = await fetch('/api/permissions', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(currentPerms),
+  });
+  if (res.ok) {
+    toast('Permissions saved ✓', 'success');
+    loadAudit();
+  } else {
+    toast('Failed to save', 'error');
+  }
+}
+
+/* ── mode ────────────────────────────────────────────────────── */
+async function loadMode() {
+  const res = await fetch('/api/mode');
+  const data = await res.json();
+  updateModePill(data.current);
+  updateModeCards(data.current);
+  renderModeHistory(data.history || []);
+}
+
+function updateModePill(mode) {
+  const pill = document.getElementById('mode-pill');
+  pill.textContent = mode.charAt(0).toUpperCase() + mode.slice(1);
+  pill.className = 'mode-pill ' + (mode === 'normal' ? '' : mode);
+}
+
+function updateModeCards(current) {
+  document.querySelectorAll('.mode-card[data-mode]').forEach(c => {
+    c.classList.remove('active','active-test','active-acting');
+    if (c.dataset.mode === current) {
+      c.classList.add(current === 'test' ? 'active-test' : current === 'acting' ? 'active-acting' : 'active');
+    }
+  });
+}
+
+function renderModeHistory(history) {
+  const el = document.getElementById('mode-history');
+  if (!history.length) { el.textContent = 'No mode changes yet.'; return; }
+  el.innerHTML = history.slice(-MAX_MODE_HISTORY_DISPLAY).reverse().map(h =>
+    `<div style="padding:3px 0;border-bottom:1px solid var(--border)">
+      <span style="color:var(--muted)">${h.at.slice(0,16)}</span>
+      ${h.from} → <strong>${h.to}</strong>
+    </div>`
+  ).join('');
+}
+
+async function setMode(mode) {
+  if (mode === 'baseline' && !confirm('Reset all permissions to safe defaults?')) return;
+  const res = await fetch('/api/mode', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({mode}),
+  });
+  if (res.ok) {
+    const data = await res.json();
+    updateModePill(data.current);
+    updateModeCards(data.current);
+    renderModeHistory(data.history || []);
+    if (mode === 'baseline') {
+      toast('Baseline restored ✓', 'success');
+      await loadPermissions();
+    } else {
+      toast(`Mode: ${mode} ✓`, 'success');
+    }
+    loadAudit();
+  }
+}
+
+
+/* ── html escaping ───────────────────────────────────────────── */
+function escHtml(str) {
+  return String(str ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+/* ── audit log ───────────────────────────────────────────────── */
+async function loadAudit() {
+  const res = await fetch('/api/audit?limit=200');
+  auditEntries = await res.json();
+  renderAudit();
+}
+
+function filterAudit(filter, btn) {
+  auditFilter = filter;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderAudit();
+}
+
+function renderAudit() {
+  let entries = auditEntries;
+  if (auditFilter === 'denied') entries = entries.filter(e => e.outcome === 'denied');
+  if (auditFilter === 'ai') entries = entries.filter(e => e.actor === 'ai');
+
+  document.getElementById('audit-count').textContent = `${entries.length} entries`;
+
+  const tbody = document.getElementById('audit-body');
+  if (!entries.length) {
+    tbody.innerHTML = `<tr><td colspan="8" style="text-align:center;color:var(--muted);padding:16px">No entries yet</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = entries.map(e => {
+    const time = e.timestamp ? e.timestamp.slice(11, 19) : '';
+    const date = e.timestamp ? e.timestamp.slice(0, 10) : '';
+    const ann = e.annotation
+      ? `<span class="annotation-text">&#128204; ${escHtml(e.annotation)}</span>`
+      : `<button class="annotate-btn" data-entry-id="${escHtml(e.id)}">+ Note</button>`;
+    return `<tr>
+      <td title="${escHtml(e.timestamp)}">${escHtml(date)}<br><span style="color:var(--muted)">${escHtml(time)}</span></td>
+      <td><span class="actor-badge actor-${escHtml(e.actor)}">${escHtml(e.actor)}</span></td>
+      <td>${escHtml(e.action)}</td>
+      <td>${escHtml(e.zone || '')}</td>
+      <td style="max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${escHtml(e.filename)}">${escHtml(e.filename || '')}</td>
+      <td><span class="outcome-badge outcome-${escHtml(e.outcome)}">${escHtml(e.outcome)}</span></td>
+      <td style="color:var(--muted);max-width:100px;overflow:hidden;text-overflow:ellipsis">${escHtml(e.notes || '')}</td>
+      <td>${ann}</td>
+    </tr>`;
+  }).join('');
+
+  // attach annotate button listeners after inserting HTML
+  tbody.querySelectorAll('.annotate-btn').forEach(btn => {
+    btn.addEventListener('click', () => openAnnotate(btn.dataset.entryId));
+  });
+}
+
+function openAnnotate(id) {
+  document.getElementById('ann-id').value = id;
+  const entry = auditEntries.find(e => e.id === id);
+  document.getElementById('ann-text').value = entry?.annotation || '';
+  openModal('annotate-modal');
+}
+
+async function submitAnnotation() {
+  const id = document.getElementById('ann-id').value;
+  const annotation = document.getElementById('ann-text').value.trim();
+  const res = await fetch(`/api/audit/${id}/annotate`, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({annotation}),
+  });
+  if (res.ok) {
+    closeModal('annotate-modal');
+    toast('Annotation saved ✓', 'success');
+    loadAudit();
+  } else {
+    toast('Failed to save annotation', 'error');
+  }
+}
+
+/* ── tab switching ───────────────────────────────────────────── */
+function switchTab(tab, btn) {
+  ['viewer','perms','mode'].forEach(t => {
+    document.getElementById('tab-' + t).style.display = t === tab ? 'block' : 'none';
+  });
+  document.querySelectorAll('.panel-tab').forEach(b => b.classList.remove('active'));
+  // find the right tab button
+  document.querySelectorAll('.panel-tab').forEach(b => {
+    if (b.getAttribute('onclick') && b.getAttribute('onclick').includes("'" + tab + "'")) {
+      b.classList.add('active');
+    }
+  });
+}
+
+/* ── modals ──────────────────────────────────────────────────── */
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+}
+// close on overlay click
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', e => {
+    if (e.target === overlay) overlay.classList.remove('open');
+  });
+});
+
+/* ── toast ───────────────────────────────────────────────────── */
+let toastTimer;
+function toast(msg, type = '') {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = 'show' + (type ? ' ' + type : '');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.className = '', 2500);
+}
+</script>
+</body>
+</html>
