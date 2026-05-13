@@ -908,9 +908,7 @@ class ArkDesktop:
                 if sid:
                     header += f" [session:{sid}]"
                 blocks.append(f"{header}\n{thought}")
-            content = "\n\n" + ("\n\n" + ("-" * 70) + "\n\n").join(blocks) if blocks else ""
-            if blocks:
-                content = ("\n\n" + ("-" * 70) + "\n\n").join(blocks)
+            content = ("\n\n" + ("-" * 70) + "\n\n").join(blocks)
 
         self._thought_text.config(state=tk.NORMAL)
         self._thought_text.delete("1.0", tk.END)
