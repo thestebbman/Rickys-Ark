@@ -103,7 +103,7 @@ Go to: **http://127.0.0.1:5000**
 
 ---
 
-Both interfaces share the same workspace files, audit log, permissions, and mode settings — you can use either one or switch between them.
+Both interfaces share the same workspace files, audit log, permissions, mode settings, and scratchpad thoughts log — you can use either one or switch between them.
 
 ---
 
@@ -131,6 +131,11 @@ When you click a file:
 - Send messages directly to your AI partner.
 - Messages are stored in the local chat log and can be refreshed live.
 - Chat message events are recorded in the audit log for transparency.
+
+#### 🧠 Thoughts Tab
+- Shows the AI scratchpad feed (`system/logs/scratchpad.jsonl`) in real time.
+- Lets you filter by optional `session_id`.
+- Supports manual reload and clear operations, with clear events logged in audit.
 
 #### 🔐 Permissions Tab
 Control what the AI can do:

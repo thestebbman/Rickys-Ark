@@ -2,7 +2,7 @@
 Memory Ark Desktop Interface
 
 Standalone tkinter GUI — no web browser required.
-Uses the same workspace, audit log, permissions, and mode files as app.py.
+Uses the same workspace, audit log, permissions, mode, and scratchpad files as app.py.
 
 Run with:
     python desktop_app.py
@@ -23,6 +23,7 @@ BASE_DIR = Path(__file__).parent
 WORKSPACE = BASE_DIR / "workspace"
 SYSTEM_DIR = BASE_DIR / "system"
 AUDIT_LOG = SYSTEM_DIR / "logs" / "audit.jsonl"
+SCRATCHPAD_LOG = SYSTEM_DIR / "logs" / "scratchpad.jsonl"
 PERMISSIONS_FILE = SYSTEM_DIR / "permissions.json"
 MODE_FILE = SYSTEM_DIR / "mode.json"
 
@@ -30,6 +31,7 @@ ZONES = ["human", "ai", "shared", "debate"]
 
 MAX_SEARCH_RESULTS = 50
 SNIPPET_CONTEXT_CHARS = 40
+SCRATCHPAD_TYPES = {"reasoning", "plan", "concern", "question", "flag", "decision"}
 
 ZONE_LABELS = {
     "human":  "🔵 Human",
@@ -90,6 +92,38 @@ def rewrite_audit(entries):
     with open(AUDIT_LOG, "w", encoding="utf-8") as fh:
         for e in reversed(entries):
             fh.write(json.dumps(e) + "\n")
+
+
+def write_scratchpad(thought, type_="reasoning", session_id=""):
+    """Append one thought entry to the scratchpad log and return it."""
+    entry = {
+        "id": str(uuid.uuid4()),
+        "timestamp": now_iso(),
+        "type": type_ if type_ in SCRATCHPAD_TYPES else "reasoning",
+        "thought": thought,
+        "session_id": session_id,
+    }
+    SCRATCHPAD_LOG.parent.mkdir(parents=True, exist_ok=True)
+    with open(SCRATCHPAD_LOG, "a", encoding="utf-8") as fh:
+        fh.write(json.dumps(entry) + "\n")
+    return entry
+
+
+def read_scratchpad(limit=200, session_id=""):
+    if not SCRATCHPAD_LOG.exists():
+        return []
+    entries = []
+    with open(SCRATCHPAD_LOG, encoding="utf-8") as fh:
+        for line in fh:
+            line = line.strip()
+            if line:
+                try:
+                    entries.append(json.loads(line))
+                except json.JSONDecodeError:
+                    pass
+    if session_id:
+        entries = [e for e in entries if e.get("session_id") == session_id]
+    return list(reversed(entries))[:limit]  # newest first
 
 
 def load_permissions():
@@ -230,11 +264,14 @@ class ArkDesktop:
         self._mode_var = tk.StringVar(value="normal")
         self._search_var = tk.StringVar()
         self._audit_entries = []
+        self._scratchpad_session_var = tk.StringVar(value="")
 
         self._build_ui()
         self._refresh_tree()
         self._refresh_mode_indicator()
         self._refresh_audit()
+        self._refresh_scratchpad()
+        self._poll_scratchpad()
 
     # ── UI construction ───────────────────────────────────────────────────────
 
@@ -298,6 +335,7 @@ class ArkDesktop:
         self._notebook.pack(fill=tk.BOTH, expand=True)
 
         self._build_file_tab()
+        self._build_thoughts_tab()
         self._build_permissions_tab()
         self._build_mode_tab()
 
@@ -385,6 +423,39 @@ class ArkDesktop:
         self._file_text.configure(yscrollcommand=fvsb.set)
         fvsb.pack(side=tk.RIGHT, fill=tk.Y)
         self._file_text.pack(fill=tk.BOTH, expand=True)
+
+    def _build_thoughts_tab(self):
+        tab = tk.Frame(self._notebook)
+        self._notebook.add(tab, text="🧠 Thoughts")
+
+        toolbar = tk.Frame(tab)
+        toolbar.pack(fill=tk.X, padx=6, pady=4)
+
+        tk.Label(
+            toolbar, text="Mind B: Active Reasoning", font=("Helvetica", 10, "bold"),
+        ).pack(side=tk.LEFT)
+
+        tk.Label(toolbar, text="Session:").pack(side=tk.LEFT, padx=(12, 4))
+        tk.Entry(
+            toolbar, textvariable=self._scratchpad_session_var, width=14,
+        ).pack(side=tk.LEFT)
+        tk.Button(
+            toolbar, text="↻ Reload", command=self._refresh_scratchpad,
+        ).pack(side=tk.LEFT, padx=6)
+        tk.Button(
+            toolbar, text="🧹 Clear", command=self._clear_scratchpad,
+        ).pack(side=tk.LEFT)
+
+        txt_frame = tk.Frame(tab)
+        txt_frame.pack(fill=tk.BOTH, expand=True, padx=6, pady=(0, 6))
+        self._thought_text = tk.Text(
+            txt_frame, wrap=tk.WORD, state=tk.DISABLED,
+            font=("Courier", 10), relief=tk.FLAT, bg="#fafafa",
+        )
+        tvsb = ttk.Scrollbar(txt_frame, orient="vertical", command=self._thought_text.yview)
+        self._thought_text.configure(yscrollcommand=tvsb.set)
+        tvsb.pack(side=tk.RIGHT, fill=tk.Y)
+        self._thought_text.pack(fill=tk.BOTH, expand=True)
 
     def _build_permissions_tab(self):
         tab = tk.Frame(self._notebook)
@@ -814,6 +885,69 @@ class ArkDesktop:
 
         tv.bind("<Double-1>", open_result)
         tk.Button(dlg, text="Open selected", command=open_result).pack(pady=4)
+
+    # ── scratchpad / thoughts ────────────────────────────────────────────────
+
+    def _refresh_scratchpad(self):
+        session_id = self._scratchpad_session_var.get().strip()
+        entries = read_scratchpad(limit=200, session_id=session_id)
+        if not entries:
+            content = (
+                "No thoughts yet.\n\n"
+                "AI writes here via scratchpad log.\n"
+                "Use Session to filter by session_id."
+            )
+        else:
+            blocks = []
+            for e in entries:
+                when = e.get("timestamp", "")
+                type_ = e.get("type", "reasoning")
+                sid = e.get("session_id", "")
+                thought = e.get("thought", "")
+                header = f"[{when}] [{type_}]"
+                if sid:
+                    header += f" [session:{sid}]"
+                blocks.append(f"{header}\n{thought}")
+            content = "\n\n" + ("\n\n" + ("-" * 70) + "\n\n").join(blocks) if blocks else ""
+            if blocks:
+                content = ("\n\n" + ("-" * 70) + "\n\n").join(blocks)
+
+        self._thought_text.config(state=tk.NORMAL)
+        self._thought_text.delete("1.0", tk.END)
+        self._thought_text.insert("1.0", content)
+        self._thought_text.config(state=tk.DISABLED)
+
+    def _clear_scratchpad(self):
+        if not messagebox.askyesno(
+            "Clear Thoughts",
+            "Clear visible scratchpad thoughts for the selected session?\n"
+            "Leave Session empty to clear all.",
+        ):
+            return
+        session_id = self._scratchpad_session_var.get().strip()
+        if session_id:
+            entries = read_scratchpad(limit=10000)
+            kept = [e for e in reversed(entries) if e.get("session_id") != session_id]
+            SCRATCHPAD_LOG.parent.mkdir(parents=True, exist_ok=True)
+            with open(SCRATCHPAD_LOG, "w", encoding="utf-8") as fh:
+                for e in kept:
+                    fh.write(json.dumps(e) + "\n")
+        else:
+            if SCRATCHPAD_LOG.exists():
+                SCRATCHPAD_LOG.unlink()
+        write_audit(
+            "human", "scratchpad_clear", "system", "", "allowed",
+            f"session_id={session_id or 'all'}",
+        )
+        self._refresh_scratchpad()
+        self._refresh_audit()
+
+    def _poll_scratchpad(self):
+        """Auto-refresh thoughts panel in the background."""
+        try:
+            self._refresh_scratchpad()
+        finally:
+            self.root.after(3000, self._poll_scratchpad)
 
     # ── permissions ───────────────────────────────────────────────────────────
 
