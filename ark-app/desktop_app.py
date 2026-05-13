@@ -2,7 +2,7 @@
 Memory Ark Desktop Interface
 
 Standalone tkinter GUI — no web browser required.
-Uses the same workspace, audit log, permissions, mode, and scratchpad files as app.py.
+Uses the same workspace, audit log, chat, permissions, mode, and scratchpad files as app.py.
 
 Run with:
     python desktop_app.py
@@ -24,6 +24,7 @@ WORKSPACE = BASE_DIR / "workspace"
 SYSTEM_DIR = BASE_DIR / "system"
 AUDIT_LOG = SYSTEM_DIR / "logs" / "audit.jsonl"
 SCRATCHPAD_LOG = SYSTEM_DIR / "logs" / "scratchpad.jsonl"
+CHAT_LOG = SYSTEM_DIR / "logs" / "chat.jsonl"
 PERMISSIONS_FILE = SYSTEM_DIR / "permissions.json"
 MODE_FILE = SYSTEM_DIR / "mode.json"
 
@@ -32,6 +33,7 @@ ZONES = ["human", "ai", "shared", "debate"]
 MAX_SEARCH_RESULTS = 50
 SNIPPET_CONTEXT_CHARS = 40
 SCRATCHPAD_TYPES = {"reasoning", "plan", "concern", "question", "flag", "decision"}
+CHAT_ACTORS = {"human", "ai"}
 
 ZONE_LABELS = {
     "human":  "🔵 Human",
@@ -124,6 +126,39 @@ def read_scratchpad(limit=200, session_id=""):
     if session_id:
         entries = [e for e in entries if e.get("session_id") == session_id]
     return list(reversed(entries))[:limit]  # newest first
+
+
+def write_chat_message(actor="human", message="", session_id="default"):
+    """Append one chat message to the chat log and return it."""
+    entry = {
+        "id": str(uuid.uuid4()),
+        "timestamp": now_iso(),
+        "actor": actor if actor in CHAT_ACTORS else "human",
+        "message": message,
+        "session_id": session_id or "default",
+    }
+    CHAT_LOG.parent.mkdir(parents=True, exist_ok=True)
+    with open(CHAT_LOG, "a", encoding="utf-8") as fh:
+        fh.write(json.dumps(entry) + "\n")
+    return entry
+
+
+def read_chat(limit=200, session_id="default"):
+    """Read chat messages for a session in chronological order."""
+    if not CHAT_LOG.exists():
+        return []
+    entries = []
+    with open(CHAT_LOG, encoding="utf-8") as fh:
+        for line in fh:
+            line = line.strip()
+            if line:
+                try:
+                    entries.append(json.loads(line))
+                except json.JSONDecodeError:
+                    pass
+    wanted_session = session_id or "default"
+    entries = [e for e in entries if e.get("session_id", "default") == wanted_session]
+    return entries[-limit:]
 
 
 def load_permissions():
@@ -264,13 +299,17 @@ class ArkDesktop:
         self._mode_var = tk.StringVar(value="normal")
         self._search_var = tk.StringVar()
         self._audit_entries = []
+        self._chat_session_var = tk.StringVar(value="default")
+        self._chat_actor_var = tk.StringVar(value="human")
         self._scratchpad_session_var = tk.StringVar(value="")
 
         self._build_ui()
         self._refresh_tree()
         self._refresh_mode_indicator()
         self._refresh_audit()
+        self._refresh_chat()
         self._refresh_scratchpad()
+        self._poll_chat()
         self._poll_scratchpad()
 
     # ── UI construction ───────────────────────────────────────────────────────
@@ -335,6 +374,7 @@ class ArkDesktop:
         self._notebook.pack(fill=tk.BOTH, expand=True)
 
         self._build_file_tab()
+        self._build_chat_tab()
         self._build_thoughts_tab()
         self._build_permissions_tab()
         self._build_mode_tab()
@@ -423,6 +463,39 @@ class ArkDesktop:
         self._file_text.configure(yscrollcommand=fvsb.set)
         fvsb.pack(side=tk.RIGHT, fill=tk.Y)
         self._file_text.pack(fill=tk.BOTH, expand=True)
+
+    def _build_chat_tab(self):
+        tab = tk.Frame(self._notebook)
+        self._notebook.add(tab, text="💬 Chat")
+
+        toolbar = tk.Frame(tab)
+        toolbar.pack(fill=tk.X, padx=6, pady=4)
+        tk.Label(toolbar, text="Session:").pack(side=tk.LEFT)
+        tk.Entry(toolbar, textvariable=self._chat_session_var, width=16).pack(side=tk.LEFT, padx=(4, 8))
+        tk.Label(toolbar, text="Actor:").pack(side=tk.LEFT)
+        ttk.Combobox(
+            toolbar, textvariable=self._chat_actor_var, values=["human", "ai"],
+            state="readonly", width=8,
+        ).pack(side=tk.LEFT, padx=(4, 8))
+        tk.Button(toolbar, text="↻ Reload", command=self._refresh_chat).pack(side=tk.LEFT)
+
+        feed_frame = tk.Frame(tab)
+        feed_frame.pack(fill=tk.BOTH, expand=True, padx=6, pady=(0, 6))
+        self._chat_feed = tk.Text(
+            feed_frame, wrap=tk.WORD, state=tk.DISABLED,
+            font=("Courier", 10), relief=tk.FLAT, bg="#fafafa",
+        )
+        cfsb = ttk.Scrollbar(feed_frame, orient="vertical", command=self._chat_feed.yview)
+        self._chat_feed.configure(yscrollcommand=cfsb.set)
+        cfsb.pack(side=tk.RIGHT, fill=tk.Y)
+        self._chat_feed.pack(fill=tk.BOTH, expand=True)
+
+        input_row = tk.Frame(tab)
+        input_row.pack(fill=tk.X, padx=6, pady=(0, 6))
+        self._chat_input = tk.Entry(input_row)
+        self._chat_input.pack(side=tk.LEFT, fill=tk.X, expand=True)
+        self._chat_input.bind("<Return>", self._send_chat)
+        tk.Button(input_row, text="Send", command=self._send_chat).pack(side=tk.LEFT, padx=(6, 0))
 
     def _build_thoughts_tab(self):
         tab = tk.Frame(self._notebook)
@@ -885,6 +958,50 @@ class ArkDesktop:
 
         tv.bind("<Double-1>", open_result)
         tk.Button(dlg, text="Open selected", command=open_result).pack(pady=4)
+
+    # ── chat ──────────────────────────────────────────────────────────────────
+
+    def _refresh_chat(self):
+        session_id = self._chat_session_var.get().strip() or "default"
+        entries = read_chat(limit=200, session_id=session_id)
+        if not entries:
+            content = (
+                f"No chat messages for session '{session_id}'.\n\n"
+                "Type a message below and click Send."
+            )
+        else:
+            rows = [
+                f"[{e.get('timestamp', '')}] {e.get('actor', 'human')}: {e.get('message', '')}"
+                for e in entries
+            ]
+            content = "\n\n".join(rows)
+
+        self._chat_feed.config(state=tk.NORMAL)
+        self._chat_feed.delete("1.0", tk.END)
+        self._chat_feed.insert("1.0", content)
+        self._chat_feed.config(state=tk.DISABLED)
+        self._chat_feed.see(tk.END)
+
+    def _send_chat(self, _event=None):
+        message = self._chat_input.get().strip()
+        if not message:
+            return
+        actor = self._chat_actor_var.get().strip()
+        if actor not in CHAT_ACTORS:
+            actor = "human"
+        session_id = self._chat_session_var.get().strip() or "default"
+        write_chat_message(actor=actor, message=message, session_id=session_id)
+        write_audit(actor, "chat_message", "shared", "", "allowed", message[:80])
+        self._chat_input.delete(0, tk.END)
+        self._refresh_chat()
+        self._refresh_audit()
+
+    def _poll_chat(self):
+        """Auto-refresh chat panel in the background."""
+        try:
+            self._refresh_chat()
+        finally:
+            self.root.after(3000, self._poll_chat)
 
     # ── scratchpad / thoughts ────────────────────────────────────────────────
 

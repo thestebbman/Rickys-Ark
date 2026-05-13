@@ -103,7 +103,7 @@ Go to: **http://127.0.0.1:5000**
 
 ---
 
-Both interfaces share the same workspace files, audit log, permissions, mode settings, and scratchpad thoughts log — you can use either one or switch between them.
+Both interfaces share the same workspace files, audit log, chat log, permissions, mode settings, and scratchpad thoughts log — you can use either one or switch between them.
 
 ---
 
