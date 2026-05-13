@@ -14,6 +14,7 @@ The Memory Ark Interface gives you and an AI partner a shared workspace where:
 - **Every action is logged** — an append-only audit trail records every access attempt with timestamps and outcomes.
 - **Modes keep things clear** — switch to Test or Acting mode so the AI knows not to overreact; annotate past events to add context.
 - **A safe baseline is always one click away** — reset all permissions to safe defaults at any time.
+- **Direct chat is available** — send messages in the Chat tab and review the full message history.
 
 ---
 
@@ -116,7 +117,7 @@ Click **Human**, **AI**, **Shared**, or **Debate** to browse files in that zone.
 - **Search** — finds files by name or content across zones.
 - **+ New** — creates a new file in any zone you choose.
 
-### Right Panel — Three Tabs
+### Right Panel — Tabs
 
 #### 📄 File Tab
 When you click a file:
@@ -125,6 +126,11 @@ When you click a file:
 - **Copy to…** to copy into another zone (provenance is preserved).
 - **Delete** — creates a tombstone record before removing.
 - If the AI has read access, a pulsing indicator shows: *AI is reading this file.*
+
+#### 💬 Chat Tab
+- Send messages directly to your AI partner.
+- Messages are stored in the local chat log and can be refreshed live.
+- Chat message events are recorded in the audit log for transparency.
 
 #### 🔐 Permissions Tab
 Control what the AI can do:
@@ -231,11 +237,27 @@ ark-app/
   system/
     logs/
       audit.jsonl     ← Append-only audit trail
+      chat.jsonl      ← Local chat messages (human/ai)
     permissions.json  ← Current permission settings
     mode.json         ← Current mode + history
 ```
 
 All files are plain text and JSON — you can open, read, and back them up with any tool.
+
+---
+
+## Chat API
+
+- `GET /api/chat?limit=200&session_id=default` — list chat messages in chronological order.
+- `POST /api/chat` — append a chat message:
+
+```json
+{
+  "actor": "human",
+  "message": "Hello AI",
+  "session_id": "default"
+}
+```
 
 ---
 

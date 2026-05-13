@@ -565,6 +565,74 @@
     .search-result:hover { border-color: var(--human); }
     .search-snippet { font-size: 10px; color: var(--muted); margin-top: 3px; }
 
+    /* ── chat panel ── */
+    .chat-wrap { display: flex; flex-direction: column; height: 100%; }
+    .chat-feed {
+      flex: 1;
+      overflow-y: auto;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .chat-row { display: flex; }
+    .chat-row.human { justify-content: flex-end; }
+    .chat-row.ai { justify-content: flex-start; }
+    .chat-msg {
+      max-width: 85%;
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-size: 12px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+      border: 1px solid var(--border);
+      background: var(--bg3);
+    }
+    .chat-row.human .chat-msg {
+      background: rgba(74,158,255,.16);
+      border-color: rgba(74,158,255,.45);
+    }
+    .chat-row.ai .chat-msg {
+      background: rgba(167,139,250,.15);
+      border-color: rgba(167,139,250,.45);
+    }
+    .chat-meta {
+      font-size: 9px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .chat-compose {
+      border-top: 1px solid var(--border);
+      padding: 10px;
+      display: flex;
+      gap: 8px;
+      flex-direction: column;
+    }
+    .chat-compose textarea {
+      width: 100%;
+      min-height: 80px;
+      resize: vertical;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 8px;
+      padding: 8px;
+      font-family: inherit;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .chat-compose-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .chat-hint {
+      font-size: 10px;
+      color: var(--muted);
+      margin-right: auto;
+    }
+
     /* ── scratchpad / thoughts panel ── */
     .thought-feed { display: flex; flex-direction: column; gap: 8px; }
     .thought-entry {
@@ -701,9 +769,10 @@
 </main>
 
 <!-- ── RIGHT PANEL ── -->
-<div class="right-panel">
+  <div class="right-panel">
   <div class="panel-tabs">
     <div class="panel-tab active" data-tab="viewer" onclick="switchTab('viewer', this)">📄 File</div>
+    <div class="panel-tab" data-tab="chat" onclick="switchTab('chat', this)">💬 Chat</div>
     <div class="panel-tab" data-tab="thoughts" onclick="switchTab('thoughts', this)">🧠 Thoughts</div>
     <div class="panel-tab" data-tab="perms" onclick="switchTab('perms', this)">🔐 Perms</div>
     <div class="panel-tab" data-tab="mode" onclick="switchTab('mode', this)">⚙️ Mode</div>
@@ -734,6 +803,20 @@
         <div class="file-actions">
           <button class="btn primary" onclick="saveEdit()">💾 Save</button>
           <button class="btn" onclick="cancelEdit()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAT -->
+  <div id="tab-chat" style="display:none;flex-direction:column;overflow:hidden;flex:1">
+    <div class="chat-wrap">
+      <div class="chat-feed" id="chat-feed"></div>
+      <div class="chat-compose">
+        <textarea id="chat-input" placeholder="Type a message to your AI..."></textarea>
+        <div class="chat-compose-row">
+          <span class="chat-hint">Messages are logged and visible in audit.</span>
+          <button class="btn primary" id="chat-send-btn" onclick="sendChat()">Send</button>
         </div>
       </div>
     </div>
@@ -903,15 +986,24 @@ let selectedFile = null;
 let currentPerms = {};
 let auditFilter = 'all';
 let auditEntries = [];
+let chatEntries = [];
+const chatSessionId = 'default';
 
 /* ── init ────────────────────────────────────────────────────── */
 window.onload = () => {
   refreshAll();
   setInterval(loadAudit, AUDIT_REFRESH_INTERVAL_MS); // auto-refresh audit
+  const input = document.getElementById('chat-input');
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+      e.preventDefault();
+      sendChat();
+    }
+  });
 };
 
 async function refreshAll() {
-  await Promise.all([loadFiles(), loadPermissions(), loadMode(), loadAudit(), loadScratchpad()]);
+  await Promise.all([loadFiles(), loadPermissions(), loadMode(), loadAudit(), loadScratchpad(), loadChat()]);
 }
 
 /* ── files ───────────────────────────────────────────────────── */
@@ -1332,6 +1424,77 @@ function renderAudit() {
   });
 }
 
+/* ── chat ─────────────────────────────────────────────────────── */
+const CHAT_REFRESH_MS = 2000;
+let chatTimer = null;
+
+async function loadChat() {
+  try {
+    const res = await fetch(`/api/chat?limit=200&session_id=${encodeURIComponent(chatSessionId)}`);
+    chatEntries = await res.json();
+    renderChat();
+  } catch (_) {}
+}
+
+function renderChat() {
+  const feed = document.getElementById('chat-feed');
+  if (!chatEntries.length) {
+    feed.innerHTML = `<div class="thoughts-empty">
+      <div class="thoughts-empty-icon">💬</div>
+      <div>No messages yet</div>
+      <div style="margin-top:6px;font-size:10px">Start by sending a message below.</div>
+    </div>`;
+    return;
+  }
+  feed.innerHTML = chatEntries.map(e => {
+    const actor = e.actor === 'ai' ? 'ai' : 'human';
+    const time = e.timestamp ? e.timestamp.slice(11, 19) : '';
+    return `<div class="chat-row ${escHtml(actor)}">
+      <div class="chat-msg">
+        <div>${escHtml(e.message || '')}</div>
+        <div class="chat-meta">${escHtml(actor.toUpperCase())} · ${escHtml(time)}</div>
+      </div>
+    </div>`;
+  }).join('');
+  feed.scrollTop = feed.scrollHeight;
+}
+
+async function sendChat() {
+  const input = document.getElementById('chat-input');
+  const button = document.getElementById('chat-send-btn');
+  const message = input.value.trim();
+  if (!message) return;
+
+  button.disabled = true;
+  button.textContent = 'Sending...';
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({actor: 'human', message, session_id: chatSessionId}),
+    });
+    if (!res.ok) {
+      toast('Message failed', 'error');
+      return;
+    }
+    input.value = '';
+    await loadChat();
+    loadAudit();
+  } finally {
+    button.disabled = false;
+    button.textContent = 'Send';
+  }
+}
+
+function startChatPolling() {
+  if (chatTimer) return;
+  chatTimer = setInterval(loadChat, CHAT_REFRESH_MS);
+}
+
+function stopChatPolling() {
+  if (chatTimer) { clearInterval(chatTimer); chatTimer = null; }
+}
+
 function openAnnotate(id) {
   document.getElementById('ann-id').value = id;
   const entry = auditEntries.find(e => e.id === id);
@@ -1419,17 +1582,27 @@ function stopThoughtPolling() {
 
 /* ── tab switching ───────────────────────────────────────────── */
 function switchTab(tab, btn) {
-  ['viewer','thoughts','perms','mode'].forEach(t => {
+  ['viewer','chat','thoughts','perms','mode'].forEach(t => {
     const el = document.getElementById('tab-' + t);
-    if (el) el.style.display = t === tab ? (t === 'thoughts' ? 'flex' : 'block') : 'none';
+    if (el) el.style.display = t === tab ? ((t === 'thoughts' || t === 'chat') ? 'flex' : 'block') : 'none';
   });
   document.querySelectorAll('.panel-tab').forEach(b => b.classList.remove('active'));
   // find the right tab button using data-tab attribute
   document.querySelectorAll('.panel-tab').forEach(b => {
     if (b.dataset.tab === tab) b.classList.add('active');
   });
-  if (tab === 'thoughts') { loadScratchpad(); startThoughtPolling(); }
-  else stopThoughtPolling();
+  if (tab === 'thoughts') {
+    loadScratchpad();
+    startThoughtPolling();
+  } else {
+    stopThoughtPolling();
+  }
+  if (tab === 'chat') {
+    loadChat();
+    startChatPolling();
+  } else {
+    stopChatPolling();
+  }
 }
 
 /* ── modals ──────────────────────────────────────────────────── */

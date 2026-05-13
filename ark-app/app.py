@@ -22,6 +22,7 @@ WORKSPACE = BASE_DIR / "workspace"
 SYSTEM_DIR = BASE_DIR / "system"
 AUDIT_LOG = SYSTEM_DIR / "logs" / "audit.jsonl"
 SCRATCHPAD_LOG = SYSTEM_DIR / "logs" / "scratchpad.jsonl"
+CHAT_LOG = SYSTEM_DIR / "logs" / "chat.jsonl"
 PERMISSIONS_FILE = SYSTEM_DIR / "permissions.json"
 MODE_FILE = SYSTEM_DIR / "mode.json"
 STATIC_DIR = BASE_DIR / "static"
@@ -495,6 +496,7 @@ def api_search():
 # ── routes — scratchpad ─────────────────────────────────────────────────────
 
 SCRATCHPAD_TYPES = {"reasoning", "plan", "concern", "question", "flag", "decision"}
+CHAT_ACTORS = {"human", "ai"}
 
 
 def write_scratchpad(thought: str, type_: str = "reasoning",
@@ -528,6 +530,39 @@ def read_scratchpad(limit: int = 200, session_id: str = "") -> list:
     if session_id:
         entries = [e for e in entries if e.get("session_id") == session_id]
     return list(reversed(entries))[:limit]  # newest first
+
+
+def write_chat_message(actor: str, message: str, session_id: str = "default") -> dict:
+    """Append one chat message to the chat log and return it."""
+    entry = {
+        "id": str(uuid.uuid4()),
+        "timestamp": now_iso(),
+        "actor": actor if actor in CHAT_ACTORS else "human",
+        "message": message,
+        "session_id": session_id or "default",
+    }
+    CHAT_LOG.parent.mkdir(parents=True, exist_ok=True)
+    with open(CHAT_LOG, "a", encoding="utf-8") as f:
+        f.write(json.dumps(entry) + "\n")
+    return entry
+
+
+def read_chat(limit: int = 200, session_id: str = "default") -> list:
+    """Read chat messages for a session in chronological order."""
+    if not CHAT_LOG.exists():
+        return []
+    entries = []
+    with open(CHAT_LOG, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line:
+                try:
+                    entries.append(json.loads(line))
+                except json.JSONDecodeError:
+                    pass
+    wanted_session = session_id or "default"
+    entries = [e for e in entries if e.get("session_id", "default") == wanted_session]
+    return entries[-limit:]
 
 
 @app.route("/api/scratchpad", methods=["GET"])
@@ -568,6 +603,32 @@ def api_clear_scratchpad():
     write_audit("human", "scratchpad_clear", "system", "", "allowed",
                 f"session_id={session_id or 'all'}")
     return jsonify({"ok": True})
+
+
+# ── routes — chat ────────────────────────────────────────────────────────────
+
+@app.route("/api/chat", methods=["GET"])
+def api_get_chat():
+    limit = int(request.args.get("limit", 200))
+    session_id = request.args.get("session_id", "default")
+    return jsonify(read_chat(limit=limit, session_id=session_id))
+
+
+@app.route("/api/chat", methods=["POST"])
+def api_post_chat():
+    data = request.json or {}
+    message = data.get("message", "").strip()
+    if not message:
+        return jsonify({"error": "message is required"}), 400
+
+    actor = data.get("actor", "human")
+    if actor not in CHAT_ACTORS:
+        return jsonify({"error": "actor must be 'human' or 'ai'"}), 400
+
+    session_id = data.get("session_id", "default")
+    entry = write_chat_message(actor=actor, message=message, session_id=session_id)
+    write_audit(actor, "chat_message", "shared", "", "allowed", message[:80])
+    return jsonify(entry), 201
 
 
 # ── bootstrap ────────────────────────────────────────────────────────────────
