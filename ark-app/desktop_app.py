@@ -639,7 +639,7 @@ class MemoryArkApp:
 
         self._query_entry = tk.Entry(
             query_row,
-            bg="#0d0d1a", fg=self._TXT_MAIN,
+            bg="#ffffff", fg="#000000",
             insertbackground=self._ACCENT,
             font=("Courier", 10), relief=tk.FLAT,
         )
