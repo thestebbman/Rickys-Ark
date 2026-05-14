@@ -424,15 +424,15 @@ class MemoryArkApp:
     TELEMETRY_REFLECTIVE = "Reflective"
     TELEMETRY_NULL       = "Null"
 
-    # Colours
-    _BG        = "#1a1a2e"
-    _TOPBAR    = "#0f3460"
-    _ACCENT    = "#e94560"
-    _TERMINAL  = "#0d1a0d"
-    _TXT_GREEN = "#00ff88"
-    _TXT_DIM   = "#6060a0"
-    _TXT_MAIN  = "#c8c8e8"
-    _BTN_BG    = "#0f3460"
+    # Colours — light theme, easy to read
+    _BG        = "#f0f0f0"
+    _TOPBAR    = "#2c3e50"
+    _ACCENT    = "#c0392b"
+    _TERMINAL  = "#1e1e1e"
+    _TXT_GREEN = "#00cc66"
+    _TXT_DIM   = "#7f8c8d"
+    _TXT_MAIN  = "#1a1a1a"
+    _BTN_BG    = "#2c3e50"
 
     def __init__(self, root: tk.Tk):
         self.root = root
@@ -574,7 +574,7 @@ class MemoryArkApp:
 
         self.human_editor = scrolledtext.ScrolledText(
             left,
-            bg="#0d0d1a", fg=self._TXT_MAIN,
+            bg="#ffffff", fg="#1a1a1a",
             insertbackground=self._ACCENT,
             font=("Courier", 11), wrap=tk.WORD, undo=True,
             relief=tk.FLAT, borderwidth=2,
@@ -828,12 +828,17 @@ class MemoryArkApp:
                 )
 
             # After indexing: propose links via Ollama (Step 6)
-            if self._processing_allowed and not self._stop_flag.is_set():
+            # Only propose if no links are already waiting for approval
+            if self._processing_allowed and not self._stop_flag.is_set() and not self._pending_links:
                 self._propose_links()
 
-            # Sleep 5 minutes between full re-index passes;
-            # respects null_event so it unblocks quickly on Null→Active switch
-            self._null_event.wait(timeout=300)
+            # Sleep 5 minutes between full re-index passes
+            # Check stop flag every 10 seconds so Null→Active switch is responsive
+            for _ in range(30):
+                if self._stop_flag.is_set():
+                    break
+                import time
+                time.sleep(10)
 
     # =========================================================================
     # STEP 6 — HITL EXECUTION LOOP
@@ -842,6 +847,8 @@ class MemoryArkApp:
     def _propose_links(self):
         """Ask Ollama to propose ONE relational link; push to HITL queue."""
         if not self.brain.online or not self._processing_allowed:
+            return
+        if self._pending_links:
             return
         try:
             with open(INDEX_FILE, "r", encoding="utf-8", errors="ignore") as fh:
