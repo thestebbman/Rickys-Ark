@@ -1,0 +1,36 @@
+# Python virtual environment
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Flask instance / cache
+instance/
+.webassets-cache
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Keep workspace structure but not content (user data)
+# The workspace folder tree is committed; actual user files are not
+workspace/human/**
+workspace/ai/**
+workspace/shared/**
+workspace/debate/**
+!workspace/human/.gitkeep
+!workspace/ai/.gitkeep
+!workspace/shared/.gitkeep
+!workspace/debate/.gitkeep
+
+# Keep system folder structure but not runtime data
+system/logs/*.jsonl
+system/permissions.json
+system/mode.json

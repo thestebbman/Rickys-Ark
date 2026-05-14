@@ -3,6 +3,24 @@
 
 ---
 
+## 🌊 MEMORY ARK INTERFACE — PROTOTYPE APP
+
+A working local-first interface for collaborating with an AI partner with full transparency and control.
+
+**→ See [`ark-app/README.md`](ark-app/README.md) for setup and usage instructions.**
+
+Quick start:
+```bash
+cd ark-app
+pip install -r requirements.txt
+python app.py
+# Open http://127.0.0.1:5000 in your browser
+```
+
+Features: file zones (Human / AI / Shared / Debate) · permission toggles · audit log · mode controls (Normal / Test / Acting / Baseline Reset) · log annotations · search
+
+---
+
 ## START HERE — THIS IS AN INVITATION
 
 You are not looking at one person's archive.
