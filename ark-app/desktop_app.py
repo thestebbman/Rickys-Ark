@@ -156,7 +156,7 @@ class BrainBridge:
             self.online = False
             return False
         try:
-            r = requests.get("http://localhost:11434/api/tags", timeout=3)
+            r = requests.get(f"{self.base_url}/api/tags", timeout=3)
             self.online = r.status_code == 200
         except Exception:
             self.online = False
@@ -191,7 +191,7 @@ class BrainBridge:
         }
         try:
             r = requests.post(
-                "http://localhost:11434/api/generate",
+                f"{self.base_url}/api/generate",
                 json=payload,
                 timeout=120,
             )
@@ -309,7 +309,7 @@ class RAGPipeline:
                 pr = self.collection.query(
                     query_texts=[text],
                     n_results=min(3, n_results),
-                    where={"filename": {"$in": ["IDENTITY.txt", "CURRENT_STATE.txt"]}},
+                    where={"filename": {"$in": list(self._PRIORITY_NAMES)}},
                 )
                 if pr and pr.get("documents"):
                     priority_docs = pr["documents"][0]
@@ -365,9 +365,12 @@ def perform_backup(dest_root: str = BACKUP_USB_PATH) -> str:
         if drive and not os.path.exists(f"{drive}\\"):
             return f"[BACKUP FAILED] USB path unavailable: {dest_root}"
 
-    stamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    stamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S_%f")
     dest  = os.path.join(dest_root, f"ark_backup_{stamp}")
-    os.makedirs(dest, exist_ok=True)
+    try:
+        os.makedirs(dest, exist_ok=True)
+    except Exception as exc:
+        return f"[BACKUP FAILED] Could not create backup path {dest}: {exc}"
 
     errors = []
     for zone in ("Human", "Shared", "AI"):
