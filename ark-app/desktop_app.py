@@ -521,18 +521,33 @@ class MemoryArkApp:
                 command=self._on_telemetry_change,
             ).pack(side=tk.LEFT, padx=5)
 
-        # Ollama status indicator
+        # [DYNAMIC MODEL PICKER] Interrogate local hardware for installed models
+        model_frame = tk.Frame(top, bg=self._TOPBAR)
+        model_frame.pack(side=tk.RIGHT, padx=12)
+
         _st_color = self._TXT_GREEN if self.brain.online else self._ACCENT
-        _st_text  = (
-            f"● OLLAMA: ONLINE  [{self.brain.model}]"
-            if self.brain.online
-            else "● OLLAMA: OFFLINE"
-        )
-        self._ollama_lbl = tk.Label(
-            top, text=_st_text, fg=_st_color, bg=self._TOPBAR,
-            font=("Courier", 10, "bold"),
-        )
-        self._ollama_lbl.pack(side=tk.RIGHT, padx=12)
+        self._ollama_lbl = tk.Label(model_frame, text="● OLLAMA:", fg=_st_color, bg=self._TOPBAR, font=("Courier", 10, "bold"))
+        self._ollama_lbl.pack(side=tk.LEFT)
+
+        # Poll the localhost API for installed brains
+        available_models = [self.brain.model]
+        try:
+            r = requests.get(f"{self.brain.base_url}/api/tags", timeout=1)
+            if r.status_code == 200:
+                available_models = [m["name"] for m in r.json().get("models", [])]
+        except Exception:
+            pass
+
+        # Build the operator dropdown menu
+        self.model_var = tk.StringVar(value=self.brain.model)
+        self.model_dropdown = ttk.Combobox(model_frame, textvariable=self.model_var, values=available_models, state="readonly", width=16)
+        self.model_dropdown.pack(side=tk.LEFT, padx=(5, 0))
+
+        def _on_model_change(event):
+            self.brain.model = self.model_var.get()
+            self._terminal_write(f"[SYSTEM] Brain Bridge re-routed to: {self.brain.model}")
+            
+        self.model_dropdown.bind("<<ComboboxSelected>>", _on_model_change)
 
         # ── Main paned window ─────────────────────────────────────────────────
         pane = tk.PanedWindow(
