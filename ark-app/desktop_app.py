@@ -555,6 +555,8 @@ class MemoryArkApp:
             bg=self._BG, sashwidth=6, sashrelief=tk.FLAT,
         )
         pane.pack(fill=tk.BOTH, expand=True, padx=4, pady=4)
+                self.root.update()
+        pane.sash_place(0, 700, 0)
 
         # ── LEFT PANE: Human Vault ────────────────────────────────────────────
         left = tk.Frame(pane, bg=self._BG)
