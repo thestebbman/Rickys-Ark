@@ -149,6 +149,21 @@ class BrainBridge:
         self.base_url = OLLAMA_BASE_URL
         self.model    = model
         self.online   = False
+
+        # [AUTO-IGNITION] Start the local AI daemon silently so the operator doesn't have to
+        import subprocess
+        import time
+        try:
+            subprocess.Popen(
+                ["ollama", "serve"], 
+                stdout=subprocess.DEVNULL, 
+                stderr=subprocess.DEVNULL,
+                creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0
+            )
+            time.sleep(1.5)  # Allow hardware to spin up the local server before probing
+        except Exception:
+            pass
+
         self._probe()
 
     def _probe(self) -> bool:
@@ -893,16 +908,23 @@ class MemoryArkApp:
         self._query_entry.delete(0, tk.END)
 
         if not self._processing_allowed:
-            self._terminal_write(
-                "[TELEMETRY: NULL] Query blocked. Re-enable telemetry to use AI."
-            )
+            self._terminal_write("[TELEMETRY: NULL] Query blocked. Re-enable telemetry to use AI.")
             return
 
         self._terminal_write(f"[OPERATOR] {query}")
-        context = self.rag.query(query)
+
+        # [ACTIVE BUFFER FIX] Grab saved memory AND the live, unsaved editor text
+        saved_context = self.rag.query(query)
+        active_text = self.human_editor.get("1.0", tk.END).strip()
+        
+        if active_text:
+            full_context = f"{saved_context}\n\n[UNSAVED ACTIVE BUFFER]:\n{active_text}"
+        else:
+            full_context = saved_context
+
         threading.Thread(
             target=self._run_query,
-            args=(query, context),
+            args=(query, full_context),
             daemon=True,
         ).start()
 
@@ -910,14 +932,28 @@ class MemoryArkApp:
         response = self.brain.generate(query, system=system, context=context)
         if self._terminal_allowed:
             self._terminal_write(f"[MIND B]\n{response}")
-        # Append to AI-OBSERVATIONS (append-only, never overwrite)
+
+        # [AUTO-LEDGER] Parse AI response and write to the appropriate memory ledgers
+        stamp = _now_stamp()
         try:
+            # 1. Always log the raw interaction to OBSERVATIONS
             with open(OBSERVATIONS_FILE, "a", encoding="utf-8") as fh:
-                fh.write(
-                    f"\n[{_now_stamp()}] OPERATOR: {query}\n"
-                    f"[{_now_stamp()}] MIND B: {response}\n"
-                )
-        except Exception:
+                fh.write(f"\n[{stamp}] OPERATOR: {query}\n[{stamp}] MIND B: {response}\n")
+            
+            # 2. Extract and defer questions to AI-QUESTIONS for the next boot sequence
+            if "?" in response:
+                sentences = response.replace("\n", " ").split(". ")
+                for sentence in sentences:
+                    if "?" in sentence:
+                        with open(QUESTIONS_FILE, "a", encoding="utf-8") as fq:
+                            fq.write(f"[{stamp}] DEFERRED: {sentence.strip()}\n")
+
+            # 3. Catch internal failures and log to AI-ERRORS
+            if "ERROR]" in response or "failed" in response.lower():
+                with open(ERRORS_FILE, "a", encoding="utf-8") as fe:
+                    fe.write(f"[{stamp}] FAILURE LOGGED: {response.strip()}\n")
+
+        except Exception as exc:
             pass
 
     def _debate(self):
