@@ -88,28 +88,16 @@ def _date_stamp() -> str:
 
 
 def initialize_sandbox() -> list:
-    """
-    Create 4-zone directories and core files if absent.
-    Returns log lines for display in the Mind B Terminal.
-    """
-    log = ["[SYSTEM] Initializing Memory Ark sandbox…"]
+    """ Create 4-zone directories and core files if absent. Silent boot. """
     for zone, path in ZONE_PATHS.items():
-        if not os.path.exists(path):
-            os.makedirs(path, exist_ok=True)
-            log.append(f"[CREATED] Zone: {path}")
-        else:
-            log.append(f"[ACTIVE]  Zone: {path}")
-
-    _ensure_file(
-        INDEX_FILE,
-        "[DATE] | [FILE] | [ACTORS] | [THREAT LEVEL] | [SUMMARY]\n",
-        log, "INDEX.txt",
-    )
-    _ensure_file(
-        IDENTITY_FILE,
-        f"[DATE: {_date_stamp()}]\n[ENTITY: OPERATOR]\n[BASELINE IDENTITY]\n\n",
-        log, "IDENTITY.txt",
-    )
+        if not os.path.exists(path): os.makedirs(path, exist_ok=True)
+    _ensure_file(INDEX_FILE, "[DATE] | [FILE] | [ACTORS] | [THREAT LEVEL] | [SUMMARY]\n", [], "INDEX.txt")
+    _ensure_file(IDENTITY_FILE, f"[DATE: {_date_stamp()}]\n[ENTITY: OPERATOR]\n[BASELINE IDENTITY]\n\n", [], "IDENTITY.txt")
+    _ensure_file(CURRENT_STATE_FILE, f"[DATE: {_date_stamp()}]\n[CURRENT STATE]\n\n", [], "CURRENT_STATE.txt")
+    _ensure_file(OBSERVATIONS_FILE, "", [], "AI-OBSERVATIONS.txt")
+    _ensure_file(QUESTIONS_FILE, "", [], "AI-QUESTIONS.txt")
+    _ensure_file(ERRORS_FILE, "", [], "AI-ERRORS.txt")
+    return ["[SYSTEM] Sandbox verified. System ready."]
     _ensure_file(
         CURRENT_STATE_FILE,
         f"[DATE: {_date_stamp()}]\n"
