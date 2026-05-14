@@ -362,10 +362,11 @@ def perform_backup(dest_root: str = BACKUP_USB_PATH) -> str:
     """
     if os.name == "nt":
         drive, _ = os.path.splitdrive(dest_root)
-        if drive and not os.path.exists(f"{drive}\\"):
+        if drive and not os.path.exists(f"{drive}{os.sep}"):
             return f"[BACKUP FAILED] USB path unavailable: {dest_root}"
 
-    stamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+    now = datetime.datetime.now()
+    stamp = now.strftime("%Y%m%d_%H%M%S") + f"_{now.microsecond // 1000:03d}"
     dest  = os.path.join(dest_root, f"ark_backup_{stamp}")
     try:
         os.makedirs(dest, exist_ok=True)
