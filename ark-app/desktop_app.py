@@ -1027,8 +1027,16 @@ class MemoryArkApp:
         self._terminal_write(result)
         self.root.update()
 
-        self.root.destroy()
+        if "[BACKUP FAILED]" in result:
+            override = messagebox.askyesno(
+                "Backup Error", 
+                "USB drive not found or inaccessible.\n\nExit anyway and risk data loss?"
+            )
+            if not override:
+                self._stop_flag.clear()
+                return
 
+        self.root.destroy()
 
 # =============================================================================
 # ENTRY POINT
