@@ -58,11 +58,9 @@ OBSERVATIONS_FILE  = os.path.join(ZONE_PATHS["AI"],     "AI-OBSERVATIONS.txt")
 QUESTIONS_FILE     = os.path.join(ZONE_PATHS["AI"],     "AI-QUESTIONS.txt")
 ERRORS_FILE        = os.path.join(ZONE_PATHS["AI"],     "AI-ERRORS.txt")
 
-# Step 10 — default backup destination
-BACKUP_DIR = os.environ.get(
-    "MEMORY_ARK_BACKUP",
-    os.path.join(pathlib.Path.home(), "Memory_Ark_Backup"),
-)
+# Step 10 — hard-coded USB backup destination
+# (Blueprint example: E:\Memory_Ark_Backup)
+BACKUP_USB_PATH = r"E:\Memory_Ark_Backup"
 
 # ARK SOUL SYSTEM PROMPT — injected silently on Ollama connection (Step 4)
 ARK_SOUL_PROMPT = (
@@ -146,12 +144,9 @@ class BrainBridge:
     NEVER connects to the open internet.
     """
 
-    def __init__(
-        self,
-        base_url: str = OLLAMA_BASE_URL,
-        model: str = OLLAMA_MODEL,
-    ):
-        self.base_url = base_url
+    def __init__(self, model: str = OLLAMA_MODEL):
+        # Hard-coded local bridge target (no external endpoint allowed)
+        self.base_url = OLLAMA_BASE_URL
         self.model    = model
         self.online   = False
         self._probe()
@@ -161,7 +156,7 @@ class BrainBridge:
             self.online = False
             return False
         try:
-            r = requests.get(f"{self.base_url}/api/tags", timeout=3)
+            r = requests.get("http://localhost:11434/api/tags", timeout=3)
             self.online = r.status_code == 200
         except Exception:
             self.online = False
@@ -196,7 +191,7 @@ class BrainBridge:
         }
         try:
             r = requests.post(
-                f"{self.base_url}/api/generate",
+                "http://localhost:11434/api/generate",
                 json=payload,
                 timeout=120,
             )
@@ -218,7 +213,7 @@ class RAGPipeline:
     """
 
     # Files that receive priority weight in retrieval (Step 7)
-    _PRIORITY_NAMES = frozenset({"INDEX.txt", "IDENTITY.txt", "CURRENT_STATE.txt"})
+    _PRIORITY_NAMES = frozenset({"IDENTITY.txt", "CURRENT_STATE.txt"})
 
     def __init__(self):
         self.available  = CHROMA_AVAILABLE
@@ -302,24 +297,34 @@ class RAGPipeline:
     def query(self, text: str, n_results: int = 5) -> str:
         """
         Retrieve relevant context.
-        Priority files (IDENTITY, CURRENT_STATE, INDEX) are fetched first
+        Priority files (IDENTITY, CURRENT_STATE) are fetched first
         to guarantee the AI never 'forgets' who someone is (Step 7).
         """
         if not self.available or self.collection is None:
             return ""
         try:
-            # Priority tier: IDENTITY / CURRENT_STATE / INDEX first
+            # Priority tier: IDENTITY / CURRENT_STATE first (hard-coded weighting)
             priority_docs = []
             try:
                 pr = self.collection.query(
                     query_texts=[text],
                     n_results=min(3, n_results),
-                    where={"priority": "True"},
+                    where={"filename": {"$in": ["IDENTITY.txt", "CURRENT_STATE.txt"]}},
                 )
                 if pr and pr.get("documents"):
                     priority_docs = pr["documents"][0]
             except Exception:
-                pass
+                # Fallback for older/local metadata state
+                try:
+                    pr = self.collection.query(
+                        query_texts=[text],
+                        n_results=min(3, n_results),
+                        where={"priority": "True"},
+                    )
+                    if pr and pr.get("documents"):
+                        priority_docs = pr["documents"][0]
+                except Exception:
+                    pass
 
             # Regular tier
             regular_docs = []
@@ -349,7 +354,7 @@ class RAGPipeline:
 # STEP 10 — AIR-GAPPED REDUNDANCY / BACKUP ON EXIT
 # =============================================================================
 
-def perform_backup(dest_root: str = BACKUP_DIR) -> str:
+def perform_backup(dest_root: str = BACKUP_USB_PATH) -> str:
     """
     Mirror Human, Shared, and AI zones to a timestamped backup directory.
     Bound to the application exit sequence (Step 10).
@@ -1009,17 +1014,11 @@ class MemoryArkApp:
         self._stop_flag.set()
         self._null_event.set()   # unblock sleeping threads so they exit cleanly
 
-        if messagebox.askyesno(
-            "Memory Ark — Exit",
-            "Perform air-gapped backup before closing?\n\n"
-            f"Source:      {BASE_DIR}\n"
-            f"Destination: {BACKUP_DIR}",
-        ):
-            self._terminal_write("[BACKUP] Initiating air-gapped redundancy protocol…")
-            self.root.update()
-            result = perform_backup()
-            self._terminal_write(result)
-            self.root.update()
+        self._terminal_write("[BACKUP] Initiating air-gapped redundancy protocol…")
+        self.root.update()
+        result = perform_backup(BACKUP_USB_PATH)
+        self._terminal_write(result)
+        self.root.update()
 
         self.root.destroy()
 
