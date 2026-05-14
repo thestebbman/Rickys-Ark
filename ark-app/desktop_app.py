@@ -360,6 +360,11 @@ def perform_backup(dest_root: str = BACKUP_USB_PATH) -> str:
     Bound to the application exit sequence (Step 10).
     Uses shutil.copytree — no cloud, no network.
     """
+    if os.name == "nt":
+        drive, _ = os.path.splitdrive(dest_root)
+        if drive and not os.path.exists(f"{drive}\\"):
+            return f"[BACKUP FAILED] USB path unavailable: {dest_root}"
+
     stamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     dest  = os.path.join(dest_root, f"ark_backup_{stamp}")
     os.makedirs(dest, exist_ok=True)
@@ -369,9 +374,7 @@ def perform_backup(dest_root: str = BACKUP_USB_PATH) -> str:
         src = ZONE_PATHS[zone]
         dst = os.path.join(dest, zone)
         try:
-            if os.path.exists(dst):
-                shutil.rmtree(dst)
-            shutil.copytree(src, dst)
+            shutil.copytree(src, dst, dirs_exist_ok=True)
         except Exception as exc:
             errors.append(f"{zone}: {exc}")
 
@@ -1029,7 +1032,7 @@ class MemoryArkApp:
 
 def main():
     root = tk.Tk()
-    app = MemoryArkApp(root)  # noqa: F841
+    _app = MemoryArkApp(root)
     root.mainloop()
 
 

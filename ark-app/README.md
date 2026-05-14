@@ -43,12 +43,11 @@ Implements the **10-Step Software Engineering Schematic** from the Memory Ark Bl
 | **Dual-pane UI** | Left: Human Vault editor · Right: Mind B Terminal (read-only) |
 | **Telemetry** | Active / Reflective / Null — gates AI thread via `threading.Event()` |
 | **HITL loop** | Approve Link / Reject Link buttons halt AI writes pending human decision |
-| **Step 10 Backup** | `shutil.copytree` backup to `~/Memory_Ark_Backup/` on exit |
+| **Step 10 Backup** | `shutil.copytree` backup to hard-coded USB path `E:\Memory_Ark_Backup` on exit |
 
 ## Environment variables (optional)
 
 | Variable | Default | Purpose |
 |---|---|---|
 | `MEMORY_ARK_DIR` | `~/Memory_Ark` | Override sandbox root |
-| `MEMORY_ARK_BACKUP` | `~/Memory_Ark_Backup` | Override backup destination |
 | `MEMORY_ARK_MODEL` | `llama3` | Override Ollama model name |
