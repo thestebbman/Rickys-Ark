@@ -59,8 +59,8 @@ QUESTIONS_FILE     = os.path.join(ZONE_PATHS["AI"],     "AI-QUESTIONS.txt")
 ERRORS_FILE        = os.path.join(ZONE_PATHS["AI"],     "AI-ERRORS.txt")
 
 # Step 10 — hard-coded USB backup destination
-# (Blueprint example: E:\Memory_Ark_Backup)
-BACKUP_USB_PATH = r"E:\Memory_Ark_Backup"
+# (Blueprint example: D:\Memory_Ark_Backup)
+BACKUP_USB_PATH = r"D:\Memory_Ark_Backup"
 
 # ARK SOUL SYSTEM PROMPT — injected silently on Ollama connection (Step 4)
 ARK_SOUL_PROMPT = (
