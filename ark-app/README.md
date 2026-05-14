@@ -1,6 +1,6 @@
 # Memory Ark Workstation
 
-**100 % offline Python/Tkinter desktop application.**  
+**100% offline Python/Tkinter desktop application.**  
 No browser, no Flask, no cloud API.  All storage is local.
 
 ---

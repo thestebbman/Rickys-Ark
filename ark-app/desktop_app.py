@@ -240,13 +240,12 @@ class RAGPipeline:
 
     def _chunk(self, text: str, chunk_size: int = 400, overlap: int = 50) -> list:
         words = text.split()
+        if not words:
+            return []
         chunks = []
         step = max(1, chunk_size - overlap)
-        for i in range(0, max(1, len(words) - chunk_size + 1), step):
+        for i in range(0, len(words), step):
             chunks.append(" ".join(words[i : i + chunk_size]))
-        # Capture tail that might be missed
-        if not chunks and words:
-            chunks.append(" ".join(words))
         return chunks
 
     # ── Indexing ──────────────────────────────────────────────────────────────
@@ -895,8 +894,8 @@ class MemoryArkApp:
             daemon=True,
         ).start()
 
-    def _run_query(self, query: str, context: str):
-        response = self.brain.generate(query, context=context)
+    def _run_query(self, query: str, context: str, system: str = ARK_SOUL_PROMPT):
+        response = self.brain.generate(query, system=system, context=context)
         if self._terminal_allowed:
             self._terminal_write(f"[MIND B]\n{response}")
         # Append to AI-OBSERVATIONS (append-only, never overwrite)
@@ -935,7 +934,7 @@ class MemoryArkApp:
         self._terminal_write("[DEBATE INITIATED] Mind B challenging active document…")
         threading.Thread(
             target=self._run_query,
-            args=(debate_prompt, ""),
+            args=(debate_prompt, "", debate_system),
             daemon=True,
         ).start()
 
@@ -953,13 +952,13 @@ class MemoryArkApp:
         try:
             with open(OBSERVATIONS_FILE, "r", encoding="utf-8", errors="ignore") as fh:
                 obs_lines = [l for l in fh.readlines() if l.strip()]
-                obs_count = max(0, len(obs_lines) - 1)
+                obs_count = len(obs_lines)
         except Exception:
             pass
         try:
             with open(QUESTIONS_FILE, "r", encoding="utf-8", errors="ignore") as fh:
                 q_lines = [l for l in fh.readlines() if l.strip()]
-                q_count = max(0, len(q_lines) - 1)
+                q_count = len(q_lines)
         except Exception:
             pass
 
