@@ -1497,15 +1497,15 @@ class MemoryArkApp:
     TELEMETRY_REFLECTIVE = "Reflective"
     TELEMETRY_NULL       = "Null"
 
-    # Colours
-    _BG        = "#1a1a2e"
-    _TOPBAR    = "#0f3460"
-    _ACCENT    = "#e94560"
-    _TERMINAL  = "#0d1a0d"
-    _TXT_GREEN = "#00ff88"
-    _TXT_DIM   = "#6060a0"
-    _TXT_MAIN  = "#c8c8e8"
-    _BTN_BG    = "#0f3460"
+    # Colours - 1980s Clean Monochrome
+        _BG        = "#ffffff"
+        _TOPBAR    = "#cccccc"
+        _ACCENT    = "#000000"
+        _TERMINAL  = "#000000"
+        _TXT_GREEN = "#ffffff"
+        _TXT_DIM   = "#555555"
+        _TXT_MAIN  = "#000000"
+        _BTN_BG    = "#eeeeee"
 
     def __init__(self, root: tk.Tk):
         self.root = root
