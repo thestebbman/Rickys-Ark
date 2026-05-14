@@ -48,7 +48,7 @@ ZONE_PATHS = {z: os.path.join(BASE_DIR, z) for z in ZONES}
 
 # Module A: Brain Bridge endpoint — hardcoded to local Ollama (Step 4)
 OLLAMA_BASE_URL = "http://localhost:11434"
-OLLAMA_MODEL    = os.environ.get("MEMORY_ARK_MODEL", "llama3")
+OLLAMA_MODEL    = os.environ.get("MEMORY_ARK_MODEL", "ark:latest")
 
 # Core file paths (Step 2)
 INDEX_FILE         = os.path.join(ZONE_PATHS["Human"],  "INDEX.txt")
