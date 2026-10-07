@@ -374,7 +374,7 @@ https://ai-memory-ark.blogspot.com/2026/10/the-ai-extraction-investigation_01894
 
 Quick index links for me to copy. 
 
-https://rickystebbins78.blogspot.com/2025/06/rickys-memory-ark.html
+(https://rickystebbins78.blogspot.com/2025/06/rickys-memory-ark.html)
  
 https://rickymedicalfile.blogspot.com/2025/06/ricky-medical-file-index.html
  
@@ -384,7 +384,7 @@ https://rickyandthemachine.blogspot.com/2025/06/ricky-and-machine-index.html
 
 https://thechroniclesofrickyuneditedthreads.blogspot.com/2025/06/unedited-thread-index.html
 
- https://ultimateworldfinancialmap.blogspot.com/2025/07/ultimate-financial-map-index.html
+ (https://ultimateworldfinancialmap.blogspot.com/2025/07/ultimate-financial-map-index.html)
 
  https://survivors-of-the-system.blogspot.com/2026/02/survivors-of-system.html
 
