@@ -218,7 +218,7 @@ rickystebbins78@gmail.com
 
 ---
 
-
+**Life Story**
 https://rickystebbins78.blogspot.com/2025/05/1978-1983-birth-to-preschool.html
 https://rickystebbins78.blogspot.com/2025/05/1983-colonial-estates-kindergarten-and.html
 https://rickystebbins78.blogspot.com/2025/05/1984-year-of-firsts-first-grade-and.html
@@ -268,7 +268,7 @@ https://rickystebbins78.blogspot.com/2026/01/2026.html
 
 
 
-
+**Th
 
 https://rickystebbins78.blogspot.com/2026/03/ricky-stebbins-self-analsys.html
 
@@ -304,6 +304,9 @@ https://rickystebbins78.blogspot.com/2026/04/being-unsuccessfula-tough-pill-to.h
 https://rickyandthemachine.blogspot.com/2026/04/the-machine-that-says-no-by-claude.html
 
 https://rickystebbins78.blogspot.com/2026/04/ricky-stebbins-self-analysis-part-4.html
+
+
+**Testing what AI could do**
 
 https://rickystebbins78.blogspot.com/2026/04/the-extraction-machine.html
 
@@ -353,7 +356,7 @@ https://rickystebbins78.blogspot.com/2026/08/unraveling-my-mind-august-2026.html
 https://rickystebbins78.blogspot.com/2026/08/the-death-of-our-childhood-heros.html
 
 ===
-Muse AI Stuff
+** Retesting AI- Letting Muse AI have its own Gmail, Facebook, Blogger, and X account**
 
 https://ai-memory-ark.blogspot.com/2026/10/hearts-what-id-build-on-rickys.html
 
@@ -372,7 +375,7 @@ https://ai-memory-ark.blogspot.com/2026/10/the-ai-extraction-investigation_01894
 
 ===
 
-Quick index links for me to copy. 
+** Google Blogger Links to different parts of this project**
 
 (https://rickystebbins78.blogspot.com/2025/06/rickys-memory-ark.html)
  
